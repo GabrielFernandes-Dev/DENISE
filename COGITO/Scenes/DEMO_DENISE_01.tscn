@@ -1,0 +1,48 @@
+[gd_scene load_steps=9 format=3 uid="uid://ct0g5u6kry7y5"]
+
+[ext_resource type="PackedScene" uid="uid://datsxini14enx" path="res://COGITO/Objects/placa_01.tscn" id="1_3724o"]
+[ext_resource type="Script" path="res://COGITO/Scripts/demo_denise_01.gd" id="1_l0vua"]
+[ext_resource type="PackedScene" uid="uid://kicjwmh02uwf" path="res://COGITO/PackedScenes/cogito_player.tscn" id="2_tujnn"]
+[ext_resource type="Script" path="res://COGITO/InventoryPD/CustomResources/InventorySlotPD.gd" id="3_6ca1j"]
+[ext_resource type="Script" path="res://COGITO/InventoryPD/cogito_inventory.gd" id="4_pk0ml"]
+[ext_resource type="PackedScene" uid="uid://xod0to5m4773" path="res://COGITO/Objects/virus.tscn" id="5_d6g3w"]
+
+[sub_resource type="Environment" id="Environment_sxel4"]
+background_mode = 1
+background_color = Color(0.446348, 0.267134, 0.429664, 1)
+background_energy_multiplier = 0.61
+ambient_light_color = Color(0.984495, 0.787459, 0.880429, 1)
+volumetric_fog_enabled = true
+
+[sub_resource type="Resource" id="Resource_bnd2g"]
+resource_local_to_scene = true
+script = ExtResource("4_pk0ml")
+grid = true
+starter_inventory = Array[ExtResource("3_6ca1j")]([])
+inventory_size = Vector2i(5, 3)
+inventory_slots = Array[ExtResource("3_6ca1j")]([null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
+
+[node name="DemoDenise01" type="Node3D"]
+script = ExtResource("1_l0vua")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_sxel4")
+
+[node name="modelo_placa" parent="." instance=ExtResource("1_3724o")]
+transform = Transform3D(47.09, 0, 0, 0, 47.09, 0, 0, 0, 62.488, 0, 0, 0)
+
+[node name="player" parent="." instance=ExtResource("2_tujnn")]
+transform = Transform3D(-4.37114e-09, 0, -0.1, 0, 0.1, 0, 0.1, 0, -4.37114e-09, -0.261108, 0.505122, 2.41965)
+inventory_data = SubResource("Resource_bnd2g")
+walk_volume_db = -60.0
+sprint_volume_db = -60.0
+crouch_volume_db = -90.0
+JUMP_VELOCITY = 3.0
+WALKING_SPEED = 2.5
+SPRINTING_SPEED = 4.0
+
+[node name="virus" parent="." instance=ExtResource("5_d6g3w")]
+transform = Transform3D(-0.00406634, 0, 0.199959, 0, 0.2, 0, -0.199959, 0, -0.00406634, 2.64297, 0.339145, 2.60421)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.728969, 0.684547, 0, -0.684547, -0.728969, 0.440798, 6.43737, -4.28886)

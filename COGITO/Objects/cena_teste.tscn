@@ -1,0 +1,56 @@
+[gd_scene load_steps=11 format=3 uid="uid://7hpw1ocupiyw"]
+
+[ext_resource type="Script" path="res://COGITO/Scripts/cena_teste.gd" id="1_raaa6"]
+[ext_resource type="PackedScene" uid="uid://xod0to5m4773" path="res://COGITO/Objects/virus.tscn" id="2_wmvt7"]
+[ext_resource type="PackedScene" uid="uid://kicjwmh02uwf" path="res://COGITO/PackedScenes/cogito_player.tscn" id="3_2md3a"]
+[ext_resource type="Script" path="res://COGITO/InventoryPD/CustomResources/InventorySlotPD.gd" id="4_e1pgj"]
+[ext_resource type="Script" path="res://COGITO/InventoryPD/cogito_inventory.gd" id="5_7s68y"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_jywpm"]
+size = Vector2(50, 50)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_8w6du"]
+points = PackedVector3Array(-25, 0, -25, -25, 0, 25, 25, 0, -25, 25, 0, 25)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xlkfo"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6oiu4"]
+points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="Resource" id="Resource_rh0ai"]
+resource_local_to_scene = true
+script = ExtResource("5_7s68y")
+grid = true
+starter_inventory = Array[ExtResource("4_e1pgj")]([])
+inventory_size = Vector2i(5, 3)
+inventory_slots = Array[ExtResource("4_e1pgj")]([null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_raaa6")
+
+[node name="floor" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_jywpm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_8w6du")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.817517, 0.575904, 0, -0.575904, 0.817517, 0, 3.57543, 4.81512)
+
+[node name="box" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.615657, -11.6474)
+mesh = SubResource("BoxMesh_xlkfo")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="box"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="box/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_6oiu4")
+
+[node name="Virus" parent="." instance=ExtResource("2_wmvt7")]
+transform = Transform3D(-0.999863, 0, 0.0165275, 0, 1, 0, -0.0165275, 0, -0.999863, 0.280601, 0.508156, -19.081)
+
+[node name="CogitoPlayer" parent="." instance=ExtResource("3_2md3a")]
+transform = Transform3D(0.992573, 0, 0.121644, 0, 1, 0, -0.121644, 0, 0.992573, 0.00695652, 1.30816, -2.52635)
+inventory_data = SubResource("Resource_rh0ai")

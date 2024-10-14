@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://ch24g2wptx3dm"]
+
+[ext_resource type="Script" path="res://COGITO/Scripts/player.gd" id="1_gwqej"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_h87y0"]
+height = 3.0
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1flaq"]
+height = 3.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7f4v1"]
+
+[node name="player" type="CharacterBody3D"]
+script = ExtResource("1_gwqej")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_h87y0")
+
+[node name="Corpo" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_1flaq")
+
+[node name="Pe" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.986391, 0)
+shape = SubResource("BoxShape3D_7f4v1")
+
+[node name="Cabeca" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.11462, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Cabeca"]

@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://tmf5wir2abyi"]
+
+[ext_resource type="Texture2D" uid="uid://ctmfwjfit55lp" path="res://COGITO/Assets/Models/textures/09_-_Default_baseColor.png" id="1_6kltu"]
+[ext_resource type="Texture2D" uid="uid://cugdyl1i7f3j3" path="res://COGITO/Assets/Models/textures/09_-_Default_metallicRoughness.jpg" id="2_0a0vv"]
+[ext_resource type="Texture2D" uid="uid://dfm8o0me0ebyd" path="res://COGITO/Assets/Models/textures/09_-_Default_normal.jpg" id="3_6b3lv"]
+
+[resource]
+resource_name = "09_-_Default"
+cull_mode = 2
+albedo_texture = ExtResource("1_6kltu")
+metallic = 1.0
+metallic_texture = ExtResource("2_0a0vv")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_0a0vv")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_6b3lv")

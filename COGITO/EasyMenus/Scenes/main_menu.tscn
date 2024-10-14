@@ -1,0 +1,127 @@
+[gd_scene load_steps=15 format=3 uid="uid://dq6tvhqcy2aps"]
+
+[ext_resource type="Theme" uid="uid://leudtt5jh16a" path="res://COGITO/Theme/Cogito_Theme_A.tres" id="1_74dia"]
+[ext_resource type="Script" path="res://COGITO/EasyMenus/Scripts/main_menu_controller.gd" id="1_lbw7r"]
+[ext_resource type="AudioStream" uid="uid://cr3bcp0u6w1pl" path="res://COGITO/Assets/Audio/Kenney/UiAudio/mouseclick1.ogg" id="3_cfl52"]
+[ext_resource type="AudioStream" uid="uid://kbw2s407quul" path="res://COGITO/Assets/Audio/Kenney/UiAudio/click1.ogg" id="4_mhv4c"]
+[ext_resource type="Script" path="res://COGITO/Theme/CogitoUiButton.gd" id="4_ufukr"]
+[ext_resource type="Texture2D" uid="uid://dtwpsohprjv3d" path="res://COGITO/Assets/Graphics/GUI/Fundo.png" id="5_ebc1c"]
+[ext_resource type="Texture2D" uid="uid://u4g5xuia2uxw" path="res://COGITO/Assets/Graphics/GUI/Janela.png" id="6_rwqaf"]
+[ext_resource type="Texture2D" uid="uid://6a0h70mguvhl" path="res://COGITO/Assets/Graphics/GUI/Jogar.png" id="7_0udjl"]
+[ext_resource type="PackedScene" uid="uid://bly6wti1q8bsu" path="res://COGITO/EasyMenus/Scenes/OptionsTabMenu.tscn" id="8_ig87r"]
+[ext_resource type="Texture2D" uid="uid://li8fk284ngfl" path="res://COGITO/Assets/Graphics/GUI/Configuracao.png" id="9_6kup4"]
+[ext_resource type="Script" path="res://COGITO/Scripts/menu_scene_switcher.gd" id="9_kfsif"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ahy7u"]
+texture = ExtResource("5_ebc1c")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tpeyb"]
+texture = ExtResource("6_rwqaf")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n66hi"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -280.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_74dia")
+script = ExtResource("1_lbw7r")
+sound_hover = ExtResource("3_cfl52")
+sound_click = ExtResource("4_mhv4c")
+
+[node name="Fundo" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ahy7u")
+
+[node name="JanelaMenu" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 87.0
+offset_right = 174.0
+offset_bottom = 113.0
+scale = Vector2(12.5788, 10.3181)
+theme_override_styles/panel = SubResource("StyleBoxTexture_tpeyb")
+
+[node name="ContentMain" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -453.0
+offset_top = -454.0
+offset_right = 47.0
+offset_bottom = 167.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="ContentMain"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "Denise"
+horizontal_alignment = 1
+
+[node name="GameMenu" type="MarginContainer" parent="ContentMain"]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ContentMain/GameMenu"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="LegacyDemoSceneButton" type="Button" parent="ContentMain/GameMenu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 30
+theme_override_icons/icon = ExtResource("7_0udjl")
+icon_alignment = 1
+script = ExtResource("4_ufukr")
+
+[node name="Separator2" type="PanelContainer" parent="ContentMain/GameMenu/VBoxContainer"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_n66hi")
+
+[node name="OptionsButton" type="Button" parent="ContentMain/GameMenu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 30
+theme_override_icons/icon = ExtResource("9_6kup4")
+icon_alignment = 1
+script = ExtResource("4_ufukr")
+
+[node name="Separator" type="PanelContainer" parent="ContentMain/GameMenu/VBoxContainer"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_n66hi")
+
+[node name="OptionsTabMenu" parent="ContentMain" node_paths=PackedStringArray("nodes_to_focus") instance=ExtResource("8_ig87r")]
+visible = false
+layout_mode = 2
+current_tab = 0
+nodes_to_focus = [NodePath("Gameplay/ScrollContainer/VBoxContainer/InvertYAxisCheckButton"), NodePath("Graphics/ScrollContainer/VBoxContainer/HBoxContainer_WindowMode/WindowModeOptionButton"), NodePath("Audio/ScrollContainer/VBoxContainer/MarginContainer/VBoxContainer/SFXVolumeSlider"), null]
+
+[node name="LegacyDemoSceneSwitcher" type="Node" parent="."]
+script = ExtResource("9_kfsif")
+start_game_scene = "res://COGITO/DemoScenes/COGITO_1_LegacyDemo.tscn"
+
+[connection signal="pressed" from="ContentMain/GameMenu/VBoxContainer/LegacyDemoSceneButton" to="LegacyDemoSceneSwitcher" method="_on_main_menu_start_game_pressed"]
+[connection signal="pressed" from="ContentMain/GameMenu/VBoxContainer/OptionsButton" to="." method="open_options_menu"]

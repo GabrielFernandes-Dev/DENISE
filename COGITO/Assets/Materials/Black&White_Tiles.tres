@@ -1,0 +1,19 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://cbs0p3d6kovdf"]
+
+[ext_resource type="Texture2D" uid="uid://b3pbwyf7ja0eb" path="res://COGITO/Assets/Textures/Black&White_Tiles/Dirty_Black_and_white_checker_Tiles_Base_Color.jpg" id="1_2pt3j"]
+[ext_resource type="Texture2D" uid="uid://tebj1iksmbcv" path="res://COGITO/Assets/Textures/Black&White_Tiles/Dirty_Black_and_white_checker_Tiles_Height.jpg" id="2_gj4ga"]
+[ext_resource type="Texture2D" uid="uid://jwrk3xsy15j5" path="res://COGITO/Assets/Textures/Black&White_Tiles/Dirty_Black_and_white_checker_Tiles_Normal.jpg" id="3_slpmn"]
+[ext_resource type="Texture2D" uid="uid://br07rkr237cab" path="res://COGITO/Assets/Textures/Black&White_Tiles/Dirty_Black_and_white_checker_Tiles_Roughness.jpg" id="4_vsdts"]
+
+[resource]
+resource_name = "Dirty Black and white checker Tiles"
+cull_mode = 2
+albedo_texture = ExtResource("1_2pt3j")
+metallic = 1.0
+metallic_texture = ExtResource("2_gj4ga")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("4_vsdts")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_slpmn")
+uv1_triplanar = true
