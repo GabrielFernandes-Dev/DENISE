@@ -1,6 +1,6 @@
 extends Node3D
 
-var area1 = Vector3(1, 0, 2)
+var area1 = Vector3(3, 0, 3)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

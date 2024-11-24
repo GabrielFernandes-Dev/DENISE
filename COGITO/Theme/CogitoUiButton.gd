@@ -20,9 +20,6 @@ func _ready() -> void:
 	self.focus_exited.connect(_on_focus_exited)
 	self.pressed.connect(_on_pressed)
 	
-	# Duplicate the normal stylebox. We are going to use it as our base stylebox
-	tween_stylebox = get_theme_stylebox('normal').duplicate()
-	
 	# Save the different styleboxes to be able to tween between their properties later
 	styleboxes[BaseButton.DRAW_NORMAL] = get_theme_stylebox('normal').duplicate()
 	styleboxes[BaseButton.DRAW_HOVER] = get_theme_stylebox('hover').duplicate()
@@ -30,12 +27,6 @@ func _ready() -> void:
 	styleboxes[BaseButton.DRAW_HOVER_PRESSED] = get_theme_stylebox('pressed').duplicate()
 	styleboxes[BaseButton.DRAW_DISABLED] = get_theme_stylebox('disabled').duplicate()
 	
-	# Override all the other styleboxes with our tween stylebox
-	add_theme_stylebox_override('normal', tween_stylebox)
-	add_theme_stylebox_override('hover', tween_stylebox)
-	add_theme_stylebox_override('focus', tween_stylebox)
-	add_theme_stylebox_override('pressed', tween_stylebox)
-	add_theme_stylebox_override('disabled', tween_stylebox)
 	
 
 func press_button_manually():
@@ -66,12 +57,6 @@ func _process(_delta: float) -> void:
 		if tween and tween.is_running(): # Kill the running tween
 			tween.kill()
 		tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC).set_parallel()
-		
-		# That tweens some properties of our tween stylebox to the target stylebox depending on the current state
-		var target = styleboxes[current_state] as StyleBoxFlat
-		tween.tween_property(tween_stylebox, "bg_color", target.bg_color, tween_time)
-		tween.tween_property(tween_stylebox, "border_color", target.border_color, tween_time)
-		tween.tween_property(tween_stylebox, "border_width_left", target.border_width_left, tween_time)
 
 
 func _on_focus_entered() -> void:
@@ -81,11 +66,6 @@ func _on_focus_entered() -> void:
 		tween.kill()
 	tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC).set_parallel()
 	
-	# That tweens some properties of our tween stylebox to the target stylebox depending on the current state
-	var target = styleboxes[BaseButton.DRAW_HOVER] as StyleBoxFlat
-	tween.tween_property(tween_stylebox, "bg_color", target.bg_color, tween_time)
-	tween.tween_property(tween_stylebox, "border_color", target.border_color, tween_time)
-	tween.tween_property(tween_stylebox, "border_width_left", target.border_width_left, tween_time)
 
 func in_context() -> bool:
 	var context = get_viewport().gui_get_focus_owner()
@@ -104,11 +84,6 @@ func _on_focus_exited() -> void:
 		tween.kill()
 	tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC).set_parallel()
 	
-	# That tweens some properties of our tween stylebox to the target stylebox depending on the current state
-	var target = styleboxes[BaseButton.DRAW_NORMAL] as StyleBoxFlat
-	tween.tween_property(tween_stylebox, "bg_color", target.bg_color, tween_time)
-	tween.tween_property(tween_stylebox, "border_color", target.border_color, tween_time)
-	tween.tween_property(tween_stylebox, "border_width_left", target.border_width_left, tween_time)
 
 func _input(event : InputEvent):
 	if in_context():

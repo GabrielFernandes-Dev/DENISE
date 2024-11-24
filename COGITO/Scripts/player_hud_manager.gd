@@ -73,8 +73,7 @@ func _setup_player():
 	instantiate_player_attribute_ui()
 	
 	# Fill inventory HUD with player inventory
-	inventory_interface.set_player_inventory_data(player.inventory_data)
-	inventory_interface.hot_bar_inventory.set_inventory_data(player.inventory_data)
+	inventory_interface.hot_bar_inventory.initialize(player)
 
 
 func connect_to_player_signals():

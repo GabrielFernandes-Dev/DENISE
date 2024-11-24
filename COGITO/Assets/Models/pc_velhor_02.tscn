@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://c1l4q7rayukog"]
+
+[ext_resource type="PackedScene" uid="uid://3uedonutss04" path="res://COGITO/Assets/Models/pc_velhor_02.blend" id="1_hh6c5"]
+[ext_resource type="Shader" path="res://COGITO/Assets/Models/shaders/pc_velho.gdshader" id="2_2ukae"]
+[ext_resource type="PackedScene" uid="uid://dq6tvhqcy2aps" path="res://COGITO/EasyMenus/Scenes/main_menu.tscn" id="2_uuel6"]
+[ext_resource type="Shader" path="res://COGITO/Assets/Models/shaders/shader_crt.gdshader" id="3_ira32"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_h2vfi"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u6hub"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("2_2ukae")
+shader_parameter/uv_scale = Vector2(4.27, 4.43)
+shader_parameter/screen_texture = SubResource("ViewportTexture_h2vfi")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jm0es"]
+shader = ExtResource("3_ira32")
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.069
+shader_parameter/scanlines_width = 0.5
+shader_parameter/grille_opacity = 0.0
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = true
+shader_parameter/roll = true
+shader_parameter/roll_speed = 6.0
+shader_parameter/roll_size = 8.261
+shader_parameter/roll_variation = 1.403
+shader_parameter/distort_intensity = 0.037
+shader_parameter/noise_opacity = 0.355
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.085
+shader_parameter/aberration = 4.75e-08
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.157
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.6
+shader_parameter/vignette_opacity = 0.32
+
+[node name="pc_velhor_02" instance=ExtResource("1_hh6c5")]
+
+[node name="tela" parent="Amiga/pc_velho/pc" index="1"]
+surface_material_override/0 = SubResource("ShaderMaterial_u6hub")
+
+[node name="SubViewport" type="SubViewport" parent="." index="1"]
+handle_input_locally = false
+size = Vector2i(1000, 750)
+render_target_update_mode = 4
+
+[node name="MainMenu" parent="SubViewport" index="0" instance=ExtResource("2_uuel6")]
+offset_right = 0.0
+offset_bottom = 0.0
+
+[node name="efeito_crt" type="ColorRect" parent="SubViewport" index="1"]
+material = SubResource("ShaderMaterial_jm0es")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

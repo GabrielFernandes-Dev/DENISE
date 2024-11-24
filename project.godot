@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="amiga"
-run/main_scene="res://COGITO/DemoScenes/COGITO_0_MainMenu.tscn"
+run/main_scene="res://COGITO/Scenes/Intro.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 run/max_fps=120
 boot_splash/image="res://COGITO/COGITO_icon.png"
@@ -206,6 +206,9 @@ ui_prev_tab={
 
 3d_physics/layer_1="Environment"
 3d_physics/layer_2="Interactables"
+3d_physics/layer_3="Areas Inimigo"
+3d_physics/layer_4="Player"
+3d_physics/layer_5="Virus"
 
 [rendering]
 
