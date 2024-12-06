@@ -1,14 +1,13 @@
-[gd_scene load_steps=26 format=3 uid="uid://kicjwmh02uwf"]
+[gd_scene load_steps=25 format=3 uid="uid://kicjwmh02uwf"]
 
 [ext_resource type="Script" path="res://COGITO/CogitoObjects/cogito_player.gd" id="1_87we8"]
 [ext_resource type="Resource" uid="uid://ev2xuamhfojm" path="res://COGITO/InventoryPD/Inventories/PlayerInventory.tres" id="2_iyhv4"]
 [ext_resource type="AudioStream" uid="uid://ba8gpptnnapyh" path="res://COGITO/Assets/Audio/Kenney/cloth2.ogg" id="3_7ds3n"]
 [ext_resource type="AudioStream" uid="uid://b7wmxwvtbpfu1" path="res://COGITO/Assets/Audio/537275__laughingfish78__dirt-sliding.ogg" id="4_1i2kv"]
-[ext_resource type="PackedScene" uid="uid://dorp3auw3s65q" path="res://COGITO/Components/Attributes/LightMeterAttribute.tscn" id="5_v3qv3"]
-[ext_resource type="PackedScene" uid="uid://wtf1fqndii2p" path="res://COGITO/Components/Attributes/VisibilityAttribute.tscn" id="6_7kb21"]
-[ext_resource type="PackedScene" uid="uid://cetc123v5gnff" path="res://COGITO/Components/Attributes/SanityAttribute.tscn" id="7_27cpi"]
+[ext_resource type="PackedScene" uid="uid://b6kxur26ohaee" path="res://COGITO/Components/Attributes/MemoryAttribute.tscn" id="5_qith3"]
 [ext_resource type="PackedScene" uid="uid://ce7bjv28uakxl" path="res://COGITO/Components/Attributes/StaminaAttribute.tscn" id="8_kodbk"]
 [ext_resource type="PackedScene" uid="uid://cqgg1nng0vvbh" path="res://COGITO/Components/Attributes/HealthAttribute.tscn" id="9_ky5mf"]
+[ext_resource type="PackedScene" uid="uid://day7jsj1w1hvc" path="res://COGITO/Components/UI/Text_editor.tscn" id="10_h1ghh"]
 [ext_resource type="AnimationLibrary" uid="uid://cdchpsv104er2" path="res://COGITO/Assets/Animations/player_eyes.tres" id="10_tp6cj"]
 [ext_resource type="Script" path="res://COGITO/Scripts/interaction_raycast.gd" id="11_miluh"]
 [ext_resource type="AudioStream" uid="uid://up2hfhgq1qx6" path="res://COGITO/Assets/Audio/Kenney/Footsteps/footstep00.ogg" id="12_ug3wt"]
@@ -49,12 +48,12 @@ slide_sound = ExtResource("4_1i2kv")
 HEADBOBBLE = 1
 STEP_MAX_SLOPE_DEGREE = 1.0
 
-[node name="LightMeterAttribute" parent="." instance=ExtResource("5_v3qv3")]
-
-[node name="VisibilityAttribute" parent="." instance=ExtResource("6_7kb21")]
-
-[node name="SanityAttribute" parent="." instance=ExtResource("7_27cpi")]
-decay_in_darkness = false
+[node name="MemoryAttribute" parent="." instance=ExtResource("5_qith3")]
+attribute_name = "memory"
+attribute_display_name = "Memory"
+attribute_color = Color(0.261207, 0.616188, 1.92523e-07, 1)
+value_max = 4096.0
+value_start = 1024.0
 
 [node name="StaminaAttribute" parent="." instance=ExtResource("8_kodbk")]
 
@@ -96,9 +95,13 @@ libraries = {
 transform = Transform3D(1, 0, 0, 0, 1, 4.46638e-06, 0, -4.46638e-06, 1, 0, 0, 0)
 
 [node name="InteractionRaycast" type="RayCast3D" parent="Neck/Head/Eyes/Camera"]
-target_position = Vector3(0, 0, -2.5)
-collision_mask = 3
+target_position = Vector3(0, 0, -15)
+collision_mask = 18
 script = ExtResource("11_miluh")
+
+[node name="TextEditor" parent="Neck/Head/Eyes" instance=ExtResource("10_h1ghh")]
+transform = Transform3D(0.920293, 0, -0.391229, 0, 1, 0, 0.391229, 0, 0.920293, 0.523847, -0.0466504, -1.07038)
+visible = false
 
 [node name="Wieldables" type="Node3D" parent="Neck/Head"]
 unique_name_in_owner = true

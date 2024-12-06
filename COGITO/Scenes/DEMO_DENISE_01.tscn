@@ -32,7 +32,7 @@ environment = SubResource("Environment_sxel4")
 transform = Transform3D(47.09, 0, 0, 0, 47.09, 0, 0, 0, 62.488, 0, 0, 0)
 
 [node name="player" parent="." instance=ExtResource("2_tujnn")]
-transform = Transform3D(-4.37114e-09, 0, -0.1, 0, 0.1, 0, 0.1, 0, -4.37114e-09, -0.261108, 0.505122, 2.41965)
+transform = Transform3D(-4.37114e-09, 0, -0.1, 0, 0.1, 0, 0.1, 0, -4.37114e-09, -0.261108, 0.695424, 2.41965)
 inventory_data = SubResource("Resource_bnd2g")
 walk_volume_db = -60.0
 sprint_volume_db = -60.0

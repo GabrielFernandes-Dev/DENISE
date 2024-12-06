@@ -103,7 +103,7 @@ var WIGGLE_INTENSITY_MODIFIER = 1
 ### NEW PLAYER ATTRIBUTE SYSTEM:
 var player_attributes : Dictionary
 var stamina_attribute : CogitoAttribute = null
-var visibility_attribute : CogitoAttribute
+var memory_attribute : CogitoAttribute
 
 ## STAIR HANDLING STUFF
 var is_step : bool = false
@@ -139,7 +139,11 @@ var last_velocity : Vector3= Vector3.ZERO
 var stand_after_roll : bool = false
 var is_movement_paused : bool = false
 var is_dead : bool = false
+var is_aiming_at_virus: bool = false
 var slide_audio_player : AudioStreamPlayer3D
+
+var abilities: Array[CogitoAbility] = []
+var current_ability_index: int = -1
 
 # Node caching
 @onready var player_interaction_component: PlayerInteractionComponent = $PlayerInteractionComponent
@@ -169,11 +173,16 @@ var slide_audio_player : AudioStreamPlayer3D
 @onready var test_motion_result: PhysicsTestMotionResult3D = PhysicsTestMotionResult3D.new()
 
 @onready var wieldables = %Wieldables
+
+#Raycast
+@onready var interaction_raycast: RayCast3D = $Neck/Head/Eyes/Camera/InteractionRaycast
+
 #endregion
 
 
 func _ready():
 	#Some Setup steps
+	add_to_group("player")
 	CogitoSceneManager._current_player_node = self
 	player_interaction_component.interaction_raycast = $Neck/Head/Eyes/Camera/InteractionRaycast
 	player_interaction_component.exclude_player(get_rid())
@@ -194,13 +203,14 @@ func _ready():
 		health_attribute.death.connect(_on_death)
 	# Save reference to stamina attribute for movements that require stamina checks (null if not found)
 	stamina_attribute = player_attributes.get("stamina")
-	# Save reference to visibilty attribute for that require visibility checks (null if not found)
-	visibility_attribute = player_attributes.get("visibility")
-	# Hookup sanity attribute to visibility attribute
-	var sanity_attribute = player_attributes.get("sanity")
-	if sanity_attribute and visibility_attribute:
-		visibility_attribute.attribute_changed.connect(sanity_attribute.on_visibility_changed)
-		visibility_attribute.check_current_visibility()
+
+	memory_attribute = player_attributes.get("memory")
+
+	abilities.resize(5)
+	abilities.fill(null)
+
+	var first_ability = FirstAbility.new()
+	add_ability(first_ability, 0)  # Adiciona na primeira slot
 
 	# Pause Menu setup
 	if pause_menu:
@@ -212,6 +222,20 @@ func _ready():
 
 	call_deferred("slide_audio_init")
 
+func add_ability(ability: CogitoAbility, slot: int) -> bool:
+	if slot < 0 or slot >= abilities.size():
+		return false
+
+	abilities[slot] = ability
+	return true
+
+func use_ability(slot: int) -> void:
+	if slot < 0 or slot >= abilities.size():
+		return
+
+	var ability = abilities[slot]
+	if ability:
+		ability.use(self)
 
 func slide_audio_init():
 	#setup sound effect for sliding
@@ -371,7 +395,7 @@ func _process_on_ladder(_delta):
 			ladder_speed = LADDER_SPRINT_SPEED
 	else:
 		is_sprinting = false
-		
+	
 	var jump = Input.is_action_pressed("jump")
 
 	# Processing analog stick mouselook
@@ -415,6 +439,9 @@ func _physics_process(delta):
 	if on_ladder:
 		_process_on_ladder(delta)
 		return
+	
+	if !is_movement_paused and !is_dead:
+		_handle_aim_detection()
 	
 	var is_falling: bool = false	
 	
@@ -808,6 +835,15 @@ func _physics_process(delta):
 	elif slide_audio_player:
 		slide_audio_player.stop()
 
+func _handle_aim_detection() -> void:
+	if interaction_raycast.is_colliding():
+		var collider = interaction_raycast.get_collider()
+		if collider.is_in_group("virus"):
+			is_aiming_at_virus = true
+		else:
+			is_aiming_at_virus = false
+	else:
+		is_aiming_at_virus = false
 
 func _on_sliding_timer_timeout():
 	is_free_looking = false

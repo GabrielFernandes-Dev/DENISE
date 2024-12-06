@@ -1,11 +1,12 @@
-extends Node3D
+extends TextEdit
 
-var area1 = Vector3(3, 0, 3)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var pos = area1 #adicionar lógica para definir área em que cada vírus de movimenta
-	$virus.get_area_main_scene(pos)
+	insert_text("Hello there!", 0, 0)
+	pass # Replace with function body.
+
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

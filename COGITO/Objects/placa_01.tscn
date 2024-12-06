@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://datsxini14enx"]
 
-[ext_resource type="PackedScene" uid="uid://c43n6ieltwh3w" path="res://COGITO/Assets/Models/modelo_placa.blend" id="1_mnkka"]
+[ext_resource type="PackedScene" path="res://COGITO/Assets/Models/modelo_placa.blend" id="1_mnkka"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fj7yo"]
 size = Vector3(0.166435, 0.163452, 0.00189209)
