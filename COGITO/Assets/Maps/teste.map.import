@@ -1,0 +1,14 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+uid="uid://cgyl6u7jvoyf7"
+path="res://.godot/imported/teste.map-a0c4a61c1179275bfbb4766986e57d72.tres"
+
+[deps]
+
+source_file="res://COGITO/Assets/Maps/teste.map"
+dest_files=["res://.godot/imported/teste.map-a0c4a61c1179275bfbb4766986e57d72.tres"]
+
+[params]
+

@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://d3p41al1k7avq"]
+
+[ext_resource type="Script" path="res://COGITO/AbilitySystem/collectable_ability.gd" id="1_ittha"]
+[ext_resource type="Texture2D" uid="uid://mhhkln4kencc" path="res://COGITO/Assets/Icons/hack_01_icon.png" id="1_r5t4k"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aq10e"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("1_r5t4k")
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_v5ci3"]
+material = SubResource("StandardMaterial3D_aq10e")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_iyd46"]
+points = PackedVector3Array(0.5, 0.5, 0, 0.5, -0.5, 0, -0.5, 0.5, 0, -0.5, -0.5, 0)
+
+[node name="CollectableAbility" type="Area3D"]
+collision_layer = 256
+collision_mask = 8
+script = ExtResource("1_ittha")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_v5ci3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_iyd46")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

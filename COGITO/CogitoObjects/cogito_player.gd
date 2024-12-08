@@ -177,6 +177,8 @@ var current_ability_index: int = -1
 #Raycast
 @onready var interaction_raycast: RayCast3D = $Neck/Head/Eyes/Camera/InteractionRaycast
 
+@onready var hot_bar = $Player_HUD/InventoryInterface/HotBarInventory
+
 #endregion
 
 
@@ -208,9 +210,6 @@ func _ready():
 
 	abilities.resize(5)
 	abilities.fill(null)
-
-	var first_ability = FirstAbility.new()
-	add_ability(first_ability, 0)  # Adiciona na primeira slot
 
 	# Pause Menu setup
 	if pause_menu:

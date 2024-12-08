@@ -1,4 +1,5 @@
 shader_type spatial;
+render_mode blend_mix, depth_draw_always, cull_disabled;
 
 uniform vec4 base_color : source_color = vec4(0.0, 0.7, 1.0, 0.3);
 uniform vec4 grid_color : source_color = vec4(0.0, 1.0, 1.0, 0.5);

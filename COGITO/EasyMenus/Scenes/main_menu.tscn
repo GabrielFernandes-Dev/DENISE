@@ -45,6 +45,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_ahy7u")
 
 [node name="JanelaMenu" type="Panel" parent="."]
@@ -54,6 +55,7 @@ offset_top = 97.0
 offset_right = 187.0
 offset_bottom = 130.0
 scale = Vector2(12.5788, 10.3181)
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_tpeyb")
 
 [node name="ContentMain" type="VBoxContainer" parent="."]
@@ -105,6 +107,7 @@ theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_hghhu")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_hghhu")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_hghhu")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_hghhu")
+action_mode = 0
 icon_alignment = 1
 script = ExtResource("4_ufukr")
 
@@ -139,6 +142,7 @@ theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_56uod")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_56uod")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_56uod")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_56uod")
+action_mode = 0
 icon_alignment = 1
 script = ExtResource("4_ufukr")
 

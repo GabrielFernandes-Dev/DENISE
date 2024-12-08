@@ -7,6 +7,7 @@ var memory_cost: float = 256.0
 func _init():
 	ability_name = "First Ability"
 	cooldown_time = 0.5
+	icon = preload("res://COGITO/Assets/Icons/hack_01_icon.png")
 
 func use(player: Node) -> void:
 	var text_editor = player.find_child("TextEditor")

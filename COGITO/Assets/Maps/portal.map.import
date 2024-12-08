@@ -1,0 +1,14 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+uid="uid://cbl4ywpuv8uf4"
+path="res://.godot/imported/portal.map-bfdae9f788f4e3ad9604c9279024097c.tres"
+
+[deps]
+
+source_file="res://COGITO/Assets/Maps/portal.map"
+dest_files=["res://.godot/imported/portal.map-bfdae9f788f4e3ad9604c9279024097c.tres"]
+
+[params]
+

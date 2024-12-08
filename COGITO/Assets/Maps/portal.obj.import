@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cdn5gall65lgx"
+path="res://.godot/imported/portal.obj-8556adedfb6444fccab51481bca2f7eb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/portal.obj-8556adedfb6444fccab51481bca2f7eb.mesh"]
+
+source_file="res://COGITO/Assets/Maps/portal.obj"
+dest_files=["res://.godot/imported/portal.obj-8556adedfb6444fccab51481bca2f7eb.mesh", "res://.godot/imported/portal.obj-8556adedfb6444fccab51481bca2f7eb.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

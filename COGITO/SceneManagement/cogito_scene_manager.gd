@@ -23,6 +23,8 @@ enum CogitoSceneLoadMode {TEMP, LOAD_SAVE, RESET}
 @export var cogito_scene_state_prefix : String = "COGITO_scene_state_"
 @export var cogito_player_state_prefix : String = "COGITO_player_state_"
 
+var is_returning_from_scene := false
+
 func _ready() -> void:
 	_player_state = get_existing_player_state(_active_slot) #Setting active slot (per default it's A)
 	_scene_state = get_existing_scene_state(_active_slot)
@@ -119,6 +121,9 @@ func load_player_state(player, passed_slot:String):
 						
 		player.inventory_data.force_inventory_update()
 		
+		player.abilities = _player_state.player_abilities
+		player.hot_bar.populate_hotbar()
+
 		# New way of loading player attributes:
 		var loaded_attribute_data = _player_state.player_attributes
 		for attribute in loaded_attribute_data:
@@ -166,11 +171,8 @@ func save_player_state(player, slot:String):
 	
 	
 	_player_state.clear_saved_wieldable_charges()
-	for item_slot in player.inventory_data.inventory_slots:
-		if item_slot and item_slot.inventory_item and item_slot.inventory_item.has_method("update_wieldable_data"): #Checking for wieldables.
-			var item_save_data = item_slot.inventory_item.save()
-			_player_state.append_saved_wieldable_charges(item_save_data)
-			print("Saved charge for ", item_slot.inventory_item )
+
+	_player_state.player_abilities = player.abilities
 	
 	_player_state.player_current_scene = _current_scene_name
 	_player_state.player_current_scene_path = _current_scene_path

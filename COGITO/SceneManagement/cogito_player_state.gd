@@ -29,6 +29,9 @@ var player_state_dir : String = CogitoSceneManager.cogito_state_dir + CogitoScen
 @export var player_completed_quests : Array[CogitoQuest]
 @export var player_failed_quests : Array[CogitoQuest]
 
+#Saving abilities
+@export var player_abilities: Array[CogitoAbility]
+
 #Saving some extra data for save game management/UI
 @export var player_state_screenshot_file : String
 @export var player_state_savetime : int
@@ -39,7 +42,6 @@ func add_player_attribute_to_state_data(name: String, attribute_data:Vector2):
 	
 func clear_saved_attribute_data():
 	player_attributes.clear()
-
 
 func add_interaction_component_state_data_to_array(state_data):
 	interaction_component_state.append(state_data)

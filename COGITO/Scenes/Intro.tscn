@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://bxb0i8e6k3fed"]
 
 [ext_resource type="Script" path="res://COGITO/Scenes/intro.gd" id="1_vbw02"]
-[ext_resource type="PackedScene" uid="uid://c1l4q7rayukog" path="res://COGITO/Assets/Models/pc_velhor_02.tscn" id="1_ysrvm"]
+[ext_resource type="PackedScene" uid="uid://c1l4q7rayukog" path="res://COGITO/Assets/Models/pc_velho_02.tscn" id="1_ysrvm"]
 [ext_resource type="Material" uid="uid://cbs0p3d6kovdf" path="res://COGITO/Assets/Materials/Black&White_Tiles.tres" id="3_4g538"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5eo2d"]
@@ -10,7 +10,7 @@
 sky_material = SubResource("ProceduralSkyMaterial_5eo2d")
 
 [sub_resource type="Environment" id="Environment_821g6"]
-background_mode = 2
+background_mode = 1
 sky = SubResource("Sky_hj16n")
 ambient_light_source = 1
 

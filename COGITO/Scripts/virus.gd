@@ -33,7 +33,6 @@ func set_next_target() -> void:
 
 func _physics_process(delta: float) -> void:
 	if not nav_agent.is_target_reachable():
-		print("Impossivel de alcançar o caminho")
 		return
 
 	if nav_agent.is_navigation_finished():
