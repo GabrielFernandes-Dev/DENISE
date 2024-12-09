@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://brbfov7lglp0"
+path="res://.godot/imported/ComputerVirus.obj-3dbd6e1122960730642f4db90706d650.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ComputerVirus.obj-3dbd6e1122960730642f4db90706d650.mesh"]
+
+source_file="res://COGITO/Assets/Models/computer virus/ComputerVirus.obj"
+dest_files=["res://.godot/imported/ComputerVirus.obj-3dbd6e1122960730642f4db90706d650.mesh", "res://.godot/imported/ComputerVirus.obj-3dbd6e1122960730642f4db90706d650.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

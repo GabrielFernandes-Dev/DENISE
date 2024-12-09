@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cv1gps0fv06yn"
+path="res://.godot/imported/alien_virus2_decimated.OBJ-a5356bb528e20c75c265ae2b76b8207f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/alien_virus2_decimated.OBJ-a5356bb528e20c75c265ae2b76b8207f.mesh"]
+
+source_file="res://COGITO/Assets/Models/computer virus/alien_virus2_decimated.OBJ"
+dest_files=["res://.godot/imported/alien_virus2_decimated.OBJ-a5356bb528e20c75c265ae2b76b8207f.mesh", "res://.godot/imported/alien_virus2_decimated.OBJ-a5356bb528e20c75c265ae2b76b8207f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
