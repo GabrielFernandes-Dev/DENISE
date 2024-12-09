@@ -1,0 +1,14 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+uid="uid://c4fjuxn3l2p5t"
+path="res://.godot/imported/memoria.1.map-8c5c69d5218671df62c074a86866cb6e.tres"
+
+[deps]
+
+source_file="res://COGITO/Assets/Maps/autosave/memoria.1.map"
+dest_files=["res://.godot/imported/memoria.1.map-8c5c69d5218671df62c074a86866cb6e.tres"]
+
+[params]
+

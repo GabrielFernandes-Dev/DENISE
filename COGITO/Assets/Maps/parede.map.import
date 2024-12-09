@@ -1,0 +1,14 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+uid="uid://bcdbx7qqobkyl"
+path="res://.godot/imported/parede.map-a68c15542cecfd9344757ae6b9e7f97a.tres"
+
+[deps]
+
+source_file="res://COGITO/Assets/Maps/parede.map"
+dest_files=["res://.godot/imported/parede.map-a68c15542cecfd9344757ae6b9e7f97a.tres"]
+
+[params]
+

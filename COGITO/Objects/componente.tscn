@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://ckkc4lt6r3kw3"]
+
+[ext_resource type="PackedScene" uid="uid://b0xl8ftvd1xd5" path="res://COGITO/Assets/Models/componente.blend" id="1_ljhip"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_uht6q"]
+data = PackedVector3Array(-48, -12, 0, -48, 0, -68, -48, 0, 0, -48, -12, 0, -48, -12, -68, -48, 0, -68, 48, 0, -68, -48, 0, 0, -48, 0, -68, 48, 0, -68, 48, 0, 0, -48, 0, 0, 48, 0, 0, -48, -12, 0, -48, 0, 0, 48, 0, 0, 48, -12, 0, -48, -12, 0, 48, -12, -68, -48, 0, -68, -48, -12, -68, 48, -12, -68, 48, 0, -68, -48, 0, -68, 48, -12, 0, -48, -12, -68, -48, -12, 0, 48, -12, 0, 48, -12, -68, -48, -12, -68, 48, -12, -68, 48, 0, 0, 48, 0, -68, 48, -12, -68, 48, -12, 0, 48, 0, 0)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_riag5"]
+data = PackedVector3Array(-48, -12, -68, -48, -4, -100, -48, -4, -68, -48, -12, -68, -48, -12, -100, -48, -4, -100, -48, -12, -100, -32.0007, -4, -112, -48, -4, -100, -48, -12, -100, -32.0007, -12, -112, -32.0007, -4, -112, 48, -4, -68, -32.0007, -4, -112, 48, -4, -112, -32.0007, -4, -112, -48, -4, -68, -48, -4, -100, -32.0007, -4, -112, 48, -4, -68, -48, -4, -68, 48, -4, -68, -48, -12, -68, -48, -4, -68, 48, -4, -68, 48, -12, -68, -48, -12, -68, 48, -12, -112, -32.0007, -4, -112, -32.0007, -12, -112, 48, -12, -112, 48, -4, -112, -32.0007, -4, -112, 48, -12, -112, -48, -12, -68, 48, -12, -68, -48, -12, -68, -32.0007, -12, -112, -48, -12, -100, -48, -12, -68, 48, -12, -112, -32.0007, -12, -112, 48, -12, -112, 48, -4, -68, 48, -4, -112, 48, -12, -112, 48, -12, -68, 48, -4, -68)
+
+[node name="componente" instance=ExtResource("1_ljhip")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="entity0_brush0" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="entity0_brush0/StaticBody3D" index="0"]
+shape = SubResource("ConcavePolygonShape3D_uht6q")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="entity0_brush1" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="entity0_brush1/StaticBody3D" index="0"]
+shape = SubResource("ConcavePolygonShape3D_riag5")

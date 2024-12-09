@@ -1,11 +1,8 @@
 extends Node3D
 
-func _ready() -> void:
-    if CogitoSceneManager.is_returning_from_scene:
-        load_game_state()
-        CogitoSceneManager.is_returning_from_scene = false
+@onready var area_1 : Area3D = $NavigationRegion3D/Area1
 
-func load_game_state():
+func _ready() -> void:
     var current_position = CogitoSceneManager._current_player_node.global_position
     var current_rotation = CogitoSceneManager._current_player_node.global_rotation
     
@@ -16,3 +13,7 @@ func load_game_state():
     # Restaura a posição original
     CogitoSceneManager._current_player_node.global_position = current_position
     CogitoSceneManager._current_player_node.global_rotation = current_rotation
+
+func _process(_delta: float) -> void:
+    if area_1.contar_inimigos() == 0 :
+        print("area limpa")

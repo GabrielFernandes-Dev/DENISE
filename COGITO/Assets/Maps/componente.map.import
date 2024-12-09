@@ -1,0 +1,14 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+uid="uid://bjnqwtvjdcl21"
+path="res://.godot/imported/componente.map-f7f88baed2f38fa0d9b85f5794548ea3.tres"
+
+[deps]
+
+source_file="res://COGITO/Assets/Maps/componente.map"
+dest_files=["res://.godot/imported/componente.map-f7f88baed2f38fa0d9b85f5794548ea3.tres"]
+
+[params]
+

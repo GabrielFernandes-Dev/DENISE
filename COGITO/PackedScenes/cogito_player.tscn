@@ -45,19 +45,22 @@ fall_damage = 10
 inventory_data = ExtResource("2_iyhv4")
 jump_sound = ExtResource("3_7ds3n")
 slide_sound = ExtResource("4_1i2kv")
+disable_roll_anim = true
 HEADBOBBLE = 1
 STEP_MAX_SLOPE_DEGREE = 1.0
+
+[node name="HealthAttribute" parent="." instance=ExtResource("9_ky5mf")]
+value_start = 100.0
+
+[node name="StaminaAttribute" parent="." instance=ExtResource("8_kodbk")]
+value_max = 50.0
+value_start = 50.0
 
 [node name="MemoryAttribute" parent="." instance=ExtResource("5_qith3")]
 attribute_name = "memory"
 attribute_display_name = "Memory"
 attribute_color = Color(0.261207, 0.616188, 1.92523e-07, 1)
 value_max = 4096.0
-value_start = 1024.0
-
-[node name="StaminaAttribute" parent="." instance=ExtResource("8_kodbk")]
-
-[node name="HealthAttribute" parent="." instance=ExtResource("9_ky5mf")]
 
 [node name="StandingCollisionShape" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)

@@ -1,0 +1,14 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+uid="uid://cgdpflqbj6w8b"
+path="res://.godot/imported/resistor.map-3b4afa9c7c329f7a4476755193c5ec8e.tres"
+
+[deps]
+
+source_file="res://COGITO/Assets/Maps/resistor.map"
+dest_files=["res://.godot/imported/resistor.map-3b4afa9c7c329f7a4476755193c5ec8e.tres"]
+
+[params]
+

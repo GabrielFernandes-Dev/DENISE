@@ -1,0 +1,229 @@
+[gd_scene load_steps=13 format=4 uid="uid://q42xxt4uwsk4"]
+
+[ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="1_t7gs3"]
+[ext_resource type="Resource" uid="uid://c36hv0o6g0udo" path="res://addons/qodot/game_definitions/fgd/qodot_fgd.tres" id="2_8serq"]
+[ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_entity.gd" id="3_i2d86"]
+[ext_resource type="Shader" path="res://COGITO/Assets/Shader/tunel_digital.gdshader" id="4_gbves"]
+[ext_resource type="PackedScene" uid="uid://dtl0psnuuffnq" path="res://COGITO/Objects/parede.tscn" id="5_q78lg"]
+[ext_resource type="PackedScene" uid="uid://ckkc4lt6r3kw3" path="res://COGITO/Objects/componente.tscn" id="6_b1ff2"]
+[ext_resource type="PackedScene" uid="uid://d20ibtkattu2a" path="res://COGITO/Objects/resistor.tscn" id="7_6ykhy"]
+[ext_resource type="PackedScene" uid="uid://bbikb8y0ffpgc" path="res://COGITO/Objects/memoria.tscn" id="8_xjj7q"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yfkub"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rd74v"]
+render_priority = 0
+shader = ExtResource("4_gbves")
+shader_parameter/shift = Vector3(0, 0, 0)
+shader_parameter/time_shift_scale = Vector3(0, 0, 0)
+shader_parameter/scan_color = Vector4(0, 0.3, 1, 1)
+shader_parameter/scan_line_width = 0.1
+shader_parameter/scan_line_size = 0.8
+shader_parameter/background_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_qo8hf"]
+_surfaces = [{
+"aabb": AABB(-49.2109, -0.5, -42.7382, 87.7228, 1, 83.7153),
+"attribute_data": PackedByteArray("dA1VxAAAgEF0DVXEAAAAACRs/cIAAAAAJGz9wgAAgEFAkQXBAACAQWw0zMIAAIBBbDTMwgAAAABAkQXBAAAAADL5isMAAAAAyNXowgAAAADI1ejCAACAQTL5isMAAIBBnJ+AQgAAAACcn4BCAACAQfPGh8MAAIBB88aHwwAAAAAc0AzEAAAAAAZgwsMAAAAABmDCwwAAgEEc0AzEAACAQepKW0MAAAAA6kpbQwAAgEHUJr1CAACAQdQmvUIAAAAAdOkoxAAAAADp0cJDAAAAAOnRwkMAAIBBdOkoxAAAgEEsp8DDqBALREf9xcPSAQtEQ9jEw4wdSMMKGKzDzo/Xw9MZKsM9YTrEmpYYw+LhPcSfLnpBu+hRxAlZBER701PEPTwgRN/hRcR2YmFEFTsNxN7da0SIiPDDLDhpRL1iokMrVFBEXxTiQ772KUQU/AVEvvYpxBT8BUQrVFDEXxTiQyw4acS9YqJD3t1rxIiI8MN2YmHEFTsNxD08IMTf4UXECVkExHvTU8SfLnrBu+hRxJqWGEPi4T3E0xkqQz1hOsQKGKxDzo/Xw0PYxEOMHUjDR/3FQ9IBC0Qsp8BDqBALRJyKQEQAAAAAnIpARAAAgEHYLIxDAACAQdgsjEMAAAAAibUexAAAAAATzyDEAAAAABPPIMQAAIBBibUexAAAgEEByDxDAACAQQHIPEMAAAAAfI27QwAAAAB8jbtDAACAQalypkMAAIBBqXKmQwAAAABTqbFDAAAAAFOpsUMAAIBBC29SQwAAgEELb1JDAAAAANFzDkQAAAAA0XMORAAAgEEsXuJCAACAQSxe4kIAAAAA1reuQwAAAADWt65DAACAQXRFC8QAAIBBdEULxAAAAADjD0dDAAAAAOMPR0MAAIBB"),
+"format": 34359742487,
+"index_count": 156,
+"index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcAGAAZABoAGAAaABsAHAAdAB4AHAAeAB8AHAAfACAAHAAgACEAHAAhACIAHAAiACMAHAAjACQAHAAkACUAHAAlACYAHAAmACcAHAAnACgAHAAoACkAKgArACwAKgAsAC0AKgAtAC4AKgAuAC8AKgAvADAAKgAwADEAKgAxADIAKgAyADMAKgAzADQAKgA0ADUAKgA1ADYAKgA2ADcAOAA5ADoAOAA6ADsAPAA9AD4APAA+AD8AQABBAEIAQABCAEMARABFAEYARABGAEcASABJAEoASABKAEsATABNAE4ATABOAE8AUABRAFIAUABSAFMA"),
+"material": SubResource("ShaderMaterial_rd74v"),
+"name": "__TB_empty",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 84,
+"vertex_data": PackedByteArray("BPR5QQAAAL/y8yrCBPR5QQAAAD/y8yrCovgKwgAAAD9ATijCovgKwgAAAL9ATijCBPR5QQAAAL/y8yrCpOemQQAAAL+KeCDCpOemQQAAAD+KeCDCBPR5QQAAAD/y8yrCovgKwgAAAD9ATijCctEqwgAAAD8/ag/CctEqwgAAAL8/ag/CovgKwgAAAL9ATijCpOemQQAAAD+KeCDCpOemQQAAAL+KeCDCnBoMQgAAAL+ipL7BnBoMQgAAAD+ipL7BctEqwgAAAD8/ag/CV8M/wgAAAD+kGdLBV8M/wgAAAL+kGdLBctEqwgAAAL8/ag/CnBoMQgAAAD+ipL7BnBoMQgAAAL+ipL7BOAwaQgAAAL863obBOAwaQgAAAD863obBV8M/wgAAAD+kGdLB69dEwgAAAD+CPSFC69dEwgAAAL+CPSFCV8M/wgAAAL+kGdLB69dEwgAAAL+CPSFCFclEwgAAAL+Q6CNCAPz3vwAAAL8OViNCkAJIQQAAAL/x9RZC+pkAQgAAAL/C4NZBnxoEQgAAAL8lH85BeCEYQgAAAL/GBHRBOAwaQgAAAL863obBnBoMQgAAAL+ipL7BpOemQQAAAL+KeCDCBPR5QQAAAL/y8yrCovgKwgAAAL9ATijCctEqwgAAAL8/ag/CV8M/wgAAAL+kGdLBV8M/wgAAAD+kGdLBctEqwgAAAD8/ag/CovgKwgAAAD9ATijCBPR5QQAAAD/y8yrCpOemQQAAAD+KeCDCnBoMQgAAAD+ipL7BOAwaQgAAAD863obBeCEYQgAAAD/GBHRBnxoEQgAAAD8lH85B+pkAQgAAAD/C4NZBkAJIQQAAAD/x9RZCAPz3vwAAAD8OViNCFclEwgAAAD+Q6CNC69dEwgAAAD+CPSFCOAwaQgAAAD863obBOAwaQgAAAL863obBeCEYQgAAAL/GBHRBeCEYQgAAAD/GBHRB69dEwgAAAD+CPSFCFclEwgAAAD+Q6CNCFclEwgAAAL+Q6CNC69dEwgAAAL+CPSFCnxoEQgAAAL8lH85BnxoEQgAAAD8lH85BeCEYQgAAAD/GBHRBeCEYQgAAAL/GBHRB+pkAQgAAAL/C4NZB+pkAQgAAAD/C4NZBnxoEQgAAAD8lH85BnxoEQgAAAL8lH85BkAJIQQAAAL/x9RZCkAJIQQAAAD/x9RZC+pkAQgAAAD/C4NZB+pkAQgAAAL/C4NZBAPz3vwAAAL8OViNCAPz3vwAAAD8OViNCkAJIQQAAAD/x9RZCkAJIQQAAAL/x9RZCFclEwgAAAL+Q6CNCFclEwgAAAD+Q6CNCAPz3vwAAAD8OViNCAPz3vwAAAL8OViNCAABW/qoq/78AAFb+qir/vwAAVv6qKv+/AABW/qoq/7///1TVAABU1f//VNUAAFTV//9U1QAAVNX//1TVAABU1QAA18dVNf+/AADXx1U1/78AANfHVTX/vwAA18dVNf+///+IuwAAqdr//4i7AACp2v//iLsAAKna//+IuwAAqdoAADOtNVf/vwAAM601V/+/AAAzrTVX/78AADOtNVf/v///qaoAAKnq//+pqgAAqer//6mqAACp6v//qaoAAKnqAABkggF//78AAGSCAX//vwAAZIIBf/+/AABkggF//7//fwAA//////9/AAD//////38AAP//////fwAA//////9/AAD//////38AAP//////fwAA//////9/AAD//////38AAP//////fwAA//////9/AAD//////38AAP//////fwAA//////9/AAD//////3////9//7//f////3//v/9/////f/+//3////9//7//f////3//v/9/////f/+//3////9//7//f////3//v/9/////f/+//3////9//7//f////3//v/9/////f/+//3////9//7//f////3//vx3+/3/////vHf7/f////+8d/v9/////7x3+/3/////vuAL/f///bRu4Av9///9tG7gC/3///20buAL/f///bRu01v9///9Z67TW/3///1nrtNb/f///Weu01v9///9Z6xvH/3///43jG8f/f///jeMbx/9///+N4xvH/3///43jna3/f///ztadrf9////O1p2t/3///87Wna3/f///ztaWlv9///9Ky5aW/3///0rLlpb/f///SsuWlv9///9Ky2KA/3///yrAYoD/f///KsBigP9///8qwGKA/3///yrA")
+}]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_125ge"]
+points = PackedVector3Array(16.9206, 1.58864, 37.3215, -35.9763, -1.19621, -43.4344, -42.9373, -1.19621, -37.8639, 33.6253, -1.19621, 27.5772, -49.9071, -1.19621, 41.5035, -35.9763, 1.58864, -43.4344, 35.021, 1.58864, -26.7145, -49.9071, 1.58864, 41.5035, 21.0902, -1.19621, -42.0293, -48.5114, 1.58864, -28.103, 39.2081, 1.58864, 16.4362, 39.2081, -1.19621, -18.3588, 18.3076, 1.58864, -43.4344, 1.60281, -1.19621, 41.5035, -48.5114, -1.19621, -28.103, 1.60281, 1.58864, 41.5035, 39.2081, -1.19621, 16.4362, 39.2081, 1.58864, -18.3588, 33.6253, 1.58864, 27.5772, -49.9071, 1.58864, 2.5099, 14.1379, -1.19621, 38.7183, 18.3076, -1.19621, -43.4344, -49.9071, -1.19621, 2.5099, 35.021, -1.19621, -26.7145, -44.333, 1.58864, -36.4588, 25.2686, 1.58864, -37.8639, 29.447, -1.19621, 30.3625, 14.1379, 1.58864, 38.7183, 25.2686, -1.19621, -37.8639, 29.447, 1.58864, 30.3625, -44.333, -1.19621, -36.4588, 21.0902, 1.58864, -42.0293)
+
+[node name="CenarioFase01" type="Node3D"]
+
+[node name="fase_01" type="Node3D" parent="."]
+script = ExtResource("1_t7gs3")
+map_file = "H:/TrabalhosFaculdade/CG&RV/Projeto/DENISE/COGITO/Assets/Maps/fase_01.map"
+entity_fgd = ExtResource("2_8serq")
+texture_file_extensions = PackedStringArray("png", "jpg", "jpeg", "bmp")
+default_material = SubResource("StandardMaterial3D_yfkub")
+
+[node name="entity_0_worldspawn" type="Node3D" parent="fase_01"]
+script = ExtResource("3_i2d86")
+properties = {
+"_tb_textures": "textures",
+"classname": "worldspawn",
+"mapversion": "220"
+}
+
+[node name="entity_1_func_group" type="Node3D" parent="fase_01"]
+transform = Transform3D(0.62521, 0, 0, 0, 0.62521, 0, 0, 0, 0.62521, 14.4446, -0.5, -16.2284)
+script = ExtResource("3_i2d86")
+properties = {
+"_tb_id": "5",
+"_tb_layer_sort_index": "5",
+"_tb_name": "chao",
+"_tb_type": "_tb_layer",
+"classname": "func_group"
+}
+
+[node name="entity_1_mesh_instance" type="MeshInstance3D" parent="fase_01/entity_1_func_group"]
+cast_shadow = 2
+gi_mode = 0
+mesh = SubResource("ArrayMesh_qo8hf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="fase_01/entity_1_func_group/entity_1_mesh_instance"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fase_01/entity_1_func_group/entity_1_mesh_instance/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.991, 1.52)
+shape = SubResource("ConvexPolygonShape3D_125ge")
+
+[node name="parede" parent="." instance=ExtResource("5_q78lg")]
+transform = Transform3D(-1.72969e-09, 0, -0.0395707, 0, 0.0395707, 0, 0.0395707, 0, -1.72969e-09, 18.3925, 4.58811, -16.419)
+
+[node name="Componentes" type="Node3D" parent="."]
+
+[node name="componente" parent="Componentes" instance=ExtResource("6_b1ff2")]
+transform = Transform3D(-1.81926e-09, 0, -0.0416199, 0, 0.0416199, 0, 0.0416199, 0, -1.81926e-09, -3.55777, -0.208513, -7.25058)
+
+[node name="componente2" parent="Componentes" instance=ExtResource("6_b1ff2")]
+transform = Transform3D(-1.81926e-09, 0, -0.0416199, 0, 0.0416199, 0, 0.0416199, 0, -1.81926e-09, -3.55777, -0.208513, -1.57656)
+
+[node name="componente3" parent="Componentes" instance=ExtResource("6_b1ff2")]
+transform = Transform3D(-1.81926e-09, 0, -0.0416199, 0, 0.0416199, 0, 0.0416199, 0, -1.81926e-09, 1.48227, -0.208513, -7.25058)
+
+[node name="componente4" parent="Componentes" instance=ExtResource("6_b1ff2")]
+transform = Transform3D(-1.81926e-09, 0, -0.0416199, 0, 0.0416199, 0, 0.0416199, 0, -1.81926e-09, 1.48227, -0.208513, -1.57656)
+
+[node name="componente5" parent="Componentes" instance=ExtResource("6_b1ff2")]
+transform = Transform3D(-1.81926e-09, 0, -0.0416199, 0, 0.0416199, 0, 0.0416199, 0, -1.81926e-09, 9.95417, -0.208513, -7.25058)
+
+[node name="componente6" parent="Componentes" instance=ExtResource("6_b1ff2")]
+transform = Transform3D(-1.81926e-09, 0, -0.0416199, 0, 0.0416199, 0, 0.0416199, 0, -1.81926e-09, 9.95417, -0.208513, -1.57656)
+
+[node name="componente7" parent="Componentes" instance=ExtResource("6_b1ff2")]
+transform = Transform3D(0.0416199, 0, 0, 0, 0.0416199, 0, 0, 0, 0.0416199, 5.71851, -0.208513, 1.65063)
+
+[node name="componente8" parent="Componentes" instance=ExtResource("6_b1ff2")]
+transform = Transform3D(-1.81926e-09, 0, 0.0416199, 0, 0.0416199, 0, -0.0416199, 0, -1.81926e-09, 16.2674, -0.208513, -7.25058)
+
+[node name="componente9" parent="Componentes" instance=ExtResource("6_b1ff2")]
+transform = Transform3D(-1.81926e-09, 0, 0.0416199, 0, 0.0416199, 0, -0.0416199, 0, -1.81926e-09, 16.2674, -0.208513, -1.57656)
+
+[node name="componente10" parent="Componentes" instance=ExtResource("6_b1ff2")]
+transform = Transform3D(-1.81926e-09, 0, 0.0416199, 0, 0.0416199, 0, -0.0416199, 0, -1.81926e-09, 21.3075, -0.208513, -7.25058)
+
+[node name="componente11" parent="Componentes" instance=ExtResource("6_b1ff2")]
+transform = Transform3D(-1.81926e-09, 0, 0.0416199, 0, 0.0416199, 0, -0.0416199, 0, -1.81926e-09, 21.3075, -0.208513, -1.57656)
+
+[node name="componente12" parent="Componentes" instance=ExtResource("6_b1ff2")]
+transform = Transform3D(-1.81926e-09, 0, 0.0416199, 0, 0.0416199, 0, -0.0416199, 0, -1.81926e-09, 29.7794, -0.208513, -7.25058)
+
+[node name="componente13" parent="Componentes" instance=ExtResource("6_b1ff2")]
+transform = Transform3D(-1.81926e-09, 0, 0.0416199, 0, 0.0416199, 0, -0.0416199, 0, -1.81926e-09, 29.7794, -0.208513, -1.57656)
+
+[node name="componente14" parent="Componentes" instance=ExtResource("6_b1ff2")]
+transform = Transform3D(0.0416199, 0, 0, 0, 0.0416199, 0, 0, 0, 0.0416199, 25.5437, -0.208513, 1.65063)
+
+[node name="Resistores" type="Node3D" parent="."]
+
+[node name="resistor" parent="Resistores" instance=ExtResource("7_6ykhy")]
+transform = Transform3D(-1.47193e-09, 0, 0.0336738, 0, 0.0336738, 0, -0.0336738, 0, -1.47193e-09, -2.30823, -0.147969, -4.38508)
+
+[node name="resistor2" parent="Resistores" instance=ExtResource("7_6ykhy")]
+transform = Transform3D(-1.47193e-09, 0, 0.0336738, 0, 0.0336738, 0, -0.0336738, 0, -1.47193e-09, 0.200092, -0.147969, -4.38508)
+
+[node name="resistor3" parent="Resistores" instance=ExtResource("7_6ykhy")]
+transform = Transform3D(-1.47193e-09, 0, 0.0336738, 0, 0.0336738, 0, -0.0336738, 0, -1.47193e-09, 3.20913, -0.147969, -4.38508)
+
+[node name="resistor4" parent="Resistores" instance=ExtResource("7_6ykhy")]
+transform = Transform3D(-1.47193e-09, 0, 0.0336738, 0, 0.0336738, 0, -0.0336738, 0, -1.47193e-09, 6.0491, -0.147969, -4.38508)
+
+[node name="resistor5" parent="Resistores" instance=ExtResource("7_6ykhy")]
+transform = Transform3D(-1.47193e-09, 0, 0.0336738, 0, 0.0336738, 0, -0.0336738, 0, -1.47193e-09, 8.74972, -0.147969, -4.38508)
+
+[node name="resistor6" parent="Resistores" instance=ExtResource("7_6ykhy")]
+transform = Transform3D(-1.47193e-09, 0, 0.0336738, 0, 0.0336738, 0, -0.0336738, 0, -1.47193e-09, 23.5514, -0.147969, -31.4319)
+
+[node name="resistor7" parent="Resistores" instance=ExtResource("7_6ykhy")]
+transform = Transform3D(-1.47193e-09, 0, 0.0336738, 0, 0.0336738, 0, -0.0336738, 0, -1.47193e-09, 6.58662, -0.147969, -31.4319)
+
+[node name="resistor8" parent="Resistores" instance=ExtResource("7_6ykhy")]
+transform = Transform3D(-1.47193e-09, 0, 0.0336738, 0, 0.0336738, 0, -0.0336738, 0, -1.47193e-09, 10.9212, -0.147969, -29.4897)
+
+[node name="resistor9" parent="Resistores" instance=ExtResource("7_6ykhy")]
+transform = Transform3D(-1.47193e-09, 0, 0.0336738, 0, 0.0336738, 0, -0.0336738, 0, -1.47193e-09, 10.9212, -0.147969, -27.2709)
+
+[node name="resistor10" parent="Resistores" instance=ExtResource("7_6ykhy")]
+transform = Transform3D(-1.47193e-09, 0, 0.0336738, 0, 0.0336738, 0, -0.0336738, 0, -1.47193e-09, 10.9212, -0.147969, -25.0707)
+
+[node name="resistor11" parent="Resistores" instance=ExtResource("7_6ykhy")]
+transform = Transform3D(-1.47193e-09, 0, 0.0336738, 0, 0.0336738, 0, -0.0336738, 0, -1.47193e-09, 10.9212, -0.147969, -22.8706)
+
+[node name="resistor12" parent="Resistores" instance=ExtResource("7_6ykhy")]
+transform = Transform3D(-1.47193e-09, 0, 0.0336738, 0, 0.0336738, 0, -0.0336738, 0, -1.47193e-09, 19.3379, -0.147969, -22.8706)
+
+[node name="resistor13" parent="Resistores" instance=ExtResource("7_6ykhy")]
+transform = Transform3D(-1.47193e-09, 0, 0.0336738, 0, 0.0336738, 0, -0.0336738, 0, -1.47193e-09, 19.324, -0.147969, -25.0707)
+
+[node name="resistor14" parent="Resistores" instance=ExtResource("7_6ykhy")]
+transform = Transform3D(-1.47193e-09, 0, 0.0336738, 0, 0.0336738, 0, -0.0336738, 0, -1.47193e-09, 19.2938, -0.147969, -27.2709)
+
+[node name="resistor15" parent="Resistores" instance=ExtResource("7_6ykhy")]
+transform = Transform3D(-1.47193e-09, 0, 0.0336738, 0, 0.0336738, 0, -0.0336738, 0, -1.47193e-09, 19.3063, -0.147969, -29.4897)
+
+[node name="resistor16" parent="Resistores" instance=ExtResource("7_6ykhy")]
+transform = Transform3D(-1.47193e-09, 0, 0.0336738, 0, 0.0336738, 0, -0.0336738, 0, -1.47193e-09, 17.2042, -0.147969, -4.38508)
+
+[node name="resistor17" parent="Resistores" instance=ExtResource("7_6ykhy")]
+transform = Transform3D(-1.47193e-09, 0, 0.0336738, 0, 0.0336738, 0, -0.0336738, 0, -1.47193e-09, 19.7126, -0.147969, -4.38508)
+
+[node name="resistor18" parent="Resistores" instance=ExtResource("7_6ykhy")]
+transform = Transform3D(-1.47193e-09, 0, 0.0336738, 0, 0.0336738, 0, -0.0336738, 0, -1.47193e-09, 22.7216, -0.147969, -4.38508)
+
+[node name="resistor19" parent="Resistores" instance=ExtResource("7_6ykhy")]
+transform = Transform3D(-1.47193e-09, 0, 0.0336738, 0, 0.0336738, 0, -0.0336738, 0, -1.47193e-09, 25.5616, -0.147969, -4.38508)
+
+[node name="resistor20" parent="Resistores" instance=ExtResource("7_6ykhy")]
+transform = Transform3D(-1.47193e-09, 0, 0.0336738, 0, 0.0336738, 0, -0.0336738, 0, -1.47193e-09, 28.2622, -0.147969, -4.38508)
+
+[node name="resistor21" parent="Resistores" instance=ExtResource("7_6ykhy")]
+transform = Transform3D(-1.47193e-09, 0, 0.0336738, 0, 0.0336738, 0, -0.0336738, 0, -1.47193e-09, 14.2442, -0.147969, -8.506)
+
+[node name="resistor22" parent="Resistores" instance=ExtResource("7_6ykhy")]
+transform = Transform3D(-1.47193e-09, 0, 0.0336738, 0, 0.0336738, 0, -0.0336738, 0, -1.47193e-09, 11.7287, -0.147969, -8.506)
+
+[node name="resistor23" parent="Resistores" instance=ExtResource("7_6ykhy")]
+transform = Transform3D(-1.47193e-09, 0, 0.0336738, 0, 0.0336738, 0, -0.0336738, 0, -1.47193e-09, 14.2442, -0.147969, -6.00805)
+
+[node name="resistor24" parent="Resistores" instance=ExtResource("7_6ykhy")]
+transform = Transform3D(-1.47193e-09, 0, 0.0336738, 0, 0.0336738, 0, -0.0336738, 0, -1.47193e-09, 11.7287, -0.147969, -6.00805)
+
+[node name="resistor25" parent="Resistores" instance=ExtResource("7_6ykhy")]
+transform = Transform3D(-1.47193e-09, 0, 0.0336738, 0, 0.0336738, 0, -0.0336738, 0, -1.47193e-09, 14.2442, -0.147969, -2.88814)
+
+[node name="resistor26" parent="Resistores" instance=ExtResource("7_6ykhy")]
+transform = Transform3D(-1.47193e-09, 0, 0.0336738, 0, 0.0336738, 0, -0.0336738, 0, -1.47193e-09, 11.7287, -0.147969, -2.88814)
+
+[node name="resistor27" parent="Resistores" instance=ExtResource("7_6ykhy")]
+transform = Transform3D(-1.47193e-09, 0, 0.0336738, 0, 0.0336738, 0, -0.0336738, 0, -1.47193e-09, 14.2442, -0.147969, -0.390199)
+
+[node name="resistor28" parent="Resistores" instance=ExtResource("7_6ykhy")]
+transform = Transform3D(-1.47193e-09, 0, 0.0336738, 0, 0.0336738, 0, -0.0336738, 0, -1.47193e-09, 11.7287, -0.147969, -0.390199)
+
+[node name="Memorias" type="Node3D" parent="."]
+
+[node name="memoria" parent="Memorias" instance=ExtResource("8_xjj7q")]
+transform = Transform3D(-1.46523e-09, 0, 0.0335206, 0, 0.0335206, 0, -0.0335206, 0, -1.46523e-09, 23.3358, -0.29163, -25.3947)
+
+[node name="memoria2" parent="Memorias" instance=ExtResource("8_xjj7q")]
+transform = Transform3D(-1.46523e-09, 0, 0.0335206, 0, 0.0335206, 0, -0.0335206, 0, -1.46523e-09, 15.1444, -0.29163, -25.3947)
+
+[node name="memoria3" parent="Memorias" instance=ExtResource("8_xjj7q")]
+transform = Transform3D(-1.46523e-09, 0, 0.0335206, 0, 0.0335206, 0, -0.0335206, 0, -1.46523e-09, 6.74947, -0.29163, -25.3947)
+
+[node name="memoria4" parent="Memorias" instance=ExtResource("8_xjj7q")]
+transform = Transform3D(0.0335206, 0, 0, 0, 0.0335206, 0, 0, 0, 0.0335206, 7.40747, -0.29163, -35.4033)
+
+[node name="memoria5" parent="Memorias" instance=ExtResource("8_xjj7q")]
+transform = Transform3D(0.0335206, 0, 0, 0, 0.0335206, 0, 0, 0, 0.0335206, 21.4357, -0.29163, -35.4033)

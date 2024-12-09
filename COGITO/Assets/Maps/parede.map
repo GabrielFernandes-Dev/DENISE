@@ -1,0 +1,107 @@
+// Game: Qodot
+// Format: Valve
+// entity 0
+{
+"mapversion" "220"
+"classname" "worldspawn"
+// brush 0
+{
+( -32 504 128 ) ( -32 -544 128 ) ( -32 -576 96 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ 0 -1 0 0 ] [ 0 0 -1 -176 ] 0 1 1
+( -32 -576 96 ) ( 32 -576 96 ) ( 32 -576 -120 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ 1 0 0 -200 ] [ 0 0 -1 -176 ] 0 1 1
+( -32 -544 128 ) ( 32 -544 128 ) ( 32 -576 96 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ 1 0 0 -200 ] [ 0 -0.7071067811865476 -0.7071067811865476 25.510529 ] 0 1 1
+( 32 -576 -120 ) ( 32 504 -120 ) ( -32 504 -120 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ -1 0 0 200 ] [ 0 -1 0 0 ] 0 1 1
+( -32 504 128 ) ( 32 504 128 ) ( 32 -544 128 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ 1 0 0 -200 ] [ 0 -1 0 0 ] 0 1 1
+( 32 504 -120 ) ( 32 504 128 ) ( -32 504 128 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ -1 0 0 200 ] [ 0 0 -1 -176 ] 0 1 1
+( 32 -544 128 ) ( 32 504 128 ) ( 32 504 -120 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ 0 1 0 0 ] [ 0 0 -1 -176 ] 0 1 1
+}
+// brush 1
+{
+( 32 -512 -104 ) ( 32 -576 -104 ) ( 32 -576 -120 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ 0 -1 0 0 ] [ 0 0 -1 -120 ] 0 1 1
+( 32 -576 -104 ) ( 80 -576 -104 ) ( 80 -576 -120 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ 1 0 0 -184 ] [ 0 0 -1 -120 ] 0 1 1
+( 80 -576 -120 ) ( 80 -512 -120 ) ( 32 -512 -120 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ -1 0 0 184 ] [ 0 -1 0 0 ] 0 1 1
+( 32 -512 -104 ) ( 80 -512 -104 ) ( 80 -576 -104 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ 1 0 0 -184 ] [ 0 -1 0 0 ] 0 1 1
+( 80 -512 -120 ) ( 80 -512 -104 ) ( 32 -512 -104 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ -1 0 0 184 ] [ 0 0 -1 -120 ] 0 1 1
+( 80 -576 -104 ) ( 80 -512 -104 ) ( 80 -512 -120 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ 0 1 0 0 ] [ 0 0 -1 -120 ] 0 1 1
+}
+// brush 2
+{
+( 32 -384 -88 ) ( 32 -448 -88 ) ( 32 -448 -104 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ 0 -1 0 -128 ] [ 0 0 -1 -104 ] 0 1 1
+( 32 -448 -88 ) ( 80 -448 -88 ) ( 80 -448 -104 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ 1 0 0 -184 ] [ 0 0 -1 -104 ] 0 1 1
+( 80 -448 -104 ) ( 80 -384 -104 ) ( 32 -384 -104 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ -1 0 0 184 ] [ 0 -1 0 -128 ] 0 1 1
+( 32 -384 -88 ) ( 80 -384 -88 ) ( 80 -448 -88 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ 1 0 0 -184 ] [ 0 -1 0 -128 ] 0 1 1
+( 80 -384 -104 ) ( 80 -384 -88 ) ( 32 -384 -88 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ -1 0 0 184 ] [ 0 0 -1 -104 ] 0 1 1
+( 80 -448 -88 ) ( 80 -384 -88 ) ( 80 -384 -104 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ 0 1 0 128 ] [ 0 0 -1 -104 ] 0 1 1
+}
+// brush 3
+{
+( 32 -256 -72 ) ( 32 -320 -72 ) ( 32 -320 -88 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ 0 -1 0 0 ] [ 0 0 -1 -88 ] 0 1 1
+( 32 -320 -72 ) ( 80 -320 -72 ) ( 80 -320 -88 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ 1 0 0 -184 ] [ 0 0 -1 -88 ] 0 1 1
+( 80 -320 -88 ) ( 80 -256 -88 ) ( 32 -256 -88 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ -1 0 0 184 ] [ 0 -1 0 0 ] 0 1 1
+( 32 -256 -72 ) ( 80 -256 -72 ) ( 80 -320 -72 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ 1 0 0 -184 ] [ 0 -1 0 0 ] 0 1 1
+( 80 -256 -88 ) ( 80 -256 -72 ) ( 32 -256 -72 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ -1 0 0 184 ] [ 0 0 -1 -88 ] 0 1 1
+( 80 -320 -72 ) ( 80 -256 -72 ) ( 80 -256 -88 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ 0 1 0 0 ] [ 0 0 -1 -88 ] 0 1 1
+}
+// brush 4
+{
+( 32 -128 -56 ) ( 32 -192 -56 ) ( 32 -192 -72 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ 0 -1 0 -128 ] [ 0 0 -1 -72 ] 0 1 1
+( 32 -192 -56 ) ( 80 -192 -56 ) ( 80 -192 -72 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ 1 0 0 -184 ] [ 0 0 -1 -72 ] 0 1 1
+( 80 -192 -72 ) ( 80 -128 -72 ) ( 32 -128 -72 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ -1 0 0 184 ] [ 0 -1 0 -128 ] 0 1 1
+( 32 -128 -56 ) ( 80 -128 -56 ) ( 80 -192 -56 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ 1 0 0 -184 ] [ 0 -1 0 -128 ] 0 1 1
+( 80 -128 -72 ) ( 80 -128 -56 ) ( 32 -128 -56 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ -1 0 0 184 ] [ 0 0 -1 -72 ] 0 1 1
+( 80 -192 -56 ) ( 80 -128 -56 ) ( 80 -128 -72 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ 0 1 0 128 ] [ 0 0 -1 -72 ] 0 1 1
+}
+// brush 5
+{
+( 32 0 -40 ) ( 32 -64 -40 ) ( 32 -64 -56 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ 0 -1 0 0 ] [ 0 0 -1 -56 ] 0 1 1
+( 32 -64 -40 ) ( 80 -64 -40 ) ( 80 -64 -56 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ 1 0 0 -184 ] [ 0 0 -1 -56 ] 0 1 1
+( 80 -64 -56 ) ( 80 0 -56 ) ( 32 0 -56 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ -1 0 0 184 ] [ 0 -1 0 0 ] 0 1 1
+( 32 0 -40 ) ( 80 0 -40 ) ( 80 -64 -40 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ 1 0 0 -184 ] [ 0 -1 0 0 ] 0 1 1
+( 80 0 -56 ) ( 80 0 -40 ) ( 32 0 -40 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ -1 0 0 184 ] [ 0 0 -1 -56 ] 0 1 1
+( 80 -64 -40 ) ( 80 0 -40 ) ( 80 0 -56 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ 0 1 0 0 ] [ 0 0 -1 -56 ] 0 1 1
+}
+// brush 6
+{
+( 32 136 -24 ) ( 32 72 -24 ) ( 32 72 -40 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ 0 -1 0 -120 ] [ 0 0 -1 -40 ] 0 1 1
+( 32 72 -24 ) ( 80 72 -24 ) ( 80 72 -40 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ 1 0 0 -184 ] [ 0 0 -1 -40 ] 0 1 1
+( 80 72 -40 ) ( 80 136 -40 ) ( 32 136 -40 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ -1 0 0 184 ] [ 0 -1 0 -120 ] 0 1 1
+( 32 136 -24 ) ( 80 136 -24 ) ( 80 72 -24 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ 1 0 0 -184 ] [ 0 -1 0 -120 ] 0 1 1
+( 80 136 -40 ) ( 80 136 -24 ) ( 32 136 -24 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ -1 0 0 184 ] [ 0 0 -1 -40 ] 0 1 1
+( 80 72 -24 ) ( 80 136 -24 ) ( 80 136 -40 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ 0 1 0 120 ] [ 0 0 -1 -40 ] 0 1 1
+}
+// brush 7
+{
+( 32 268 -8 ) ( 32 204 -8 ) ( 32 204 -24 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ 0 -1 0 -244 ] [ 0 0 -1 -24 ] 0 1 1
+( 32 204 -8 ) ( 80 204 -8 ) ( 80 204 -24 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ 1 0 0 -184 ] [ 0 0 -1 -24 ] 0 1 1
+( 80 204 -24 ) ( 80 268 -24 ) ( 32 268 -24 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ -1 0 0 184 ] [ 0 -1 0 -244 ] 0 1 1
+( 32 268 -8 ) ( 80 268 -8 ) ( 80 204 -8 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ 1 0 0 -184 ] [ 0 -1 0 -244 ] 0 1 1
+( 80 268 -24 ) ( 80 268 -8 ) ( 32 268 -8 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ -1 0 0 184 ] [ 0 0 -1 -24 ] 0 1 1
+( 80 204 -8 ) ( 80 268 -8 ) ( 80 268 -24 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ 0 1 0 244 ] [ 0 0 -1 -24 ] 0 1 1
+}
+// brush 8
+{
+( 32 396 8 ) ( 32 332 8 ) ( 32 332 -8 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ 0 -1 0 -116 ] [ 0 0 -1 -8 ] 0 1 1
+( 32 332 8 ) ( 80 332 8 ) ( 80 332 -8 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ 1 0 0 -184 ] [ 0 0 -1 -8 ] 0 1 1
+( 80 332 -8 ) ( 80 396 -8 ) ( 32 396 -8 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ -1 0 0 184 ] [ 0 -1 0 -116 ] 0 1 1
+( 32 396 8 ) ( 80 396 8 ) ( 80 332 8 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ 1 0 0 -184 ] [ 0 -1 0 -116 ] 0 1 1
+( 80 396 -8 ) ( 80 396 8 ) ( 32 396 8 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ -1 0 0 184 ] [ 0 0 -1 -8 ] 0 1 1
+( 80 332 8 ) ( 80 396 8 ) ( 80 396 -8 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ 0 1 0 116 ] [ 0 0 -1 -8 ] 0 1 1
+}
+// brush 9
+{
+( 32 504 24 ) ( 32 440 24 ) ( 32 440 8 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ 0 -1 0 -8 ] [ 0 0 -1 8 ] 0 1 1
+( 32 440 24 ) ( 80 440 24 ) ( 80 440 8 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ 1 0 0 -184 ] [ 0 0 -1 8 ] 0 1 1
+( 80 440 8 ) ( 80 504 8 ) ( 32 504 8 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ -1 0 0 184 ] [ 0 -1 0 -8 ] 0 1 1
+( 32 504 24 ) ( 80 504 24 ) ( 80 440 24 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ 1 0 0 -184 ] [ 0 -1 0 -8 ] 0 1 1
+( 80 504 8 ) ( 80 504 24 ) ( 32 504 24 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ -1 0 0 184 ] [ 0 0 -1 8 ] 0 1 1
+( 80 440 24 ) ( 80 504 24 ) ( 80 504 8 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ 0 1 0 8 ] [ 0 0 -1 8 ] 0 1 1
+}
+// brush 10
+{
+( -32 552 24 ) ( -32 552 40 ) ( -32 504 40 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ -6.123233995736766e-17 -1 0 -112 ] [ 0 0 -1 24 ] 0 1 1
+( -32 504 40 ) ( 32 504 40 ) ( 32 504 24 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ 1 -6.123233995736766e-17 0 -224 ] [ 0 0 -1 24 ] 0 1 1
+( 32 552 24 ) ( -32 552 24 ) ( -32 504 24 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ -6.123233995736766e-17 -1 0 -112 ] [ 1 -6.123233995736766e-17 0 -224 ] 90 1 1
+( -32 504 40 ) ( -32 552 40 ) ( 32 552 40 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ 6.123233995736766e-17 1 0 112 ] [ 1 -6.123233995736766e-17 0 -224 ] 270 1 1
+( 32 552 40 ) ( -32 552 40 ) ( -32 552 24 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ -1 6.123233995736766e-17 0 224 ] [ 0 0 -1 24 ] 0 1 1
+( 32 504 40 ) ( 32 552 40 ) ( 32 552 24 ) Poliigon_MetalGalvanizedZinc_7184_BaseColor [ 6.123233995736766e-17 1 0 112 ] [ 0 0 -1 24 ] 0 1 1
+}
+}

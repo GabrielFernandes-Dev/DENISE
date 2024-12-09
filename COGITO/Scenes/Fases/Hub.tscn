@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://bbrav1pwy0uso"]
+[gd_scene load_steps=38 format=4 uid="uid://bbrav1pwy0uso"]
 
 [ext_resource type="Script" path="res://COGITO/Scenes/Fases/hub.gd" id="1_2nd3x"]
 [ext_resource type="PackedScene" uid="uid://cv03lo3m3adio" path="res://COGITO/DetectionZoneSystem/zona_deteccao.tscn" id="1_36ctg"]
@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://xod0to5m4773" path="res://COGITO/Objects/virus.tscn" id="9_ug8r7"]
 [ext_resource type="PackedScene" uid="uid://b07avihnyexjd" path="res://COGITO/Objects/portal.tscn" id="10_1sfsn"]
 [ext_resource type="PackedScene" uid="uid://d3p41al1k7avq" path="res://COGITO/AbilitySystem/collectable_ability.tscn" id="11_uwlka"]
-[ext_resource type="Script" path="res://COGITO/AbilitySystem/second_ability.gd" id="12_1g0py"]
 [ext_resource type="Script" path="res://COGITO/AbilitySystem/first_ability.gd" id="12_4ebjt"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vngwd"]
@@ -241,7 +240,7 @@ properties = {
 }
 
 [node name="entity_1_func_group" type="Node3D" parent="NavigationRegion3D/hub"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.314777, -0.75, 25.1189)
+transform = Transform3D(0.818076, 0, 0, 0, 1, 0, 0, 0, 0.91427, -0.314777, -0.763, 23.3193)
 script = ExtResource("4_5gyx4")
 properties = {
 "_tb_id": "1",
@@ -262,7 +261,7 @@ mesh = SubResource("ArrayMesh_eki0v")
 shape = SubResource("ConcavePolygonShape3D_3ntk8")
 
 [node name="entity_2_func_group" type="Node3D" parent="NavigationRegion3D/hub"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.93024, 4.00035, -22.098)
+transform = Transform3D(0.820386, 0, 0, 0, 0.883232, 0, 0, 0, 1, 3.16688, 3.43975, -22.098)
 script = ExtResource("4_5gyx4")
 properties = {
 "_tb_id": "2",
@@ -283,7 +282,7 @@ mesh = SubResource("ArrayMesh_s23f8")
 shape = SubResource("ConcavePolygonShape3D_rc2tc")
 
 [node name="entity_3_func_group" type="Node3D" parent="NavigationRegion3D/hub"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.56976, 4.00035, -22.098)
+transform = Transform3D(0.820386, 0, 0, 0, 0.883232, 0, 0, 0, 1, -3.8064, 3.43975, -22.098)
 script = ExtResource("4_5gyx4")
 properties = {
 "_tb_id": "3",
@@ -304,7 +303,7 @@ mesh = SubResource("ArrayMesh_3yvli")
 shape = SubResource("ConcavePolygonShape3D_4lgqf")
 
 [node name="entity_4_func_group" type="Node3D" parent="NavigationRegion3D/hub"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31976, 8.25035, -22.098)
+transform = Transform3D(0.820386, 0, 0, 0, 0.883232, 0, 0, 0, 1, -0.31976, 7.19349, -22.098)
 script = ExtResource("4_5gyx4")
 properties = {
 "_tb_id": "4",
@@ -325,7 +324,7 @@ mesh = SubResource("ArrayMesh_vqd3e")
 shape = SubResource("ConcavePolygonShape3D_jjjne")
 
 [node name="entity_5_func_group" type="Node3D" parent="NavigationRegion3D/hub"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31976, -0.749649, -22.098)
+transform = Transform3D(0.820386, 0, 0, 0, 0.883232, 0, 0, 0, 1, -0.31976, -0.755603, -22.098)
 script = ExtResource("4_5gyx4")
 properties = {
 "_tb_id": "5",
@@ -346,7 +345,7 @@ mesh = SubResource("ArrayMesh_td8aw")
 shape = SubResource("ConcavePolygonShape3D_rnvb7")
 
 [node name="entity_6_func_group" type="Node3D" parent="NavigationRegion3D/hub"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31976, 3.75035, -48.6605)
+transform = Transform3D(0.820386, 0, 0, 0, 0.883232, 0, 0, 0, 1, -0.31976, 3.21894, -48.6605)
 script = ExtResource("4_5gyx4")
 properties = {
 "_tb_id": "6",
@@ -367,19 +366,19 @@ mesh = SubResource("ArrayMesh_jjpni")
 shape = SubResource("ConcavePolygonShape3D_y303f")
 
 [node name="portal_fase01" parent="NavigationRegion3D" instance=ExtResource("10_1sfsn")]
-transform = Transform3D(-0.7, 0, -6.11959e-08, 0, 0.7, 0, 6.11959e-08, 0, -0.7, -0.658912, -0.653378, 44.511)
-target_scene = "res://COGITO/Scenes/Fases/Fase_01.tscn"
+transform = Transform3D(-0.7, 0, -6.11959e-08, 0, 0.7, 0, 6.11959e-08, 0, -0.7, 0.0749742, -0.763, 38.7695)
+target_scene = "res://COGITO/Scenes/Fases/fase_01/Fase_01.tscn"
 
 [node name="portal_fase02" parent="NavigationRegion3D" instance=ExtResource("10_1sfsn")]
-transform = Transform3D(-0.518218, 0, -0.470584, 0, 0.7, 0, 0.470584, 0, -0.518218, 16.0513, -0.653378, 38.7562)
-target_scene = "res://COGITO/Scenes/Fases/Fase_02.tscn"
+transform = Transform3D(-0.518218, 0, -0.470584, 0, 0.7, 0, 0.470584, 0, -0.518218, 14.0569, -0.763, 34.9951)
+target_scene = "res://COGITO/Scenes/Fases/fase_02/Fase_02.tscn"
 
 [node name="portal_fase03" parent="NavigationRegion3D" instance=ExtResource("10_1sfsn")]
-transform = Transform3D(-0.363736, 0, 0.598076, 0, 0.7, 0, -0.598076, 0, -0.363736, -18.7618, -0.653378, 38.2546)
+transform = Transform3D(-0.363736, 0, 0.598076, 0, 0.7, 0, -0.598076, 0, -0.363736, -14.308, -0.763, 34.7731)
 target_scene = "res://COGITO/Scenes/Fases/Fase_03.tscn"
 
 [node name="player" parent="." instance=ExtResource("6_icu2x")]
-transform = Transform3D(-0.999958, 0, -0.00925086, 0, 1, 0, 0.00925086, 0, -0.999958, 0.195517, 0.830915, -46.2049)
+transform = Transform3D(-0.999958, 0, -0.00925086, 0, 1, 0, 0.00925086, 0, -0.999958, 0.195517, 1.03314, -46.2049)
 collision_layer = 8
 collision_mask = 31
 inventory_data = SubResource("Resource_iann7")
@@ -391,12 +390,8 @@ transform = Transform3D(0.665569, 0, -0.746337, 0, 1, 0, 0.746337, 0, 0.665569, 
 debug_enabled = true
 
 [node name="CollectableAbility_01" parent="." instance=ExtResource("11_uwlka")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.167838, 1.29, -36.4419)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0471099, 1.31753, -36.4419)
 ability = ExtResource("12_4ebjt")
-
-[node name="CollectableAbility_02" parent="." instance=ExtResource("11_uwlka")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.91021, 1.29, -36.4419)
-ability = ExtResource("12_1g0py")
 
 [connection signal="body_entered" from="NavigationRegion3D/Area1" to="NavigationRegion3D/Area1" method="_on_body_entered"]
 [connection signal="body_exited" from="NavigationRegion3D/Area1" to="NavigationRegion3D/Area1" method="_on_body_exited"]

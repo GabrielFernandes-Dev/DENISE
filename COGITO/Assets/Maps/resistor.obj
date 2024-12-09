@@ -1,0 +1,139 @@
+mtllib resistor.mtl
+# vertices
+v -16 4 -38
+v -16 4 -6
+v -16 16 -6
+v -16 16 -38
+v 0 16 -6
+v 0 4 -6
+v 0 4 -38
+v 0 16 -38
+v -12 4 -44
+v -12 4 -38
+v -12 8 -38
+v -12 8 -44
+v -4 8 -38
+v -4 4 -38
+v -4 4 -44
+v -4 8 -44
+v -12 4 -6
+v -12 4 -0
+v -12 8 -0
+v -12 8 -6
+v -4 8 -0
+v -4 4 -0
+v -4 4 -6
+v -4 8 -6
+
+# texture coordinates
+vt 0.25 -0
+vt 0.375 -0
+vt 0.375 0.046875
+vt 0.25 0.046875
+vt 0.8125 0.046875
+vt 0.75 0.046875
+vt 0.75 -0
+vt 0.8125 -0
+vt -0.8125 -0.375
+vt -0.75 -0.375
+vt -0.75 -0.25
+vt -0.8125 -0.25
+vt 0.8125 -0.25
+vt 0.75 -0.25
+vt 0.75 -0.375
+vt 0.8125 -0.375
+vt -0.8125 -0
+vt -0.75 -0
+vt -0.75 0.046875
+vt -0.8125 0.046875
+vt -0.25 0.046875
+vt -0.375 0.046875
+vt -0.375 -0
+vt -0.25 -0
+vt 0.2734375 -0
+vt 0.2734375 0.015625
+vt 0.25 0.015625
+vt 0.796875 0.015625
+vt 0.765625 0.015625
+vt 0.765625 -0
+vt 0.796875 -0
+vt -0.796875 -0.2734375
+vt -0.765625 -0.2734375
+vt -0.765625 -0.25
+vt -0.796875 -0.25
+vt 0.796875 -0.25
+vt 0.765625 -0.25
+vt 0.765625 -0.2734375
+vt 0.796875 -0.2734375
+vt -0.796875 -0
+vt -0.765625 -0
+vt -0.765625 0.015625
+vt -0.796875 0.015625
+vt -0.25 0.015625
+vt -0.2734375 0.015625
+vt -0.2734375 -0
+vt 0.3984375 -0
+vt 0.3984375 0.015625
+vt 0.375 0.015625
+vt -0.796875 -0.3984375
+vt -0.765625 -0.3984375
+vt -0.765625 -0.375
+vt -0.796875 -0.375
+vt 0.796875 -0.375
+vt 0.765625 -0.375
+vt 0.765625 -0.3984375
+vt 0.796875 -0.3984375
+vt -0.375 0.015625
+vt -0.3984375 0.015625
+vt -0.3984375 -0
+
+# normals
+vn -1 0 0
+vn 0 0 1
+vn 0 -1 -0
+vn -0 1 -0
+vn 0 -0 -1
+vn 1 0 0
+
+o entity0_brush0
+usemtl Poliigon_MetalGalvanizedZinc_7184_BaseColor
+f  1/1/1  2/2/1  3/3/1  4/4/1
+usemtl Poliigon_MetalGalvanizedZinc_7184_BaseColor
+f  5/5/2  3/6/2  2/7/2  6/8/2
+usemtl Poliigon_MetalGalvanizedZinc_7184_BaseColor
+f  6/9/3  2/10/3  1/11/3  7/12/3
+usemtl Poliigon_MetalGalvanizedZinc_7184_BaseColor
+f  8/13/4  4/14/4  3/15/4  5/16/4
+usemtl Poliigon_MetalGalvanizedZinc_7184_BaseColor
+f  7/17/5  1/18/5  4/19/5  8/20/5
+usemtl Poliigon_MetalGalvanizedZinc_7184_BaseColor
+f  8/21/6  5/22/6  6/23/6  7/24/6
+
+o entity0_brush1
+usemtl Poliigon_MetalGalvanizedZinc_7184_BaseColor
+f  9/1/1  10/25/1  11/26/1  12/27/1
+usemtl Poliigon_MetalGalvanizedZinc_7184_BaseColor
+f  13/28/2  11/29/2  10/30/2  14/31/2
+usemtl Poliigon_MetalGalvanizedZinc_7184_BaseColor
+f  14/32/3  10/33/3  9/34/3  15/35/3
+usemtl Poliigon_MetalGalvanizedZinc_7184_BaseColor
+f  16/36/4  12/37/4  11/38/4  13/39/4
+usemtl Poliigon_MetalGalvanizedZinc_7184_BaseColor
+f  15/40/5  9/41/5  12/42/5  16/43/5
+usemtl Poliigon_MetalGalvanizedZinc_7184_BaseColor
+f  16/44/6  13/45/6  14/46/6  15/24/6
+
+o entity0_brush2
+usemtl Poliigon_MetalGalvanizedZinc_7184_BaseColor
+f  17/2/1  18/47/1  19/48/1  20/49/1
+usemtl Poliigon_MetalGalvanizedZinc_7184_BaseColor
+f  21/28/2  19/29/2  18/30/2  22/31/2
+usemtl Poliigon_MetalGalvanizedZinc_7184_BaseColor
+f  22/50/3  18/51/3  17/52/3  23/53/3
+usemtl Poliigon_MetalGalvanizedZinc_7184_BaseColor
+f  24/54/4  20/55/4  19/56/4  21/57/4
+usemtl Poliigon_MetalGalvanizedZinc_7184_BaseColor
+f  23/40/5  17/41/5  20/42/5  24/43/5
+usemtl Poliigon_MetalGalvanizedZinc_7184_BaseColor
+f  24/58/6  21/59/6  22/60/6  23/23/6
+

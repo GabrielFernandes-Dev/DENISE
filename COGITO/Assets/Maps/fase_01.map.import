@@ -1,0 +1,14 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+uid="uid://b0nt1qkbumk28"
+path="res://.godot/imported/fase_01.map-31a9e6020b9441cbc877eca3ffa8b263.tres"
+
+[deps]
+
+source_file="res://COGITO/Assets/Maps/fase_01.map"
+dest_files=["res://.godot/imported/fase_01.map-31a9e6020b9441cbc877eca3ffa8b263.tres"]
+
+[params]
+

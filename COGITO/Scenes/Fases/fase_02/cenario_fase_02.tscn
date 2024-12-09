@@ -1,0 +1,295 @@
+[gd_scene load_steps=12 format=4 uid="uid://dpcnm78mxxhag"]
+
+[ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="1_8wmu8"]
+[ext_resource type="Resource" uid="uid://c36hv0o6g0udo" path="res://addons/qodot/game_definitions/fgd/qodot_fgd.tres" id="2_flrh0"]
+[ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_entity.gd" id="3_8pyjc"]
+[ext_resource type="Shader" path="res://COGITO/Assets/Shader/tunel_digital.gdshader" id="4_2i1ik"]
+[ext_resource type="PackedScene" uid="uid://ckkc4lt6r3kw3" path="res://COGITO/Objects/componente.tscn" id="5_j1xdo"]
+[ext_resource type="PackedScene" uid="uid://bbikb8y0ffpgc" path="res://COGITO/Objects/memoria.tscn" id="6_g04uw"]
+[ext_resource type="PackedScene" uid="uid://d20ibtkattu2a" path="res://COGITO/Objects/resistor.tscn" id="7_oshkv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_53cyu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3ypvl"]
+render_priority = 0
+shader = ExtResource("4_2i1ik")
+shader_parameter/shift = Vector3(0, 0, 0)
+shader_parameter/time_shift_scale = Vector3(0, 0, 0)
+shader_parameter/scan_color = Vector4(0, 0.3, 1, 1)
+shader_parameter/scan_line_width = 0.1
+shader_parameter/scan_line_size = 0.8
+shader_parameter/background_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_q5w4a"]
+_surfaces = [{
+"aabb": AABB(-39.186, -0.5, -38.9605, 84, 1, 74),
+"attribute_data": PackedByteArray("AQD4QwAAgEEBAAzEAACAQQEADMQAAAAAAQD4QwAAAAAKkk5DAACAQQqSTkMAAAAADJ6XQwAAAAAMnpdDAACAQfogbMMAAAAA+iBswwAAgEHxOqDDAACAQfE6oMMAAAAA+DxzQgAAAACKARZDAAAAAIoBFkMAAIBB+DxzQgAAgEFAD5VCAAAAAEAPlUIAAIBBIKBFQQAAgEEgoEVBAAAAAIxeFcMAAIBBjF4VwwAAAAAIWsjCAAAAAAhayMIAAIBBAADgwwAAAAD///dDAAAAAP//90MAAIBBAADgwwAAgEEBAPxDAAAoxEqSCkRu2x7EAAAURAEADMQAABREAQD4QwAACkT//xFE///1Q/9/IkQAAOBDAAAoRP//98MAAChEAQAKxAAAIET+/w/EBgAURAAAFMT+/wVEAAAUxP//98P//xHEAQAAxGlm7sPMzBrEAACowwAAKMQAAKhDAAAoxGlm7kPMzBrE//8RRAEAAMQAABRE///3wwAAFET+/wVE/v8PRAYAFEQBAApEAAAgRP//90MAAChEAADgwwAAKET///XD/38iRAAACsT//xFEAAAUxAEA+EMAABTEAQAMxEqSCsRu2x7EAQD8wwAAKMQBAPxDAAAAAAEA/EMAAIBBAACowwAAgEEAAKjDAAAAAKRNncIAAIBBtgZlwwAAgEG2BmXDAAAAAKRNncIAAAAAiHzCQgAAAADIvSFDAAAAAMi9IUMAAIBBiHzCQgAAgEGApUvCAACAQYClS8IAAAAARGLJQgAAAABEYslCAACAQQD0h8MAAIBBJsmiwwAAgEEmyaLDAAAAAAD0h8MAAAAAquIyQwAAgEGq4jJDAAAAACrGREMAAAAAKsZEQwAAgEHafc3DAACAQdp9zcMAAAAA9F6wwwAAAAD0XrDDAACAQf7/BcQAAIBB/v8FxAAAAAD///dDAAAAAP//90MAAIBB"),
+"format": 34359742487,
+"index_count": 168,
+"index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcAGAAZABoAGAAaABsAHAAdAB4AHAAeAB8AHAAfACAAHAAgACEAHAAhACIAHAAiACMAHAAjACQAHAAkACUAHAAlACYAHAAmACcAHAAnACgAHAAoACkAHAApACoAKwAsAC0AKwAtAC4AKwAuAC8AKwAvADAAKwAwADEAKwAxADIAKwAyADMAKwAzADQAKwA0ADUAKwA1ADYAKwA2ADcAKwA3ADgAKwA4ADkAOgA7ADwAOgA8AD0APgA/AEAAPgBAAEEAQgBDAEQAQgBEAEUARgBHAEgARgBIAEkASgBLAEwASgBMAE0ATgBPAFAATgBQAFEAUgBTAFQAUgBUAFUAVgBXAFgAVgBYAFkA"),
+"material": SubResource("ShaderMaterial_3ypvl"),
+"name": "__TB_empty",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 90,
+"vertex_data": PackedByteArray("1XzhwQAAAL+H1xvCl0EXQgAAAL+H1xvCl0EXQgAAAD+H1xvC1XzhwQAAAD+H1xvC1XzhwQAAAL+H1xvC1XzhwQAAAD+H1xvCab4GwgAAAD+H1xHCab4GwgAAAL+H1xHCl0EXQgAAAD+H1xvCl0EXQgAAAL+H1xvCBB0qQgAAAL/RaRLCBB0qQgAAAD/RaRLCab4GwgAAAD+H1xHCaT4XwgAAAD+G1wLCaT4XwgAAAL+G1wLCab4GwgAAAL+H1xHCBB0qQgAAAD/RaRLCBB0qQgAAAL/RaRLClkEzQgAAAL+H1wXClkEzQgAAAD+H1wXCaT4XwgAAAL+G1wLCaT4XwgAAAD+G1wLCar4cwgAAAD8Nr+/Bar4cwgAAAL8Nr+/Bar4cwgAAAD8Nr+/Bar4cwgAAAD/yUOhBar4cwgAAAL/yUOhBar4cwgAAAL8Nr+/BlkEzQgAAAL+H1wXCBB0qQgAAAL/RaRLCl0EXQgAAAL+H1xvC1XzhwQAAAL+H1xvCab4GwgAAAL+H1xHCaT4XwgAAAL+G1wLCar4cwgAAAL8Nr+/Bar4cwgAAAL/yUOhBar4UwgAAAL96KAJCcL4IwgAAAL93KAhC0Hz1wQAAAL95KAxClkEHQgAAAL95KAxCl0ELQgAAAL94KApCYg4mQgAAAL9ct95BlkEzQgAAAL/zUJhBlkEzQgAAAD/zUJhBYg4mQgAAAD9ct95Bl0ELQgAAAD94KApClkEHQgAAAD95KAxC0Hz1wQAAAD95KAxCcL4IwgAAAD93KAhCar4UwgAAAD96KAJCar4cwgAAAD/yUOhBar4cwgAAAD8Nr+/BaT4XwgAAAD+G1wLCab4GwgAAAD+H1xHC1XzhwQAAAD+H1xvCl0EXQgAAAD+H1xvCBB0qQgAAAD/RaRLClkEzQgAAAD+H1wXClkEzQgAAAD+H1wXClkEzQgAAAL+H1wXClkEzQgAAAL/zUJhBlkEzQgAAAD/zUJhBlkEzQgAAAL/zUJhBYg4mQgAAAL9ct95BYg4mQgAAAD9ct95BlkEzQgAAAD/zUJhBar4cwgAAAD/yUOhBar4UwgAAAD96KAJCar4UwgAAAL96KAJCar4cwgAAAL/yUOhBl0ELQgAAAL94KApCl0ELQgAAAD94KApCYg4mQgAAAD9ct95BYg4mQgAAAL9ct95BcL4IwgAAAL93KAhCar4UwgAAAL96KAJCar4UwgAAAD96KAJCcL4IwgAAAD93KAhClkEHQgAAAL95KAxClkEHQgAAAD95KAxCl0ELQgAAAD94KApCl0ELQgAAAL94KApCcL4IwgAAAL93KAhCcL4IwgAAAD93KAhC0Hz1wQAAAD95KAxC0Hz1wQAAAL95KAxC0Hz1wQAAAL95KAxC0Hz1wQAAAD95KAxClkEHQgAAAD95KAxClkEHQgAAAL95KAxC/////wAA/7//////AAD/v/////8AAP+//////wAA/78AAP/X/yf/vwAA/9f/J/+/AAD/1/8n/78AAP/X/yf/v///VNUAAFTV//9U1QAAVNX//1TVAABU1f//VNUAAFTVAAALw/M8/78AAAvD8zz/vwAAC8PzPP+/AAALw/M8/7///+S1AAAM5f//5LUAAAzl///ktQAADOX//+S1AAAM5QAAqapUVf+/AACpqlRV/78AAKmqVFX/vwAAqapUVf+/AAD/f/9//78AAP9//3//vwAA/3//f/+/AAD/f/9//7//fwAA//////9/AAD//////38AAP//////fwAA//////9/AAD//////38AAP//////fwAA//////9/AAD//////38AAP//////fwAA//////9/AAD//////38AAP//////fwAA//////9/AAD//////38AAP//////f////3//v/9/////f/+//3////9//7//f////3//v/9/////f/+//3////9//7//f////3//v/9/////f/+//3////9//7//f////3//v/9/////f/+//3////9//7//f////3//v/9/////f/+//3////9//7////9//////////3//////////f/////////9//////xbd/3///4ruFt3/f///iu4W3f9///+K7hbd/3///4ruiy7/f4qu/7+LLv9/iq7/v4su/3+Krv+/iy7/f4qu/7//v/9/////3/+//3/////f/7//f////9//v/9/////31RV/39U1f+/VFX/f1TV/79UVf9/VNX/v1RV/39U1f+/qqr/f///VNWqqv9///9U1aqq/3///1TVqqr/f///VNWNY/9/jeP/v41j/3+N4/+/jWP/f43j/7+NY/9/jeP/v/9//3////+//3//f////7//f/9/////v/9//3////+/")
+}]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_pvmf8"]
+points = PackedVector3Array(41.4796, 1.5, 29.7041, -30.5058, -1.16667, -39.6272, -35.8516, -1.16667, -36.9595, 36.1338, -1.16667, 35.0395, -38.5162, 1.5, 33.702, 40.1432, 1.5, -39.6272, 45.4807, -1.16667, -35.6219, -35.8516, 1.5, -36.9595, -39.8527, -1.16667, 31.027, 45.4807, -1.16667, 21.6936, 45.4807, 1.5, -35.6219, -39.8527, 1.5, -31.624, 36.1338, 1.5, 35.0395, -35.8516, -1.16667, 35.0395, 40.1432, -1.16667, -39.6272, -39.8527, -1.16667, -31.624, 45.4807, 1.5, 21.6936, -30.5058, 1.5, -39.6272, -35.8516, 1.5, 35.0395, -39.8527, 1.5, 31.027, 42.8077, -1.16667, 28.3666, -38.5162, -1.16667, -34.2917, 42.8077, 1.5, -38.2897, -38.5162, -1.16667, 33.702, 42.8077, 1.5, 28.3666, -38.5162, 1.5, -34.2917, 42.8077, -1.16667, -38.2897)
+
+[node name="CenarioFase02" type="Node3D"]
+
+[node name="QodotMap" type="Node3D" parent="."]
+script = ExtResource("1_8wmu8")
+map_file = "H:/TrabalhosFaculdade/CG&RV/Projeto/DENISE/COGITO/Assets/Maps/fase_02.map"
+entity_fgd = ExtResource("2_flrh0")
+texture_file_extensions = PackedStringArray("png", "jpg", "jpeg", "bmp")
+default_material = SubResource("StandardMaterial3D_53cyu")
+
+[node name="entity_0_worldspawn" type="Node3D" parent="QodotMap"]
+transform = Transform3D(0.525, 0, 0, 0, 0.525, 0, 0, 0, 0.525, 0, 0, 0)
+script = ExtResource("3_8pyjc")
+properties = {
+"classname": "worldspawn",
+"mapversion": "220"
+}
+
+[node name="entity_0_mesh_instance" type="MeshInstance3D" parent="QodotMap/entity_0_worldspawn"]
+cast_shadow = 2
+gi_mode = 0
+mesh = SubResource("ArrayMesh_q5w4a")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="QodotMap/entity_0_worldspawn/entity_0_mesh_instance"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="QodotMap/entity_0_worldspawn/entity_0_mesh_instance/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.93, 0)
+shape = SubResource("ConvexPolygonShape3D_pvmf8")
+
+[node name="Componentes" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.61477, 0, 1.78975)
+
+[node name="componente" parent="Componentes" instance=ExtResource("5_j1xdo")]
+transform = Transform3D(-0.05, 0, -4.37114e-09, 0, 0.05, 0, 4.37114e-09, 0, -0.05, -11.4321, 0, 1.62197)
+
+[node name="componente2" parent="Componentes" instance=ExtResource("5_j1xdo")]
+transform = Transform3D(-0.05, 0, -4.37114e-09, 0, 0.05, 0, 4.37114e-09, 0, -0.05, -3.76204, 0, 1.62733)
+
+[node name="componente3" parent="Componentes" instance=ExtResource("5_j1xdo")]
+transform = Transform3D(-0.05, 0, -4.37114e-09, 0, 0.05, 0, 4.37114e-09, 0, -0.05, 4.00817, 0, 1.63275)
+
+[node name="componente4" parent="Componentes" instance=ExtResource("5_j1xdo")]
+transform = Transform3D(-0.05, 0, -4.37114e-09, 0, 0.05, 0, 4.37114e-09, 0, -0.05, 12.0225, 0, 1.63835)
+
+[node name="componente5" parent="Componentes" instance=ExtResource("5_j1xdo")]
+transform = Transform3D(-2.18557e-09, 0, 0.05, 0, 0.05, 0, -0.05, 0, -2.18557e-09, 17.217, 0, 4.8827)
+
+[node name="componente6" parent="Componentes" instance=ExtResource("5_j1xdo")]
+transform = Transform3D(-2.18557e-09, 0, 0.05, 0, 0.05, 0, -0.05, 0, -2.18557e-09, 17.217, 0, 10.7815)
+
+[node name="Memorias" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.61477, 0, 1.78975)
+
+[node name="memoria" parent="Memorias" instance=ExtResource("6_g04uw")]
+transform = Transform3D(2.30396e-05, 0, 0.033, 0, 0.033, 0, -0.033, 0, 2.30396e-05, -11.4368, 0.1, 10.3423)
+
+[node name="memoria2" parent="Memorias" instance=ExtResource("6_g04uw")]
+transform = Transform3D(2.30396e-05, 0, 0.033, 0, 0.033, 0, -0.033, 0, 2.30396e-05, -3.78038, 0.1, 10.3476)
+
+[node name="memoria3" parent="Memorias" instance=ExtResource("6_g04uw")]
+transform = Transform3D(2.30396e-05, 0, 0.033, 0, 0.033, 0, -0.033, 0, 2.30396e-05, 3.98922, 0.1, 10.353)
+
+[node name="memoria4" parent="Memorias" instance=ExtResource("6_g04uw")]
+transform = Transform3D(2.30396e-05, 0, 0.033, 0, 0.033, 0, -0.033, 0, 2.30396e-05, 12.0524, 0.1, 10.3587)
+
+[node name="Resistors" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.61477, 0, 1.78975)
+
+[node name="resistor" parent="Resistors" instance=ExtResource("7_oshkv")]
+transform = Transform3D(0.0416036, 0, 0, 0, 0.0416036, 0, 0, 0, 0.0416036, 13.6885, 0.346464, 3.71661)
+
+[node name="resistor2" parent="Resistors" instance=ExtResource("7_oshkv")]
+transform = Transform3D(0.0416036, 0, 0, 0, 0.0416036, 0, 0, 0, 0.0416036, 10.6521, 0.346464, 3.71661)
+
+[node name="resistor3" parent="Resistors" instance=ExtResource("7_oshkv")]
+transform = Transform3D(0.0416036, 0, 0, 0, 0.0416036, 0, 0, 0, 0.0416036, 5.54198, 0.346464, 3.71661)
+
+[node name="resistor4" parent="Resistors" instance=ExtResource("7_oshkv")]
+transform = Transform3D(0.0416036, 0, 0, 0, 0.0416036, 0, 0, 0, 0.0416036, 2.50554, 0.346464, 3.71661)
+
+[node name="resistor5" parent="Resistors" instance=ExtResource("7_oshkv")]
+transform = Transform3D(0.0416036, 0, 0, 0, 0.0416036, 0, 0, 0, 0.0416036, -2.16203, 0.346464, 3.71661)
+
+[node name="resistor6" parent="Resistors" instance=ExtResource("7_oshkv")]
+transform = Transform3D(0.0416036, 0, 0, 0, 0.0416036, 0, 0, 0, 0.0416036, -5.19847, 0.346464, 3.71661)
+
+[node name="resistor7" parent="Resistors" instance=ExtResource("7_oshkv")]
+transform = Transform3D(0.0416036, 0, 0, 0, 0.0416036, 0, 0, 0, 0.0416036, -9.95804, 0.346464, 3.71661)
+
+[node name="resistor8" parent="Resistors" instance=ExtResource("7_oshkv")]
+transform = Transform3D(0.0416036, 0, 0, 0, 0.0416036, 0, 0, 0, 0.0416036, -12.9945, 0.346464, 3.71661)
+
+[node name="resistor9" parent="Resistors" instance=ExtResource("7_oshkv")]
+transform = Transform3D(-1.11467e-09, 0, 0.0255006, 0, 0.0255006, 0, -0.0255006, 0, -1.11467e-09, -7.62091, 0.346464, 6.399)
+
+[node name="resistor10" parent="Resistors" instance=ExtResource("7_oshkv")]
+transform = Transform3D(-1.11467e-09, 0, 0.0255006, 0, 0.0255006, 0, -0.0255006, 0, -1.11467e-09, -7.62091, 0.346464, 8.56553)
+
+[node name="resistor11" parent="Resistors" instance=ExtResource("7_oshkv")]
+transform = Transform3D(-1.11467e-09, 0, 0.0255006, 0, 0.0255006, 0, -0.0255006, 0, -1.11467e-09, -7.62091, 0.346464, 10.6333)
+
+[node name="resistor12" parent="Resistors" instance=ExtResource("7_oshkv")]
+transform = Transform3D(-1.11467e-09, 0, 0.0255006, 0, 0.0255006, 0, -0.0255006, 0, -1.11467e-09, -7.62091, 0.346464, 12.7084)
+
+[node name="resistor13" parent="Resistors" instance=ExtResource("7_oshkv")]
+transform = Transform3D(0.0416036, 0, 0, 0, 0.0416036, 0, 0, 0, 0.0416036, -12.9945, 0.346464, 3.71661)
+
+[node name="resistor14" parent="Resistors" instance=ExtResource("7_oshkv")]
+transform = Transform3D(-1.11467e-09, 0, 0.0255006, 0, 0.0255006, 0, -0.0255006, 0, -1.11467e-09, -7.62091, 0.346464, 6.399)
+
+[node name="resistor15" parent="Resistors" instance=ExtResource("7_oshkv")]
+transform = Transform3D(-1.11467e-09, 0, 0.0255006, 0, 0.0255006, 0, -0.0255006, 0, -1.11467e-09, -7.62091, 0.346464, 8.56553)
+
+[node name="resistor16" parent="Resistors" instance=ExtResource("7_oshkv")]
+transform = Transform3D(-1.11467e-09, 0, 0.0255006, 0, 0.0255006, 0, -0.0255006, 0, -1.11467e-09, -7.62091, 0.346464, 10.6333)
+
+[node name="resistor17" parent="Resistors" instance=ExtResource("7_oshkv")]
+transform = Transform3D(-1.11467e-09, 0, 0.0255006, 0, 0.0255006, 0, -0.0255006, 0, -1.11467e-09, -7.62091, 0.346464, 12.7084)
+
+[node name="resistor18" parent="Resistors" instance=ExtResource("7_oshkv")]
+transform = Transform3D(-1.11467e-09, 0, 0.0255006, 0, 0.0255006, 0, -0.0255006, 0, -1.11467e-09, 0.107069, 0.346464, 6.399)
+
+[node name="resistor19" parent="Resistors" instance=ExtResource("7_oshkv")]
+transform = Transform3D(-1.11467e-09, 0, 0.0255006, 0, 0.0255006, 0, -0.0255006, 0, -1.11467e-09, 0.107069, 0.346464, 8.56553)
+
+[node name="resistor20" parent="Resistors" instance=ExtResource("7_oshkv")]
+transform = Transform3D(-1.11467e-09, 0, 0.0255006, 0, 0.0255006, 0, -0.0255006, 0, -1.11467e-09, 0.107069, 0.346464, 10.6333)
+
+[node name="resistor21" parent="Resistors" instance=ExtResource("7_oshkv")]
+transform = Transform3D(-1.11467e-09, 0, 0.0255006, 0, 0.0255006, 0, -0.0255006, 0, -1.11467e-09, 0.107069, 0.346464, 12.7084)
+
+[node name="resistor22" parent="Resistors" instance=ExtResource("7_oshkv")]
+transform = Transform3D(-1.11467e-09, 0, 0.0255006, 0, 0.0255006, 0, -0.0255006, 0, -1.11467e-09, 7.98478, 0.346464, 6.399)
+
+[node name="resistor23" parent="Resistors" instance=ExtResource("7_oshkv")]
+transform = Transform3D(-1.11467e-09, 0, 0.0255006, 0, 0.0255006, 0, -0.0255006, 0, -1.11467e-09, 7.98478, 0.346464, 8.56553)
+
+[node name="resistor24" parent="Resistors" instance=ExtResource("7_oshkv")]
+transform = Transform3D(-1.11467e-09, 0, 0.0255006, 0, 0.0255006, 0, -0.0255006, 0, -1.11467e-09, 7.98478, 0.346464, 10.6333)
+
+[node name="resistor25" parent="Resistors" instance=ExtResource("7_oshkv")]
+transform = Transform3D(-1.11467e-09, 0, 0.0255006, 0, 0.0255006, 0, -0.0255006, 0, -1.11467e-09, 7.98478, 0.346464, 12.7084)
+
+[node name="Componentes2" type="Node3D" parent="."]
+transform = Transform3D(-0.999982, 0, 0.00591671, 0, 1, 0, -0.00591671, 0, -0.999982, -3.61477, 0, -3.38998)
+
+[node name="componente" parent="Componentes2" instance=ExtResource("5_j1xdo")]
+transform = Transform3D(-0.05, 0, -4.37114e-09, 0, 0.05, 0, 4.37114e-09, 0, -0.05, -11.4321, 0, 1.62197)
+
+[node name="componente2" parent="Componentes2" instance=ExtResource("5_j1xdo")]
+transform = Transform3D(-0.05, 0, -4.37114e-09, 0, 0.05, 0, 4.37114e-09, 0, -0.05, -3.76204, 0, 1.62733)
+
+[node name="componente3" parent="Componentes2" instance=ExtResource("5_j1xdo")]
+transform = Transform3D(-0.05, 0, -4.37114e-09, 0, 0.05, 0, 4.37114e-09, 0, -0.05, 4.00817, 0, 1.63275)
+
+[node name="componente4" parent="Componentes2" instance=ExtResource("5_j1xdo")]
+transform = Transform3D(-0.05, 0, -4.37114e-09, 0, 0.05, 0, 4.37114e-09, 0, -0.05, 12.0225, 0, 1.63835)
+
+[node name="componente5" parent="Componentes2" instance=ExtResource("5_j1xdo")]
+transform = Transform3D(-0.000589905, 0, -0.0499965, 0, 0.05, 0, 0.0499965, 0, -0.000589905, -17.2303, 0, 10.9849)
+
+[node name="componente6" parent="Componentes2" instance=ExtResource("5_j1xdo")]
+transform = Transform3D(-0.000589905, 0, -0.0499965, 0, 0.05, 0, 0.0499965, 0, -0.000589905, -17.1607, 0, 5.08652)
+
+[node name="Memorias2" type="Node3D" parent="."]
+transform = Transform3D(-0.999982, 0, 0.00591671, 0, 1, 0, -0.00591671, 0, -0.999982, -3.61477, 0, -3.38998)
+
+[node name="memoria" parent="Memorias2" instance=ExtResource("6_g04uw")]
+transform = Transform3D(2.30396e-05, 0, 0.033, 0, 0.033, 0, -0.033, 0, 2.30396e-05, -11.4368, 0.1, 10.3423)
+
+[node name="memoria2" parent="Memorias2" instance=ExtResource("6_g04uw")]
+transform = Transform3D(2.30396e-05, 0, 0.033, 0, 0.033, 0, -0.033, 0, 2.30396e-05, -3.78038, 0.1, 10.3476)
+
+[node name="memoria3" parent="Memorias2" instance=ExtResource("6_g04uw")]
+transform = Transform3D(2.30396e-05, 0, 0.033, 0, 0.033, 0, -0.033, 0, 2.30396e-05, 3.98922, 0.1, 10.353)
+
+[node name="memoria4" parent="Memorias2" instance=ExtResource("6_g04uw")]
+transform = Transform3D(2.30396e-05, 0, 0.033, 0, 0.033, 0, -0.033, 0, 2.30396e-05, 12.0524, 0.1, 10.3587)
+
+[node name="Resistors2" type="Node3D" parent="."]
+transform = Transform3D(-0.999982, 0, 0.00591671, 0, 1, 0, -0.00591671, 0, -0.999982, -3.61477, 0, -3.38998)
+
+[node name="resistor" parent="Resistors2" instance=ExtResource("7_oshkv")]
+transform = Transform3D(0.0416036, 0, 0, 0, 0.0416036, 0, 0, 0, 0.0416036, 13.6885, 0.346464, 3.71661)
+
+[node name="resistor2" parent="Resistors2" instance=ExtResource("7_oshkv")]
+transform = Transform3D(0.0416036, 0, 0, 0, 0.0416036, 0, 0, 0, 0.0416036, 10.6521, 0.346464, 3.71661)
+
+[node name="resistor3" parent="Resistors2" instance=ExtResource("7_oshkv")]
+transform = Transform3D(0.0416036, 0, 0, 0, 0.0416036, 0, 0, 0, 0.0416036, 5.54198, 0.346464, 3.71661)
+
+[node name="resistor4" parent="Resistors2" instance=ExtResource("7_oshkv")]
+transform = Transform3D(0.0416036, 0, 0, 0, 0.0416036, 0, 0, 0, 0.0416036, 2.50554, 0.346464, 3.71661)
+
+[node name="resistor5" parent="Resistors2" instance=ExtResource("7_oshkv")]
+transform = Transform3D(0.0416036, 0, 0, 0, 0.0416036, 0, 0, 0, 0.0416036, -2.16203, 0.346464, 3.71661)
+
+[node name="resistor6" parent="Resistors2" instance=ExtResource("7_oshkv")]
+transform = Transform3D(0.0416036, 0, 0, 0, 0.0416036, 0, 0, 0, 0.0416036, -5.19847, 0.346464, 3.71661)
+
+[node name="resistor7" parent="Resistors2" instance=ExtResource("7_oshkv")]
+transform = Transform3D(0.0416036, 0, 0, 0, 0.0416036, 0, 0, 0, 0.0416036, -9.95804, 0.346464, 3.71661)
+
+[node name="resistor8" parent="Resistors2" instance=ExtResource("7_oshkv")]
+transform = Transform3D(0.0416036, 0, 0, 0, 0.0416036, 0, 0, 0, 0.0416036, -12.9945, 0.346464, 3.71661)
+
+[node name="resistor9" parent="Resistors2" instance=ExtResource("7_oshkv")]
+transform = Transform3D(-1.11467e-09, 0, 0.0255006, 0, 0.0255006, 0, -0.0255006, 0, -1.11467e-09, -7.62091, 0.346464, 6.399)
+
+[node name="resistor10" parent="Resistors2" instance=ExtResource("7_oshkv")]
+transform = Transform3D(-1.11467e-09, 0, 0.0255006, 0, 0.0255006, 0, -0.0255006, 0, -1.11467e-09, -7.62091, 0.346464, 8.56553)
+
+[node name="resistor11" parent="Resistors2" instance=ExtResource("7_oshkv")]
+transform = Transform3D(-1.11467e-09, 0, 0.0255006, 0, 0.0255006, 0, -0.0255006, 0, -1.11467e-09, -7.62091, 0.346464, 10.6333)
+
+[node name="resistor12" parent="Resistors2" instance=ExtResource("7_oshkv")]
+transform = Transform3D(-1.11467e-09, 0, 0.0255006, 0, 0.0255006, 0, -0.0255006, 0, -1.11467e-09, -7.62091, 0.346464, 12.7084)
+
+[node name="resistor13" parent="Resistors2" instance=ExtResource("7_oshkv")]
+transform = Transform3D(0.0416036, 0, 0, 0, 0.0416036, 0, 0, 0, 0.0416036, -12.9945, 0.346464, 3.71661)
+
+[node name="resistor14" parent="Resistors2" instance=ExtResource("7_oshkv")]
+transform = Transform3D(-1.11467e-09, 0, 0.0255006, 0, 0.0255006, 0, -0.0255006, 0, -1.11467e-09, -7.62091, 0.346464, 6.399)
+
+[node name="resistor15" parent="Resistors2" instance=ExtResource("7_oshkv")]
+transform = Transform3D(-1.11467e-09, 0, 0.0255006, 0, 0.0255006, 0, -0.0255006, 0, -1.11467e-09, -7.62091, 0.346464, 8.56553)
+
+[node name="resistor16" parent="Resistors2" instance=ExtResource("7_oshkv")]
+transform = Transform3D(-1.11467e-09, 0, 0.0255006, 0, 0.0255006, 0, -0.0255006, 0, -1.11467e-09, -7.62091, 0.346464, 10.6333)
+
+[node name="resistor17" parent="Resistors2" instance=ExtResource("7_oshkv")]
+transform = Transform3D(-1.11467e-09, 0, 0.0255006, 0, 0.0255006, 0, -0.0255006, 0, -1.11467e-09, -7.62091, 0.346464, 12.7084)
+
+[node name="resistor18" parent="Resistors2" instance=ExtResource("7_oshkv")]
+transform = Transform3D(-1.11467e-09, 0, 0.0255006, 0, 0.0255006, 0, -0.0255006, 0, -1.11467e-09, 0.107069, 0.346464, 6.399)
+
+[node name="resistor19" parent="Resistors2" instance=ExtResource("7_oshkv")]
+transform = Transform3D(-1.11467e-09, 0, 0.0255006, 0, 0.0255006, 0, -0.0255006, 0, -1.11467e-09, 0.107069, 0.346464, 8.56553)
+
+[node name="resistor20" parent="Resistors2" instance=ExtResource("7_oshkv")]
+transform = Transform3D(-1.11467e-09, 0, 0.0255006, 0, 0.0255006, 0, -0.0255006, 0, -1.11467e-09, 0.107069, 0.346464, 10.6333)
+
+[node name="resistor21" parent="Resistors2" instance=ExtResource("7_oshkv")]
+transform = Transform3D(-1.11467e-09, 0, 0.0255006, 0, 0.0255006, 0, -0.0255006, 0, -1.11467e-09, 0.107069, 0.346464, 12.7084)
+
+[node name="resistor22" parent="Resistors2" instance=ExtResource("7_oshkv")]
+transform = Transform3D(-1.11467e-09, 0, 0.0255006, 0, 0.0255006, 0, -0.0255006, 0, -1.11467e-09, 7.98478, 0.346464, 6.399)
+
+[node name="resistor23" parent="Resistors2" instance=ExtResource("7_oshkv")]
+transform = Transform3D(-1.11467e-09, 0, 0.0255006, 0, 0.0255006, 0, -0.0255006, 0, -1.11467e-09, 7.98478, 0.346464, 8.56553)
+
+[node name="resistor24" parent="Resistors2" instance=ExtResource("7_oshkv")]
+transform = Transform3D(-1.11467e-09, 0, 0.0255006, 0, 0.0255006, 0, -0.0255006, 0, -1.11467e-09, 7.98478, 0.346464, 10.6333)
+
+[node name="resistor25" parent="Resistors2" instance=ExtResource("7_oshkv")]
+transform = Transform3D(-1.11467e-09, 0, 0.0255006, 0, 0.0255006, 0, -0.0255006, 0, -1.11467e-09, 7.98478, 0.346464, 12.7084)

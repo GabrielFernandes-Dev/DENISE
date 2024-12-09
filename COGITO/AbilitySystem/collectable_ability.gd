@@ -14,6 +14,7 @@ extends Area3D
 @onready var new_ability = ability.new()
 
 func _ready() -> void:
+    add_to_group("Persist")
     var material = StandardMaterial3D.new()
     material.transparency = StandardMaterial3D.TRANSPARENCY_ALPHA
     material.shading_mode = StandardMaterial3D.SHADING_MODE_UNSHADED
@@ -28,3 +29,20 @@ func _on_body_entered(body: Node3D) -> void:
     body.add_ability(new_ability, quantidade_real)
     body.hot_bar.populate_hotbar()
     queue_free()
+
+func save() -> Dictionary:
+    return {
+        "filename": scene_file_path,
+        "parent": get_parent().get_path(),
+        "pos_x": position.x,
+        "pos_y": position.y,
+        "pos_z": position.z,
+        "rot_x": rotation.x,
+        "rot_y": rotation.y,
+        "rot_z": rotation.z,
+        "collected": !is_inside_tree()
+    }
+
+func _enter_tree() -> void:
+    if get("collected"):
+        queue_free()

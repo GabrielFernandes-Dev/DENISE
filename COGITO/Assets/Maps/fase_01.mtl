@@ -1,0 +1,6 @@
+newmtl Poliigon_MetalGalvanizedZinc_7184_BaseColor
+map_Kd textures/Poliigon_MetalGalvanizedZinc_7184_BaseColor.jpg
+
+newmtl __TB_empty
+map_Kd textures/__TB_empty.png
+

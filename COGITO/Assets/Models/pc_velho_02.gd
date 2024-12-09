@@ -20,6 +20,38 @@ func _ready() -> void:
     if collision:
         print("Collision shape type: ", collision.shape.get_class())
 
+    # Adicionar bordas visíveis para a área clicável
+    var debug_border = Control.new()
+    viewport.add_child(debug_border)
+    
+    # Borda superior
+    var top = ColorRect.new()
+    top.position = Vector2(0, 0)
+    top.size = Vector2(viewport.size.x, 2)
+    top.color = Color.GREEN
+    debug_border.add_child(top)
+    
+    # Borda inferior
+    var bottom = ColorRect.new()
+    bottom.position = Vector2(0, viewport.size.y - 2)
+    bottom.size = Vector2(viewport.size.x, 2)
+    bottom.color = Color.GREEN
+    debug_border.add_child(bottom)
+    
+    # Borda esquerda
+    var left = ColorRect.new()
+    left.position = Vector2(0, 0)
+    left.size = Vector2(2, viewport.size.y)
+    left.color = Color.GREEN
+    debug_border.add_child(left)
+    
+    # Borda direita
+    var right = ColorRect.new()
+    right.position = Vector2(viewport.size.x - 2, 0)
+    right.size = Vector2(2, viewport.size.y)
+    right.color = Color.GREEN
+    debug_border.add_child(right)
+
 func _unhandled_input(event: InputEvent) -> void:
     if event is InputEventMouseButton and event.pressed:
         print("Mouse button event detectado: ", event.position)
@@ -34,53 +66,111 @@ func _unhandled_input(event: InputEvent) -> void:
         if result and result.collider == monitor_body:
             print("Hit monitor!")
             
-            # Convertendo o ponto de colisão para o espaço local do monitor
+            # Convertendo o ponto de colisão e normal para o espaço local do monitor
             var local_point = monitor_mesh.global_transform.inverse() * result.position
+            var local_normal = monitor_mesh.global_transform.basis.inverse() * result.normal
             
-            # Calculando UV baseado na normal do monitor
-            var forward = Vector3(0, 0, 1)
-            var right = Vector3(1, 0, 0)
-            var up = Vector3(0, 1, 0)
+            # Definindo o plano da tela usando a normal
+            var plane = Plane(Vector3.FORWARD, 0)  # Assumindo que a tela está alinhada com Z
             
-            var x_proj = local_point.dot(right)
-            var y_proj = local_point.dot(up)
+            # Projetando o ponto no plano da tela
+            var projected_point = local_point - (local_point.dot(plane.normal) * plane.normal)
             
+            # Calculando dimensões da tela baseado no AABB
+            var aabb = monitor_mesh.mesh.get_aabb()
+            var screen_size = Vector2(aabb.size.x, aabb.size.y)
+            
+            # Calculando UV baseado na posição projetada
             var uv = Vector2(
-                (x_proj / 0.5 + 1.0) * 0.5,
-                1.0 - ((y_proj / 0.5 + 1.0) * 0.5)
+                (projected_point.x - aabb.position.x) / aabb.size.x,
+                1.0 - ((projected_point.y - aabb.position.y) / aabb.size.y)
             )
             
-            print("Projected coords - X: ", x_proj, " Y: ", y_proj)
-            print("Calculated UV: ", uv)
+            print("\n=== Debug Detalhado ===")
+            print("Local point: ", local_point)
+            print("Local normal: ", local_normal)
+            print("Projected point: ", projected_point)
+            print("AABB: ", aabb)
+            print("Screen size: ", screen_size)
+            print("UV antes do clamp: ", uv)
             
+            # Garantir que os UVs estão no intervalo correto
             uv = uv.clamp(Vector2.ZERO, Vector2.ONE)
+            print("UV após clamp: ", uv)
             
+            # Converter para coordenadas do viewport
             var viewport_pos = Vector2(
                 uv.x * viewport.size.x,
                 uv.y * viewport.size.y
             )
+            
             print("Viewport position: ", viewport_pos)
             
-            # Criando eventos de mouse
-            # Movimento do mouse
-            var mouse_motion = InputEventMouseMotion.new()
-            mouse_motion.position = viewport_pos
-            viewport.push_input(mouse_motion)
+            # Criar o ponto de debug visual
+            if viewport_pos.x >= 0 and viewport_pos.x <= viewport.size.x and \
+               viewport_pos.y >= 0 and viewport_pos.y <= viewport.size.y:
+                var debug_point = ColorRect.new()
+                viewport.add_child(debug_point)
+                debug_point.position = viewport_pos - Vector2(2.5, 2.5)  # Centraliza o ponto
+                debug_point.size = Vector2(5, 5)
+                debug_point.color = Color.RED
+                
+                await get_tree().create_timer(2.0).timeout
+                debug_point.queue_free()
             
-            # Mouse button down
-            var mouse_down = InputEventMouseButton.new()
-            mouse_down.button_index = event.button_index
-            mouse_down.pressed = true
-            mouse_down.position = viewport_pos
-            mouse_down.double_click = event.double_click
-            viewport.push_input(mouse_down)
+            if viewport_pos.x < 0 or viewport_pos.x > viewport.size.x or \
+            viewport_pos.y < 0 or viewport_pos.y > viewport.size.y:
+                print("Clique fora dos limites do viewport!")
+                return
+
+            _debug_uv_coords(local_point, uv, viewport_pos)
+
+            print("\n=== Viewport Debug ===")
+            print("Viewport size: ", viewport.size)
+            print("Click within bounds: ", Rect2(Vector2.ZERO, viewport.size).has_point(viewport_pos))
+
+            var debug_point = ColorRect.new()
+            viewport.add_child(debug_point)
+            debug_point.position = viewport_pos
+            debug_point.size = Vector2(5, 5)
+            debug_point.color = Color.RED
             
-            # Mouse button up
-            var mouse_up = InputEventMouseButton.new()
-            mouse_up.button_index = event.button_index
-            mouse_up.pressed = false
-            mouse_up.position = viewport_pos
-            mouse_up.double_click = event.double_click
-            viewport.push_input(mouse_up)
-            
-            get_viewport().set_input_as_handled()
+            # Remove o ponto depois de 2 segundos
+            await get_tree().create_timer(2.0).timeout
+            debug_point.queue_free()
+
+            var mouse_event = InputEventMouseButton.new()
+            mouse_event.button_index = event.button_index
+            mouse_event.pressed = true
+            mouse_event.position = viewport_pos
+            mouse_event.global_position = viewport_pos  # Importante definir ambos
+            mouse_event.double_click = event.double_click
+
+            viewport.push_input(mouse_event)
+
+func _debug_uv_coords(local_point: Vector3, uv: Vector2, viewport_pos: Vector2):
+    print("\n=== UV Debug ===")
+    print("Local point: ", local_point)
+    print("Monitor size: ", monitor_mesh.mesh.get_aabb().size if monitor_mesh.mesh else "Unknown")
+    print("UV coords: ", uv)
+    print("Viewport size: ", viewport.size)
+    print("Final viewport position: ", viewport_pos)
+    
+    # Cria uma cruz para melhor visualização do ponto de clique
+    var debug_cross = Control.new()
+    viewport.add_child(debug_cross)
+    
+    var horizontal = ColorRect.new()
+    horizontal.position = Vector2(viewport_pos.x - 10, viewport_pos.y)
+    horizontal.size = Vector2(20, 1)
+    horizontal.color = Color.BLUE
+    debug_cross.add_child(horizontal)
+    
+    var vertical = ColorRect.new()
+    vertical.position = Vector2(viewport_pos.x, viewport_pos.y - 10)
+    vertical.size = Vector2(1, 20)
+    vertical.color = Color.BLUE
+    debug_cross.add_child(vertical)
+    
+    await get_tree().create_timer(2.0).timeout
+    debug_cross.queue_free()

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://uds5uisexq7t"
+path="res://.godot/imported/fase_01.obj-d353cf9c0340ed37eb10435101a4b297.mesh"
+
+[deps]
+
+files=["res://.godot/imported/fase_01.obj-d353cf9c0340ed37eb10435101a4b297.mesh"]
+
+source_file="res://COGITO/Assets/Maps/fase_01.obj"
+dest_files=["res://.godot/imported/fase_01.obj-d353cf9c0340ed37eb10435101a4b297.mesh", "res://.godot/imported/fase_01.obj-d353cf9c0340ed37eb10435101a4b297.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

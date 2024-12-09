@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://b6kxur26ohaee"]
+[gd_scene load_steps=3 format=3 uid="uid://b6kxur26ohaee"]
 
 [ext_resource type="Script" path="res://COGITO/Components/Attributes/memory_attribute.gd" id="1_mr601"]
+[ext_resource type="Texture2D" uid="uid://dvrnbic8w3x6g" path="res://COGITO/Assets/Icons/ram.png" id="2_6yn3e"]
 
 [node name="MemoryAttribute" type="Node"]
 script = ExtResource("1_mr601")
+attribute_icon = ExtResource("2_6yn3e")

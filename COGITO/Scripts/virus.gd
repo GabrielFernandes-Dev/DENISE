@@ -65,7 +65,5 @@ func _on_vision_timer_timeout() -> void:
 					if collider.name == "player":
 						collider.decrease_attribute("health", 5)
 						$RayCast3D.debug_shape_custom_color = Color(174, 0, 0)
-						print('I see you')
 					else:
 						$RayCast3D.debug_shape_custom_color = Color(0, 255, 0)
-						print("I don't see you")
