@@ -47,7 +47,7 @@ theme_override_constants/separation = 15
 [node name="PauseMenuLabel" type="Label" parent="Content"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 45
-text = "Pause Menu"
+text = "Jogo Pausado"
 horizontal_alignment = 1
 
 [node name="HSeparator" type="HSeparator" parent="Content"]
@@ -70,7 +70,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 30
-text = "Resume"
+text = "Retomar"
 script = ExtResource("6_a8sll")
 
 [node name="HSeparator" type="HSeparator" parent="Content/GameMenu/VBoxContainer"]
@@ -85,12 +85,14 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_3a44o")
 
 [node name="Label_ActiveSlot" type="Label" parent="Content/GameMenu/VBoxContainer"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "Current Slot: ?"
 horizontal_alignment = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="Content/GameMenu/VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(130, 160)
 layout_mode = 2
 theme = ExtResource("1_1djt0")
@@ -130,6 +132,7 @@ text = "YYYY-MM-DD HH:MM"
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Content/GameMenu/VBoxContainer"]
+visible = false
 layout_mode = 2
 
 [node name="LoadButton" type="Button" parent="Content/GameMenu/VBoxContainer/HBoxContainer"]
@@ -159,26 +162,35 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_3a44o")
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 30
-text = "Options"
+text = "Configurações"
 script = ExtResource("6_a8sll")
+
+[node name="VSeparator" type="VSeparator" parent="Content/GameMenu/VBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
 
 [node name="BackToMenuButton" type="Button" parent="Content/GameMenu/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 30
-text = "Back to Main Menu"
+text = "Tela Inicial"
 script = ExtResource("6_a8sll")
+
+[node name="VSeparator2" type="VSeparator" parent="Content/GameMenu/VBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
 
 [node name="QuitButton" type="Button" parent="Content/GameMenu/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 30
-text = "Quit"
+text = "Sair"
 script = ExtResource("6_a8sll")
 
 [node name="OptionsTabMenu" parent="Content" node_paths=PackedStringArray("nodes_to_focus") instance=ExtResource("6_xdpcn")]
 visible = false
 layout_mode = 2
+current_tab = 0
 nodes_to_focus = [NodePath("Gameplay/ScrollContainer/VBoxContainer/InvertYAxisCheckButton"), NodePath("Graphics/ScrollContainer/VBoxContainer/HBoxContainer_WindowMode/WindowModeOptionButton"), NodePath("Audio/ScrollContainer/VBoxContainer/MarginContainer/VBoxContainer/SFXVolumeSlider"), null]
 
 [node name="MenuSceneSwitcher" type="Node" parent="."]

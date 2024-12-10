@@ -372,7 +372,6 @@ layout_mode = 2
 text = "Drop"
 
 [node name="DeathScreen" type="Control" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -413,15 +412,19 @@ layout_mode = 2
 [node name="Label" type="Label" parent="DeathScreen/Panel/BoxContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
-text = "You died."
+text = "Você Morreu."
 horizontal_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="DeathScreen/Panel/BoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20.745)
+layout_mode = 2
 
 [node name="RestartButton" type="Button" parent="DeathScreen/Panel/BoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 30
-text = "Restart"
+text = "Tentar Novamente"
 
 [node name="HintArea" type="VBoxContainer" parent="."]
 layout_mode = 1

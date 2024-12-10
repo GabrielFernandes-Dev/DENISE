@@ -26,6 +26,7 @@ var temp_screenshot : Image
 @onready var game_menu: MarginContainer = $Content/GameMenu
 #endregion
 
+var main_menu_scene = "res://COGITO/Scenes/Intro.tscn"
 
 func _enter_tree() -> void:
 	# Create an audio player
@@ -123,7 +124,7 @@ func _on_quit_button_pressed():
 func _on_back_to_menu_button_pressed():
 	close_pause_menu()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	emit_signal("back_to_main_pressed")
+	CogitoSceneManager.load_next_scene(main_menu_scene, "", "temp", CogitoSceneManager.CogitoSceneLoadMode.RESET)
 
 
 func _input(event):

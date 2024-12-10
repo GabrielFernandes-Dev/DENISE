@@ -6,22 +6,24 @@ signal start_game_pressed
 @onready var game_menu: MarginContainer = $ContentMain/GameMenu
 @onready var options_tab_menu: OptionsTabMenu = $ContentMain/OptionsTabMenu
 @onready var options_button: CogitoUiButton = $ContentMain/GameMenu/HBoxContainer/OptionsButton
+@onready var efeito_crt: ColorRect = $efeito_crt
 
 #region UI AUDIO
 @export var sound_hover : AudioStream
 @export var sound_click : AudioStream
 var playback : AudioStreamPlaybackPolyphonic
 
+var start_game_scene = "res://COGITO/Scenes/Fases/Hub.tscn"
+
 func _ready():
 	# Configuração básica
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	mouse_filter = Control.MOUSE_FILTER_STOP
 
+	efeito_crt.mouse_filter = Control.MOUSE_FILTER_IGNORE
+
 	# Configura todos os controles do menu
 	_setup_menu_controls()
-
-	# Debug das configurações
-	_print_debug_info()
 
 func _setup_menu_controls():
 	# Configura o GameMenu
@@ -52,28 +54,9 @@ func _find_buttons(node: Node, buttons: Array):
 	for child in node.get_children():
 		_find_buttons(child, buttons)
 
-func _print_debug_info():
-	print("\n=== Menu Configuration Debug ===")
-	print("Menu mouse_filter: ", mouse_filter)
-	print("GameMenu mouse_filter: ", game_menu.mouse_filter)
-	print("HBoxContainer mouse_filter: ", $ContentMain/GameMenu/HBoxContainer.mouse_filter)
-
-	print("\n=== Button Configurations ===")
-	for button in _get_all_buttons():
-		print("Button: ", button.name)
-		print("- mouse_filter: ", button.mouse_filter)
-		print("- focus_mode: ", button.focus_mode)
-		print("- global_position: ", button.global_position)
-		print("- size: ", button.size)
-
 func _input(event: InputEvent):
 	if event is InputEventMouseButton and event.pressed:
-		print("\n=== Mouse Click Debug ===")
-		print("Click position: ", event.position)
-
-		# Verifica qual controle está sob o mouse
-		var control_under_mouse = _get_control_at_position(event.position)
-		print("Control under mouse: ", control_under_mouse.name if control_under_mouse else "None")
+		CogitoSceneManager.load_next_scene(start_game_scene, "", "temp", CogitoSceneManager.CogitoSceneLoadMode.RESET)
 
 func _get_control_at_position(position: Vector2) -> Control:
 	return _find_control_at_position(self, position)	
@@ -82,7 +65,7 @@ func _find_control_at_position(node: Node, position: Vector2) -> Control:
 	if node is Control:
 		var control = node as Control
 		if control.get_global_rect().has_point(position):
-            # Procura nos filhos primeiro para encontrar o controle mais específico
+			# Procura nos filhos primeiro para encontrar o controle mais específico
 			for child in node.get_children():
 				var result = _find_control_at_position(child, position)
 				if result:
@@ -101,7 +84,7 @@ func _on_button_input(event: InputEvent, button: Button):
 		if button == options_button:
 			print("Options button clicked!")
 			open_options_menu()
-        # Adicione outros botões conforme necessário
+		# Adicione outros botões conforme necessário
 
 func _enter_tree() -> void:
 	# Create an audio player

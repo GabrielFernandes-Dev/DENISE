@@ -98,7 +98,7 @@ libraries = {
 }
 
 [node name="pc_velho" parent="." instance=ExtResource("1_ysrvm")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+transform = Transform3D(2.08964, 0, 0, 0, 2.08964, 0, 0, 0, 2.08964, 0, 0, 0.0817045)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.11489, 0, -16.9608)

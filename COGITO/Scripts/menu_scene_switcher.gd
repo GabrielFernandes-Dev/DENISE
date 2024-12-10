@@ -1,9 +1,9 @@
 extends Node
 
 ## Filepath to the main menu scene.
-@export_file("*.tscn") var main_menu_scene
+@export_file("*.tscn") var main_menu_scene = "res://COGITO/Scenes/Intro.tscn"
 ## Filepath to the scene the player should start in, when pressing "Start game" button.
-@export_file("*.tscn") var start_game_scene
+@export_file("*.tscn") var start_game_scene = "res://COGITO/Scenes/Fases/Hub.tscn"
 
 func _on_main_menu_start_game_pressed():
 	if start_game_scene: 
