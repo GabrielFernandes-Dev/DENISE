@@ -8,9 +8,9 @@ extends CharacterBody3D
 var current_target_index = 0
 
 var points = [
-	Vector3(15, 1, -16),
-	Vector3(21, 2, -7),
-	Vector3(15, 2, 14)
+	Vector3(15, 0.4, -16),
+	Vector3(21, 0.4, -7),
+	Vector3(15, 0.4, 14)
 	
 ]
 

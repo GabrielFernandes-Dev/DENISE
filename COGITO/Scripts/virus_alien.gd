@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-@export var speed : int = 2
+@export var speed : int = 3
 @export var accel : int = 10
 
 @onready var nav_agent: NavigationAgent3D = $virus_alien/NavigationAgent3D
@@ -8,9 +8,8 @@ extends CharacterBody3D
 var current_target_index = 0
 
 var points = [
-	Vector3(19,2,2),
-	Vector3(-9, 2, 2)
-	
+	Vector3(19,0.8,2),
+	Vector3(10, 0.8, 2),
 ]
 
 func _ready() -> void:
