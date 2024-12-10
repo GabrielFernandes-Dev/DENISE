@@ -39,6 +39,8 @@ func handle_mouse_event(event):
 	
 	var mouse_pos3d = find_mouse(event.global_position)
 	mouse_inside = mouse_pos3d != null
+	print(mouse_inside)
+	print(mouse_pos3d)
 
 	if mouse_inside:
 		mouse_pos3d = area.global_transform.affine_inverse() * mouse_pos3d
