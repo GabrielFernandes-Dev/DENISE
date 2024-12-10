@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cgvfmyngcvp7v"]
+[gd_scene load_steps=14 format=3 uid="uid://cgvfmyngcvp7v"]
 
 [ext_resource type="PackedScene" uid="uid://cv03lo3m3adio" path="res://COGITO/DetectionZoneSystem/zona_deteccao.tscn" id="1_gamkr"]
 [ext_resource type="Script" path="res://COGITO/Scenes/Fases/fase_03/fase_03.gd" id="1_ml0xm"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://l6w83yqfh6ts" path="res://COGITO/Scenes/Fases/fase_03/cenario_fase_03.tscn" id="7_0hwxa"]
 [ext_resource type="Script" path="res://COGITO/InventoryPD/CustomResources/InventorySlotPD.gd" id="7_xe8we"]
 [ext_resource type="Script" path="res://COGITO/InventoryPD/cogito_inventory.gd" id="8_alk6v"]
+[ext_resource type="AudioStream" uid="uid://buaubhqef8s7b" path="res://COGITO/Assets/Audio/technology-271272.mp3" id="8_gasq2"]
 [ext_resource type="PackedScene" uid="uid://b07avihnyexjd" path="res://COGITO/Objects/portal.tscn" id="11_cjxc8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_habnt"]
@@ -88,12 +89,12 @@ portal_name = "Portal Hub"
 
 [node name="portal_fase01" parent="NavigationRegion3D" instance=ExtResource("11_cjxc8")]
 transform = Transform3D(-0.456571, 0, 0.530607, 0, 0.7, 0, -0.530607, 0, -0.456571, -11.9486, 10.5777, 20.1675)
-target_scene = "res://COGITO/Scenes/Fases/Hub.tscn"
+target_scene = "res://COGITO/Scenes/Fases/fase_01/Fase_01.tscn"
 portal_name = "Portal Hub"
 
 [node name="portal_fase_02" parent="NavigationRegion3D" instance=ExtResource("11_cjxc8")]
 transform = Transform3D(-0.355193, 0, -0.60319, 0, 0.7, 0, 0.60319, 0, -0.355193, 14.1, -0.653378, 19.8678)
-target_scene = "res://COGITO/Scenes/Fases/Hub.tscn"
+target_scene = "res://COGITO/Scenes/Fases/fase_02/Fase_02.tscn"
 portal_name = "Portal Hub"
 
 [node name="player" parent="." instance=ExtResource("6_2pwdv")]
@@ -101,6 +102,12 @@ transform = Transform3D(-0.748355, 0, 0.663299, 0, 1, 0, -0.663299, 0, -0.748355
 collision_layer = 8
 collision_mask = 31
 inventory_data = SubResource("Resource_3qufe")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_gasq2")
+volume_db = -13.97
+autoplay = true
+parameters/looping = true
 
 [connection signal="body_entered" from="NavigationRegion3D/Area1" to="NavigationRegion3D/Area1" method="_on_body_entered"]
 [connection signal="body_exited" from="NavigationRegion3D/Area1" to="NavigationRegion3D/Area1" method="_on_body_exited"]
