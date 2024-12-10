@@ -11,7 +11,6 @@ var points = [
 	Vector3(15, 0.4, -16),
 	Vector3(21, 0.4, -7),
 	Vector3(15, 0.4, 14)
-	
 ]
 
 func _ready() -> void:

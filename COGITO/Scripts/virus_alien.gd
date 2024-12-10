@@ -8,8 +8,8 @@ extends CharacterBody3D
 var current_target_index = 0
 
 var points = [
-	Vector3(19,0.8,2),
-	Vector3(10, 0.8, 2),
+	Vector3(19,1,0),
+	Vector3(19, 1, 2),
 ]
 
 func _ready() -> void:

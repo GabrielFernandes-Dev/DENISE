@@ -11,7 +11,6 @@ var current_target_index = 0
 var points = [
 	Vector3(-9,1,-2),
 	Vector3(19, 1, -2)
-	
 ]
 
 func _ready() -> void:
