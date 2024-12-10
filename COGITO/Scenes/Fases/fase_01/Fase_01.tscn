@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cxe8ifj7cb8sj"]
+[gd_scene load_steps=18 format=3 uid="uid://cxe8ifj7cb8sj"]
 
 [ext_resource type="PackedScene" uid="uid://cv03lo3m3adio" path="res://COGITO/DetectionZoneSystem/zona_deteccao.tscn" id="1_lrn1w"]
 [ext_resource type="Script" path="res://COGITO/Scenes/Fases/fase_01/fase_01.gd" id="1_n7nl1"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b07avihnyexjd" path="res://COGITO/Objects/portal.tscn" id="10_0o3ng"]
 [ext_resource type="PackedScene" uid="uid://dm6qrlkbiie18" path="res://COGITO/Objects/virus_conj.tscn" id="10_333eb"]
 [ext_resource type="PackedScene" uid="uid://dj16jxsxp4pbp" path="res://COGITO/Objects/virus_tobacco.tscn" id="11_tuyh1"]
+[ext_resource type="AudioStream" uid="uid://buaubhqef8s7b" path="res://COGITO/Assets/Audio/technology-271272.mp3" id="12_egbh0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_c40mf"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -103,7 +104,7 @@ portal_name = "Portal Hub"
 
 [node name="portal_fase03" parent="NavigationRegion3D" instance=ExtResource("10_0o3ng")]
 transform = Transform3D(0.542701, 0, 0.442127, 0, 0.7, 0, -0.442127, 0, 0.542701, -16.9635, -0.457326, -37.9568)
-target_scene = "res://COGITO/Scenes/Fases/Hub.tscn"
+target_scene = "res://COGITO/Scenes/Fases/fase_03/Fase_03.tscn"
 portal_name = "Portal Hub"
 
 [node name="player" parent="." instance=ExtResource("6_7h2wb")]
@@ -132,6 +133,12 @@ transform = Transform3D(1, 0, 0, 0, -0.979673, 0.200599, 0, -0.200599, -0.979673
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0.2, -5)
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="virus_tobacco"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_egbh0")
+volume_db = -13.97
+autoplay = true
+parameters/looping = true
 
 [connection signal="body_entered" from="NavigationRegion3D/Area1" to="NavigationRegion3D/Area1" method="_on_body_entered"]
 [connection signal="body_exited" from="NavigationRegion3D/Area1" to="NavigationRegion3D/Area1" method="_on_body_exited"]

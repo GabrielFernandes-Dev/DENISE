@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://wjcauo77l5vh"]
+[gd_scene load_steps=17 format=3 uid="uid://wjcauo77l5vh"]
 
 [ext_resource type="Script" path="res://COGITO/Scenes/Fases/fase_02/fase_02.gd" id="1_0p2g1"]
 [ext_resource type="PackedScene" uid="uid://cv03lo3m3adio" path="res://COGITO/DetectionZoneSystem/zona_deteccao.tscn" id="1_01r0n"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dctwsg8mhg0tu" path="res://COGITO/Objects/virus_alien2.tscn" id="9_e2n6i"]
 [ext_resource type="PackedScene" uid="uid://b07avihnyexjd" path="res://COGITO/Objects/portal.tscn" id="10_08eg4"]
 [ext_resource type="PackedScene" uid="uid://dddwxb5wsrkre" path="res://COGITO/Objects/virus_nano.tscn" id="10_gtyo4"]
+[ext_resource type="AudioStream" uid="uid://buaubhqef8s7b" path="res://COGITO/Assets/Audio/technology-271272.mp3" id="11_uipvd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wcfml"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -119,6 +120,12 @@ transform = Transform3D(-0.0540091, 0, 0.99854, 0, 1, 0, -0.99854, 0, -0.0540091
 transform = Transform3D(-0.890054, 0, -0.455856, 0.0518019, 0.993522, -0.101143, 0.452903, -0.113637, -0.884288, 15, 1, -16)
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="virus_nano"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_uipvd")
+volume_db = -13.97
+autoplay = true
+parameters/looping = true
 
 [connection signal="body_entered" from="NavigationRegion3D/Area1" to="NavigationRegion3D/Area1" method="_on_body_entered"]
 [connection signal="body_exited" from="NavigationRegion3D/Area1" to="NavigationRegion3D/Area1" method="_on_body_exited"]

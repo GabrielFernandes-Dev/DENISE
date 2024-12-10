@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://bbrav1pwy0uso"]
+[gd_scene load_steps=41 format=4 uid="uid://bbrav1pwy0uso"]
 
 [ext_resource type="Script" path="res://COGITO/Scenes/Fases/hub.gd" id="1_2nd3x"]
 [ext_resource type="PackedScene" uid="uid://cv03lo3m3adio" path="res://COGITO/DetectionZoneSystem/zona_deteccao.tscn" id="1_36ctg"]
@@ -9,11 +9,12 @@
 [ext_resource type="PackedScene" uid="uid://kicjwmh02uwf" path="res://COGITO/PackedScenes/cogito_player.tscn" id="6_icu2x"]
 [ext_resource type="Script" path="res://COGITO/InventoryPD/CustomResources/InventorySlotPD.gd" id="7_xuqng"]
 [ext_resource type="Script" path="res://COGITO/InventoryPD/cogito_inventory.gd" id="8_sr4d4"]
-[ext_resource type="PackedScene" uid="uid://xod0to5m4773" path="res://COGITO/Objects/virus.tscn" id="9_ug8r7"]
 [ext_resource type="PackedScene" uid="uid://b07avihnyexjd" path="res://COGITO/Objects/portal.tscn" id="10_1sfsn"]
 [ext_resource type="PackedScene" uid="uid://d3p41al1k7avq" path="res://COGITO/AbilitySystem/collectable_ability.tscn" id="11_uwlka"]
 [ext_resource type="Script" path="res://COGITO/AbilitySystem/first_ability.gd" id="12_4ebjt"]
+[ext_resource type="PackedScene" uid="uid://7i404lgwxglr" path="res://COGITO/Objects/virus_tutorial.tscn" id="14_lghm0"]
 [ext_resource type="FontFile" uid="uid://cmb3wo6eij34p" path="res://COGITO/Assets/Fonts/windows_command_prompt.ttf" id="14_r0hab"]
+[ext_resource type="AudioStream" uid="uid://buaubhqef8s7b" path="res://COGITO/Assets/Audio/technology-271272.mp3" id="15_eqed6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vngwd"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -38,7 +39,7 @@ fog_density = 0.1239
 fog_sky_affect = 0.141
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3668u"]
-size = Vector3(6.94452, 7.1084, 7.2298)
+size = Vector3(8.35654, 4.88556, 8.39566)
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_d2bqr"]
 
@@ -476,7 +477,7 @@ transform = Transform3D(0.640445, 0, 0.768004, 0, 1, 0, -0.768004, 0, 0.640445, 
 collision_mask = 8
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="deteccao_mensagem_funcoes2"]
-transform = Transform3D(0.999909, 0, 0.0135258, 0, 1, 0, -0.0135258, 0, 0.999909, -2.70627, 3.0542, 1.7807)
+transform = Transform3D(0.999909, 0, 0.0135257, 0, 1, 0, -0.0135257, 0, 0.999909, -3.4201, 1.79807, 1.20737)
 shape = SubResource("BoxShape3D_3668u")
 
 [node name="mensagem_virus" type="Label3D" parent="."]
@@ -493,12 +494,6 @@ horizontal_alignment = 0
 autowrap_mode = 1
 width = 1100.0
 
-[node name="Virus" parent="." instance=ExtResource("9_ug8r7")]
-transform = Transform3D(-0.443948, 0, -0.896053, 0, 1, 0, 0.896053, 0, -0.443948, 11.3305, -0.0299251, 14.7946)
-
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="Virus"]
-debug_enabled = true
-
 [node name="CollectableAbility_01" parent="." instance=ExtResource("11_uwlka")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.194333, 1.31753, 1.50324)
 ability = ExtResource("12_4ebjt")
@@ -513,6 +508,26 @@ font_size = 42
 horizontal_alignment = 0
 autowrap_mode = 1
 width = 800.0
+
+[node name="Virus" parent="." instance=ExtResource("14_lghm0")]
+transform = Transform3D(0.508485, 0, 0.861071, 0, 1, 0, -0.861071, 0, 0.508485, 10.5208, -0.16965, 14.7122)
+
+[node name="mensagem_portais" type="Label3D" parent="."]
+transform = Transform3D(-1, 0, -8.74227e-08, 0, 1, 0, 8.74227e-08, 0, -1, 2.6638, 3.23022, 30.3473)
+text = "> Portais de transporte;
+> Utilize eles para acessar as áreas de memória e procurar por vírus;
+"
+font = ExtResource("14_r0hab")
+font_size = 58
+horizontal_alignment = 0
+autowrap_mode = 1
+width = 1000.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_eqed6")
+volume_db = -13.97
+autoplay = true
+parameters/looping = true
 
 [connection signal="body_entered" from="deteccao_mensagem_variavel" to="." method="_on_area_variaveis_body_entered"]
 [connection signal="body_exited" from="deteccao_mensagem_variavel" to="." method="_on_area_variaveis_body_exited"]

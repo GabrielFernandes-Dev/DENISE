@@ -72,5 +72,6 @@ func _on_vision_timer_timeout() -> void:
 						$RayCast3D.debug_shape_custom_color = Color(174, 0, 0)
 					else:
 						$RayCast3D.debug_shape_custom_color = Color(0, 255, 0)
+						
 func _eliminar():
 	queue_free()
