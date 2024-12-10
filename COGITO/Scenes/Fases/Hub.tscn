@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://bbrav1pwy0uso"]
+[gd_scene load_steps=40 format=4 uid="uid://bbrav1pwy0uso"]
 
 [ext_resource type="Script" path="res://COGITO/Scenes/Fases/hub.gd" id="1_2nd3x"]
 [ext_resource type="PackedScene" uid="uid://cv03lo3m3adio" path="res://COGITO/DetectionZoneSystem/zona_deteccao.tscn" id="1_36ctg"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://b07avihnyexjd" path="res://COGITO/Objects/portal.tscn" id="10_1sfsn"]
 [ext_resource type="PackedScene" uid="uid://d3p41al1k7avq" path="res://COGITO/AbilitySystem/collectable_ability.tscn" id="11_uwlka"]
 [ext_resource type="Script" path="res://COGITO/AbilitySystem/first_ability.gd" id="12_4ebjt"]
+[ext_resource type="FontFile" uid="uid://cmb3wo6eij34p" path="res://COGITO/Assets/Fonts/windows_command_prompt.ttf" id="14_r0hab"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vngwd"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -35,6 +36,9 @@ ambient_light_color = Color(0.450648, 0.450648, 0.450648, 1)
 fog_mode = 1
 fog_density = 0.1239
 fog_sky_affect = 0.141
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3668u"]
+size = Vector3(6.94452, 7.1084, 7.2298)
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_d2bqr"]
 
@@ -215,6 +219,90 @@ script = ExtResource("1_2nd3x")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_jiate")
 
+[node name="mensagem_inicial" type="Label3D" parent="."]
+transform = Transform3D(-0.920047, 0, -0.391807, 0, 1, 0, 0.391807, 0, -0.920047, 2.6638, 1.57307, -43.3306)
+text = "> ALERTA DE SEGURANÇA!!!;
+> Sistema comprometido!!!;
+> Detectamos múltiplos vírus invadindo o mainframe;
+> Encontre os locais infectados;
+>Elimine todos os vírus;"
+font = ExtResource("14_r0hab")
+font_size = 42
+horizontal_alignment = 0
+autowrap_mode = 1
+width = 651.0
+
+[node name="deteccao_mensagem_variavel" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -39.8342)
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="deteccao_mensagem_variavel"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.294556, 3.0542, 2.68259)
+shape = SubResource("BoxShape3D_3668u")
+
+[node name="mensagem_variaveis" type="Label3D" parent="."]
+transform = Transform3D(-0.920047, 0, -0.391807, 0, 1, 0, 0.391807, 0, -0.920047, 2.6638, 1.57307, -36.3953)
+text = "> TUTORIAL: VARIÁVEIS;
+> Variáveis são como caixas que guardam informações;
+> EXEMPLO NO CÓDIGO:;
+> ativo = true;
+> memoria_consumida = 0;
+> Você pode mudar o valor de uma variável para afetar o comportamento do código;"
+font = ExtResource("14_r0hab")
+font_size = 42
+horizontal_alignment = 0
+autowrap_mode = 1
+width = 800.0
+
+[node name="deteccao_mensagem_condicionais" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -32.2383)
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="deteccao_mensagem_condicionais"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.294556, 3.0542, 2.68259)
+shape = SubResource("BoxShape3D_3668u")
+
+[node name="mensagem_condicionais" type="Label3D" parent="."]
+transform = Transform3D(-0.920047, 0, -0.391807, 0, 1, 0, 0.391807, 0, -0.920047, 2.6638, 1.57307, -28.8463)
+text = "> TUTORIAL: CONDICIONAIS;
+> Condicionais são verificações que usam 'if';
+> Elas controlam quando certas partes do código são executadas;
+>
+> EXEMPLO NO CÓDIGO:;
+> if self.ativo then;
+>    -- Código só roda se 'ativo' for true;
+>
+> DICA: Encontre condicionais importantes para quebrar a lógica do vírus;"
+font = ExtResource("14_r0hab")
+font_size = 42
+horizontal_alignment = 0
+autowrap_mode = 1
+width = 800.0
+
+[node name="deteccao_mensagem_funcoes" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -24.5668)
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="deteccao_mensagem_funcoes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.294556, 3.0542, 2.68259)
+shape = SubResource("BoxShape3D_3668u")
+
+[node name="mensagem_funcoes" type="Label3D" parent="."]
+transform = Transform3D(-0.920047, 0, -0.391807, 0, 1, 0, 0.391807, 0, -0.920047, 2.6638, 1.57307, -23.0265)
+text = "> TUTORIAL: FUNÇÕES;
+> Funções são blocos de código que executam tarefas específicas;
+> 
+> EXEMPLO NO CÓDIGO:;
+> function crash_sistema();
+>    -- Código que roda quando a função é chamada;
+> 
+> DICA: As funções mais importantes geralmente têm nomes relacionados às ações que elas fazem;"
+font = ExtResource("14_r0hab")
+font_size = 42
+horizontal_alignment = 0
+autowrap_mode = 1
+width = 900.0
+
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_d2bqr")
 
@@ -378,20 +466,61 @@ transform = Transform3D(-0.363736, 0, 0.598076, 0, 0.7, 0, -0.598076, 0, -0.3637
 target_scene = "res://COGITO/Scenes/Fases/Fase_03.tscn"
 
 [node name="player" parent="." instance=ExtResource("6_icu2x")]
-transform = Transform3D(-0.999958, 0, -0.00925086, 0, 1, 0, 0.00925086, 0, -0.999958, 0.195517, 1.03314, -46.2049)
+transform = Transform3D(-0.999958, 0, -0.00925086, 0, 1, 0, 0.00925086, 0, -0.999958, -0.137883, 1.03314, -46.7525)
 collision_layer = 8
 collision_mask = 31
 inventory_data = SubResource("Resource_iann7")
 
+[node name="deteccao_mensagem_funcoes2" type="Area3D" parent="."]
+transform = Transform3D(0.640445, 0, 0.768004, 0, 1, 0, -0.768004, 0, 0.640445, 11.2198, 0, 12.3869)
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="deteccao_mensagem_funcoes2"]
+transform = Transform3D(0.999909, 0, 0.0135258, 0, 1, 0, -0.0135258, 0, 0.999909, -2.70627, 3.0542, 1.7807)
+shape = SubResource("BoxShape3D_3668u")
+
+[node name="mensagem_virus" type="Label3D" parent="."]
+transform = Transform3D(-0.500453, 0, -0.865764, 0, 1, 0, 0.865764, 0, -0.500453, 13.3598, 1.57307, 13.4882)
+text = "> Esse é um vírus desativado;
+> VULNERABILIDADE ENCONTRADA:
+> O vírus possui uma variável chamada 'ativo' que controla seu funcionamento;
+> Quando ativo = true, o vírus continua se multiplicando;
+> Na função crash_sistema(), o vírus define: self.ativo = true;
+> Isso faz com que ele continue ativo mesmo após falhar;"
+font = ExtResource("14_r0hab")
+font_size = 42
+horizontal_alignment = 0
+autowrap_mode = 1
+width = 1100.0
+
 [node name="Virus" parent="." instance=ExtResource("9_ug8r7")]
-transform = Transform3D(0.665569, 0, -0.746337, 0, 1, 0, 0.746337, 0, 0.665569, 8.24747, -0.0299251, 19.9917)
+transform = Transform3D(-0.443948, 0, -0.896053, 0, 1, 0, 0.896053, 0, -0.443948, 11.3305, -0.0299251, 14.7946)
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="Virus"]
 debug_enabled = true
 
 [node name="CollectableAbility_01" parent="." instance=ExtResource("11_uwlka")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0471099, 1.31753, -36.4419)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.194333, 1.31753, 1.50324)
 ability = ExtResource("12_4ebjt")
 
+[node name="mensagem_habilidade" type="Label3D" parent="."]
+transform = Transform3D(-0.920047, 0, -0.391807, 0, 1, 0, 0.391807, 0, -0.920047, 2.6638, 1.57307, 4.84256)
+text = "> Habilidade Desbloqueada: VISÃO DE CÓDIGO;
+> Focando em um vírus, você consegue modificar seu código diretamente;
+> Procure por falhas na lógica do código e explore-as para neutralizar as ameaças;"
+font = ExtResource("14_r0hab")
+font_size = 42
+horizontal_alignment = 0
+autowrap_mode = 1
+width = 800.0
+
+[connection signal="body_entered" from="deteccao_mensagem_variavel" to="." method="_on_area_variaveis_body_entered"]
+[connection signal="body_exited" from="deteccao_mensagem_variavel" to="." method="_on_area_variaveis_body_exited"]
+[connection signal="body_entered" from="deteccao_mensagem_condicionais" to="." method="_on_area_condicionais_body_entered"]
+[connection signal="body_exited" from="deteccao_mensagem_condicionais" to="." method="_on_area_condicionais_body_exited"]
+[connection signal="body_entered" from="deteccao_mensagem_funcoes" to="." method="_on_area_funcoes_body_entered"]
+[connection signal="body_exited" from="deteccao_mensagem_funcoes" to="." method="_on_area_funcoes_body_exited"]
 [connection signal="body_entered" from="NavigationRegion3D/Area1" to="NavigationRegion3D/Area1" method="_on_body_entered"]
 [connection signal="body_exited" from="NavigationRegion3D/Area1" to="NavigationRegion3D/Area1" method="_on_body_exited"]
+[connection signal="body_entered" from="deteccao_mensagem_funcoes2" to="." method="_on_area_virus_body_entered"]
+[connection signal="body_entered" from="CollectableAbility_01" to="." method="_on_area_habilidade_body_entered"]

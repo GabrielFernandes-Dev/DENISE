@@ -88,12 +88,12 @@ portal_name = "Portal Hub"
 
 [node name="portal_fase01" parent="NavigationRegion3D" instance=ExtResource("11_cjxc8")]
 transform = Transform3D(-0.456571, 0, 0.530607, 0, 0.7, 0, -0.530607, 0, -0.456571, -11.9486, 10.5777, 20.1675)
-target_scene = "res://COGITO/Scenes/Fases/Hub.tscn"
+target_scene = "res://COGITO/Scenes/Fases/fase_01/Fase_01.tscn"
 portal_name = "Portal Hub"
 
 [node name="portal_fase_02" parent="NavigationRegion3D" instance=ExtResource("11_cjxc8")]
 transform = Transform3D(-0.355193, 0, -0.60319, 0, 0.7, 0, 0.60319, 0, -0.355193, 14.1, -0.653378, 19.8678)
-target_scene = "res://COGITO/Scenes/Fases/Hub.tscn"
+target_scene = "res://COGITO/Scenes/Fases/fase_02/Fase_02.tscn"
 portal_name = "Portal Hub"
 
 [node name="player" parent="." instance=ExtResource("6_2pwdv")]
