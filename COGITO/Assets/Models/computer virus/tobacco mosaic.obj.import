@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dhufnpju8mlqp"
+path="res://.godot/imported/tobacco mosaic.obj-5e237bed62527b2b9328c9b7f94f7ab4.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tobacco mosaic.obj-5e237bed62527b2b9328c9b7f94f7ab4.mesh"]
+
+source_file="res://COGITO/Assets/Models/computer virus/tobacco mosaic.obj"
+dest_files=["res://.godot/imported/tobacco mosaic.obj-5e237bed62527b2b9328c9b7f94f7ab4.mesh", "res://.godot/imported/tobacco mosaic.obj-5e237bed62527b2b9328c9b7f94f7ab4.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

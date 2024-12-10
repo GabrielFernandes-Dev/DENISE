@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bsjsiu0ecvj4m"
+path="res://.godot/imported/virus corona.obj-7174478f8f2c918520039e43fca1626a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/virus corona.obj-7174478f8f2c918520039e43fca1626a.mesh"]
+
+source_file="res://COGITO/Assets/Models/computer virus/virus corona.obj"
+dest_files=["res://.godot/imported/virus corona.obj-7174478f8f2c918520039e43fca1626a.mesh", "res://.godot/imported/virus corona.obj-7174478f8f2c918520039e43fca1626a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
