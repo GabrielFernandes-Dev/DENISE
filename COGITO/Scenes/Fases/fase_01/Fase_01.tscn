@@ -52,16 +52,31 @@ environment = SubResource("Environment_q73lk")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.0506104, 0.998719, 0, -0.998719, -0.0506104, 10.0506, 27.4634, -12.506)
+light_energy = 8.0
 spot_range = 57.7674
 spot_angle = 44.6369
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.508786, 0.860893, 0, -0.860893, 0.508786, 10.0506, 27.4634, 8.36661)
+light_energy = 8.0
 spot_range = 57.7674
 spot_angle = 44.6369
 
 [node name="SpotLight3D3" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.504799, 0.863237, 0, -0.863237, -0.504799, 10.0506, 27.4634, -35.3169)
+light_energy = 8.0
+spot_range = 57.7674
+spot_angle = 44.6369
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="."]
+transform = Transform3D(0.909657, -0.00343609, -0.415346, 0.41536, 0.00752519, 0.909626, 0, -0.999966, 0.00827256, -11.8944, 14.2335, -4.68174)
+light_energy = 8.0
+spot_range = 57.7674
+spot_angle = 44.6369
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="."]
+transform = Transform3D(0.792949, 0.00504037, 0.609267, -0.609287, 0.00655972, 0.792922, -2.11796e-10, -0.999966, 0.00827256, 32.0069, 14.2335, -4.68174)
+light_energy = 8.0
 spot_range = 57.7674
 spot_angle = 44.6369
 
