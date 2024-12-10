@@ -22,7 +22,6 @@ func use(player: Node) -> void:
 		
 		if distance <= max_range:
 			print("Virus atingido!")
-			print("Teste")
 			print(text_editor.visible)
 			if text_editor.visible:
 				text_editor.visible = false

@@ -1,0 +1,106 @@
+[gd_scene load_steps=13 format=3 uid="uid://cgvfmyngcvp7v"]
+
+[ext_resource type="PackedScene" uid="uid://cv03lo3m3adio" path="res://COGITO/DetectionZoneSystem/zona_deteccao.tscn" id="1_gamkr"]
+[ext_resource type="Script" path="res://COGITO/Scenes/Fases/fase_03/fase_03.gd" id="1_ml0xm"]
+[ext_resource type="PackedScene" uid="uid://kicjwmh02uwf" path="res://COGITO/PackedScenes/cogito_player.tscn" id="6_2pwdv"]
+[ext_resource type="PackedScene" uid="uid://l6w83yqfh6ts" path="res://COGITO/Scenes/Fases/fase_03/cenario_fase_03.tscn" id="7_0hwxa"]
+[ext_resource type="Script" path="res://COGITO/InventoryPD/CustomResources/InventorySlotPD.gd" id="7_xe8we"]
+[ext_resource type="Script" path="res://COGITO/InventoryPD/cogito_inventory.gd" id="8_alk6v"]
+[ext_resource type="PackedScene" uid="uid://b07avihnyexjd" path="res://COGITO/Objects/portal.tscn" id="11_cjxc8"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_habnt"]
+sky_top_color = Color(0, 0, 0, 1)
+sky_horizon_color = Color(0.0196078, 0.376471, 1, 1)
+sky_curve = 0.0222976
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0.0196078, 0.376471, 1, 1)
+ground_curve = 0.0649805
+sun_angle_max = 0.0
+sun_curve = 0.00861081
+
+[sub_resource type="Sky" id="Sky_ouqmh"]
+sky_material = SubResource("ProceduralSkyMaterial_habnt")
+
+[sub_resource type="Environment" id="Environment_dq7i4"]
+background_mode = 2
+sky = SubResource("Sky_ouqmh")
+fog_mode = 1
+fog_density = 0.1239
+fog_sky_affect = 0.141
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_eewoa"]
+
+[sub_resource type="Resource" id="Resource_3qufe"]
+resource_local_to_scene = true
+script = ExtResource("8_alk6v")
+grid = true
+starter_inventory = Array[ExtResource("7_xe8we")]([])
+inventory_size = Vector2i(5, 3)
+inventory_slots = Array[ExtResource("7_xe8we")]([null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
+
+[node name="Fase03" type="Node3D"]
+script = ExtResource("1_ml0xm")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_dq7i4")
+
+[node name="Iluminacao" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2817, 0, 17.4558)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Iluminacao"]
+transform = Transform3D(1, 0, 0, 0, -0.0506104, 0.998719, 0, -0.998719, -0.0506104, -13.8995, 27.2791, -12.4967)
+light_energy = 6.0
+spot_range = 57.7674
+spot_angle = 44.6369
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Iluminacao"]
+transform = Transform3D(1, 0, 0, 0, 0.508786, 0.860893, 0, -0.860893, 0.508786, -13.8995, 27.3045, 8.2727)
+light_energy = 6.0
+spot_range = 57.7674
+spot_angle = 44.6369
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Iluminacao"]
+transform = Transform3D(1, 0, 0, 0, -0.504799, 0.863237, 0, -0.863237, -0.504799, -13.8995, 27.3041, -35.2237)
+light_energy = 6.0
+spot_range = 57.7674
+spot_angle = 44.6369
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Iluminacao"]
+transform = Transform3D(-0.520495, -0.801393, -0.294712, 0.714836, -0.597743, 0.362924, -0.467006, -0.0217713, 0.883986, -9.45452, 7.1568, -4.56611)
+light_energy = 4.0
+spot_range = 57.7674
+spot_angle = 44.6369
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_eewoa")
+
+[node name="Area1" parent="NavigationRegion3D" instance=ExtResource("1_gamkr")]
+transform = Transform3D(52.289, 0, 0, 0, 52.289, 0, 0, 0, 52.289, -10.8815, 0.388426, 4.82888)
+collision_layer = 4
+collision_mask = 24
+
+[node name="CenarioFase03" parent="NavigationRegion3D" instance=ExtResource("7_0hwxa")]
+
+[node name="portal_hub" parent="NavigationRegion3D" instance=ExtResource("11_cjxc8")]
+transform = Transform3D(0.466354, 0, -0.522029, 0, 0.7, 0, 0.522029, 0, 0.466354, 14.6111, -0.653378, -10.3888)
+target_scene = "res://COGITO/Scenes/Fases/Hub.tscn"
+portal_name = "Portal Hub"
+
+[node name="portal_fase01" parent="NavigationRegion3D" instance=ExtResource("11_cjxc8")]
+transform = Transform3D(-0.456571, 0, 0.530607, 0, 0.7, 0, -0.530607, 0, -0.456571, -11.9486, 10.5777, 20.1675)
+target_scene = "res://COGITO/Scenes/Fases/Hub.tscn"
+portal_name = "Portal Hub"
+
+[node name="portal_fase_02" parent="NavigationRegion3D" instance=ExtResource("11_cjxc8")]
+transform = Transform3D(-0.355193, 0, -0.60319, 0, 0.7, 0, 0.60319, 0, -0.355193, 14.1, -0.653378, 19.8678)
+target_scene = "res://COGITO/Scenes/Fases/Hub.tscn"
+portal_name = "Portal Hub"
+
+[node name="player" parent="." instance=ExtResource("6_2pwdv")]
+transform = Transform3D(-0.748355, 0, 0.663299, 0, 1, 0, -0.663299, 0, -0.748355, 13.4017, 0.850489, -9.12348)
+collision_layer = 8
+collision_mask = 31
+inventory_data = SubResource("Resource_3qufe")
+
+[connection signal="body_entered" from="NavigationRegion3D/Area1" to="NavigationRegion3D/Area1" method="_on_body_entered"]
+[connection signal="body_exited" from="NavigationRegion3D/Area1" to="NavigationRegion3D/Area1" method="_on_body_exited"]

@@ -19,12 +19,12 @@ ground_curve = 0.0649805
 sun_angle_max = 0.0
 sun_curve = 0.00861081
 
-[sub_resource type="Sky" id="Sky_ouqmh"]
+[sub_resource type="Sky" id="Sky_q0u3f"]
 sky_material = SubResource("ProceduralSkyMaterial_c40mf")
 
 [sub_resource type="Environment" id="Environment_q73lk"]
 background_mode = 2
-sky = SubResource("Sky_ouqmh")
+sky = SubResource("Sky_q0u3f")
 fog_mode = 1
 fog_density = 0.1239
 fog_sky_affect = 0.141
