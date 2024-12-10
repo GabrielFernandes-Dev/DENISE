@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c5o0gnk6yhcpr"
-path="res://.godot/imported/modelo_portal.blend-6e2f55834e1cbec7f32d13af640d2945.scn"
+valid=false
 
 [deps]
 
 source_file="res://COGITO/Assets/Models/modelo_portal.blend"
-dest_files=["res://.godot/imported/modelo_portal.blend-6e2f55834e1cbec7f32d13af640d2945.scn"]
 
 [params]
 

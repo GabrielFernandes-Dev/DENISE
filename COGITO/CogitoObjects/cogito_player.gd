@@ -145,6 +145,8 @@ var slide_audio_player : AudioStreamPlayer3D
 var abilities: Array[CogitoAbility] = []
 var current_ability_index: int = -1
 
+var editor_toggle = false
+
 # Node caching
 @onready var player_interaction_component: PlayerInteractionComponent = $PlayerInteractionComponent
 @onready var neck: Node3D = $Neck
@@ -432,6 +434,12 @@ func _process_on_ladder(_delta):
 var jumped_from_slide = false
 
 func _physics_process(delta):
+	if Input.is_action_just_pressed("editor_toggle") && is_on_floor():
+		editor_toggle = !editor_toggle
+		if editor_toggle == true:
+			_on_pause_movement()
+		else:
+			_on_resume_movement()
 	#if is_movement_paused:
 		#return
 		

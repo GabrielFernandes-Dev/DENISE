@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://ca6m34i2ku60u"
-path="res://.godot/imported/memoria.blend-ee33bba3f75ca6d24c74bbbafc2439d6.scn"
+valid=false
 
 [deps]
 
 source_file="res://COGITO/Assets/Models/memoria.blend"
-dest_files=["res://.godot/imported/memoria.blend-ee33bba3f75ca6d24c74bbbafc2439d6.scn"]
 
 [params]
 

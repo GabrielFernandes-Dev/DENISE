@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://xod0to5m4773" path="res://COGITO/Objects/virus.tscn" id="8_8fnn2"]
 [ext_resource type="Script" path="res://COGITO/InventoryPD/cogito_inventory.gd" id="8_nhfd6"]
 [ext_resource type="PackedScene" uid="uid://di7id6n510eg2" path="res://COGITO/Objects/virus_ computer.tscn" id="9_xbsvk"]
+[ext_resource type="PackedScene" uid="uid://di7id6n510eg2" path="res://COGITO/Objects/virus_ computer.tscn" id="9_xbsvk"]
 [ext_resource type="PackedScene" uid="uid://b07avihnyexjd" path="res://COGITO/Objects/portal.tscn" id="10_0o3ng"]
 [ext_resource type="PackedScene" uid="uid://dm6qrlkbiie18" path="res://COGITO/Objects/virus_conj.tscn" id="10_333eb"]
 [ext_resource type="PackedScene" uid="uid://dj16jxsxp4pbp" path="res://COGITO/Objects/virus_tobacco.tscn" id="11_tuyh1"]
@@ -22,12 +23,12 @@ ground_curve = 0.0649805
 sun_angle_max = 0.0
 sun_curve = 0.00861081
 
-[sub_resource type="Sky" id="Sky_ouqmh"]
+[sub_resource type="Sky" id="Sky_q0u3f"]
 sky_material = SubResource("ProceduralSkyMaterial_c40mf")
 
 [sub_resource type="Environment" id="Environment_q73lk"]
 background_mode = 2
-sky = SubResource("Sky_ouqmh")
+sky = SubResource("Sky_q0u3f")
 fog_mode = 1
 fog_density = 0.1239
 fog_sky_affect = 0.141
@@ -52,16 +53,31 @@ environment = SubResource("Environment_q73lk")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.0506104, 0.998719, 0, -0.998719, -0.0506104, 10.0506, 27.4634, -12.506)
+light_energy = 8.0
 spot_range = 57.7674
 spot_angle = 44.6369
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.508786, 0.860893, 0, -0.860893, 0.508786, 10.0506, 27.4634, 8.36661)
+light_energy = 8.0
 spot_range = 57.7674
 spot_angle = 44.6369
 
 [node name="SpotLight3D3" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.504799, 0.863237, 0, -0.863237, -0.504799, 10.0506, 27.4634, -35.3169)
+light_energy = 8.0
+spot_range = 57.7674
+spot_angle = 44.6369
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="."]
+transform = Transform3D(0.909657, -0.00343609, -0.415346, 0.41536, 0.00752519, 0.909626, 0, -0.999966, 0.00827256, -11.8944, 14.2335, -4.68174)
+light_energy = 8.0
+spot_range = 57.7674
+spot_angle = 44.6369
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="."]
+transform = Transform3D(0.792949, 0.00504037, 0.609267, -0.609287, 0.00655972, 0.792922, -2.11796e-10, -0.999966, 0.00827256, 32.0069, 14.2335, -4.68174)
+light_energy = 8.0
 spot_range = 57.7674
 spot_angle = 44.6369
 
@@ -88,7 +104,7 @@ portal_name = "Portal Hub"
 
 [node name="portal_fase03" parent="NavigationRegion3D" instance=ExtResource("10_0o3ng")]
 transform = Transform3D(0.542701, 0, 0.442127, 0, 0.7, 0, -0.442127, 0, 0.542701, -16.9635, -0.457326, -37.9568)
-target_scene = "res://COGITO/Scenes/Fases/Hub.tscn"
+target_scene = "res://COGITO/Scenes/Fases/fase_03/Fase_03.tscn"
 portal_name = "Portal Hub"
 
 [node name="player" parent="." instance=ExtResource("6_7h2wb")]
@@ -98,6 +114,7 @@ collision_mask = 31
 inventory_data = SubResource("Resource_5dk1p")
 
 [node name="Virus" parent="." instance=ExtResource("8_8fnn2")]
+transform = Transform3D(0.0629628, 0.0784243, 0.99493, -0.00495307, 0.99692, -0.0782678, -0.998004, 0, 0.0631573, -1, 0.2, -5.5)
 transform = Transform3D(0.0629628, 0.0784243, 0.99493, -0.00495307, 0.99692, -0.0782678, -0.998004, 0, 0.0631573, -1, 0.2, -5.5)
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="Virus"]

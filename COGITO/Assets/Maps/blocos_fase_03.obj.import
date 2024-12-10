@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dtt6wj1i7rpgi"
+path="res://.godot/imported/blocos_fase_03.obj-44c03685fcd54375ac67fffff9d59745.mesh"
+
+[deps]
+
+files=["res://.godot/imported/blocos_fase_03.obj-44c03685fcd54375ac67fffff9d59745.mesh"]
+
+source_file="res://COGITO/Assets/Maps/blocos_fase_03.obj"
+dest_files=["res://.godot/imported/blocos_fase_03.obj-44c03685fcd54375ac67fffff9d59745.mesh", "res://.godot/imported/blocos_fase_03.obj-44c03685fcd54375ac67fffff9d59745.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

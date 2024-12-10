@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://buhcuiav8gdhy"
-path="res://.godot/imported/modelo_componente.blend-180ae4e53e43c859ef2af7d479047879.scn"
+valid=false
 
 [deps]
 
 source_file="res://COGITO/Assets/Models/modelo_componente.blend"
-dest_files=["res://.godot/imported/modelo_componente.blend-180ae4e53e43c859ef2af7d479047879.scn"]
 
 [params]
 

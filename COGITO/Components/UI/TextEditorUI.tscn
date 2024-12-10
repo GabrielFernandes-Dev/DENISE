@@ -32,4 +32,4 @@ script = ExtResource("1_v4nqu")
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "HELLO"
+text = "SEND"

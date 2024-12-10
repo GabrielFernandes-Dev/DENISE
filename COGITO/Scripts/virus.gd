@@ -14,6 +14,12 @@ var points = [
 	Vector3(26, 0.2,0),
 	Vector3(26, 0.2,-9)
 	
+	Vector3(-1, 0.2, -5.5),
+	Vector3(2, 0.2,-10),
+	Vector3(26, 0.2,-9),
+	Vector3(26, 0.2,0),
+	Vector3(26, 0.2,-9)
+	
 ]
 
 func _ready() -> void:
@@ -26,6 +32,8 @@ func _ready() -> void:
 	nav_agent.target_desired_distance = 0.5
 
 	await get_tree().create_timer(0.1).timeout
+	
+	position = points[0]
 	
 	position = points[0]
 

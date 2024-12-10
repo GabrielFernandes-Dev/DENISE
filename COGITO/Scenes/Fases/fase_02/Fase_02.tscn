@@ -5,7 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://dpcnm78mxxhag" path="res://COGITO/Scenes/Fases/fase_02/cenario_fase_02.tscn" id="3_q87dw"]
 [ext_resource type="PackedScene" uid="uid://kicjwmh02uwf" path="res://COGITO/PackedScenes/cogito_player.tscn" id="6_kp54i"]
 [ext_resource type="Script" path="res://COGITO/InventoryPD/CustomResources/InventorySlotPD.gd" id="7_h8b18"]
+[ext_resource type="PackedScene" uid="uid://cjykok478dx46" path="res://COGITO/Objects/virus_alien.tscn" id="8_ew25j"]
 [ext_resource type="Script" path="res://COGITO/InventoryPD/cogito_inventory.gd" id="8_khsed"]
+[ext_resource type="PackedScene" uid="uid://dctwsg8mhg0tu" path="res://COGITO/Objects/virus_alien2.tscn" id="9_e2n6i"]
 [ext_resource type="PackedScene" uid="uid://b07avihnyexjd" path="res://COGITO/Objects/portal.tscn" id="10_08eg4"]
 [ext_resource type="PackedScene" uid="uid://dddwxb5wsrkre" path="res://COGITO/Objects/virus_nano.tscn" id="10_gtyo4"]
 
@@ -48,17 +50,26 @@ script = ExtResource("1_0p2g1")
 environment = SubResource("Environment_5gua4")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.0506104, 0.998719, 0, -0.998719, -0.0506104, -6.7149, 27.4634, -0.463442)
+transform = Transform3D(1, 0, 0, 0, -0.0506104, 0.998719, 0, -0.998719, -0.0506104, -0.517813, 24.6348, -0.463442)
+light_energy = 8.0
 spot_range = 57.7674
 spot_angle = 44.6369
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.508786, 0.860893, 0, -0.860893, 0.508786, -6.7149, 27.4634, 20.4092)
+transform = Transform3D(1, 0, 0, 0, 0.508786, 0.860893, 0, -0.860893, 0.508786, -0.517813, 23.6242, 16.8482)
+light_energy = 8.0
 spot_range = 57.7674
 spot_angle = 44.6369
 
 [node name="SpotLight3D3" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.504799, 0.863237, 0, -0.863237, -0.504799, -6.7149, 27.4634, -23.2743)
+transform = Transform3D(1, 0, 0, 0, -0.504799, 0.863237, 0, -0.863237, -0.504799, -0.517813, 23.6279, -20.0915)
+light_energy = 8.0
+spot_range = 57.7674
+spot_angle = 44.6369
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="."]
+transform = Transform3D(0.0292825, 0.862867, 0.504582, -1.41073e-08, -0.504799, 0.863237, 0.999571, -0.0252777, -0.0147817, 16.5347, 23.6279, 3.46529)
+light_energy = 6.0
 spot_range = 57.7674
 spot_angle = 44.6369
 
@@ -89,7 +100,7 @@ target_scene = "res://COGITO/Scenes/Fases/Hub.tscn"
 portal_name = "Portal Hub"
 
 [node name="player" parent="." instance=ExtResource("6_kp54i")]
-transform = Transform3D(0.568921, 0, 0.822394, 0, 1, 0, -0.822394, 0, 0.568921, 21.738, 1.20692, 10.3366)
+transform = Transform3D(0.568921, 0, 0.822394, 0, 1, 0, -0.822394, 0, 0.568921, 17.7151, 1.61471, 15.085)
 collision_layer = 8
 collision_mask = 31
 inventory_data = SubResource("Resource_0o5p4")

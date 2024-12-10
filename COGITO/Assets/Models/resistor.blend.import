@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bgnl5jigmtr34"
-path="res://.godot/imported/resistor.blend-dc0a14c5ae36d8fd40903c7d10d941ba.scn"
+valid=false
 
 [deps]
 
 source_file="res://COGITO/Assets/Models/resistor.blend"
-dest_files=["res://.godot/imported/resistor.blend-dc0a14c5ae36d8fd40903c7d10d941ba.scn"]
 
 [params]
 

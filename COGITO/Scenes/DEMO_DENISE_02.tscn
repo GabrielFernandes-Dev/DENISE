@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://ctb0oo4806d0p"]
+[gd_scene load_steps=21 format=4 uid="uid://ctb0oo4806d0p"]
 
 [ext_resource type="Script" path="res://COGITO/Scenes/demo_denise_02.gd" id="1_e34vj"]
 [ext_resource type="PackedScene" uid="uid://kicjwmh02uwf" path="res://COGITO/PackedScenes/cogito_player.tscn" id="2_4a83w"]
@@ -7,8 +7,6 @@
 [ext_resource type="Script" path="res://COGITO/InventoryPD/cogito_inventory.gd" id="4_ajltk"]
 [ext_resource type="PackedScene" uid="uid://xod0to5m4773" path="res://COGITO/Objects/virus.tscn" id="5_revhx"]
 [ext_resource type="PackedScene" uid="uid://cv03lo3m3adio" path="res://COGITO/DetectionZoneSystem/zona_deteccao.tscn" id="6_lvjja"]
-[ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="8_qb2d3"]
-[ext_resource type="Resource" uid="uid://c36hv0o6g0udo" path="res://addons/qodot/game_definitions/fgd/qodot_fgd.tres" id="9_2lufs"]
 [ext_resource type="Texture2D" uid="uid://dfhr6s2ux8t0i" path="res://COGITO/Assets/Textures/Prototype Textures/PNG/Dark/texture_01.png" id="10_jhxfh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2j3o0"]
@@ -56,8 +54,6 @@ grid = true
 starter_inventory = Array[ExtResource("3_iwilt")]([])
 inventory_size = Vector2i(5, 3)
 inventory_slots = Array[ExtResource("3_iwilt")]([null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_23pbi"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aistq"]
 resource_local_to_scene = true
@@ -142,11 +138,6 @@ debug_enabled = true
 
 [node name="QodotMap" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.17645, 0)
-script = ExtResource("8_qb2d3")
-map_file = "H:/TrabalhosFaculdade/CG&RV/Projeto/DENISE/COGITO/Assets/Maps/teste.map"
-entity_fgd = ExtResource("9_2lufs")
-texture_file_extensions = PackedStringArray("png", "jpg", "jpeg", "bmp")
-default_material = SubResource("StandardMaterial3D_23pbi")
 
 [node name="entity_0_worldspawn" type="StaticBody3D" parent="QodotMap"]
 
