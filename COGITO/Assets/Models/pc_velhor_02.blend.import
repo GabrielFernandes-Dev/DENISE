@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://3uedonutss04"
-path="res://.godot/imported/pc_velhor_02.blend-278db4708801c76e2954e4aea5265da9.scn"
+valid=false
 
 [deps]
 
 source_file="res://COGITO/Assets/Models/pc_velhor_02.blend"
-dest_files=["res://.godot/imported/pc_velhor_02.blend-278db4708801c76e2954e4aea5265da9.scn"]
 
 [params]
 

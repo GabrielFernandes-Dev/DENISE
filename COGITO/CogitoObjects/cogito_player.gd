@@ -181,6 +181,7 @@ var current_ability_index: int = -1
 
 #endregion
 
+var editor_toggle = false
 
 func _ready():
 	#Some Setup steps
@@ -510,6 +511,13 @@ func _physics_process(delta):
 			crouching_collision_shape.disabled = true
 		sliding_timer.stop()
 		# Prevent sprinting if player is out of stamina.
+		if Input.is_action_just_pressed("editor_toggle") && is_on_floor():
+			editor_toggle = !editor_toggle
+			if editor_toggle == true:
+				_on_pause_movement()
+			else:
+				_on_resume_movement()
+			
 		if Input.is_action_pressed("sprint") and stamina_attribute and stamina_attribute.value_current > 0:
 			if !Input.is_action_pressed("jump") and CAN_BUNNYHOP:
 				bunny_hop_speed = SPRINTING_SPEED
@@ -543,6 +551,7 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed("free_look") or !sliding_timer.is_stopped() and !is_movement_paused:
 		is_free_looking = true
+		print("free look")
 		if sliding_timer.is_stopped():
 			eyes.rotation.z = -deg_to_rad(
 				neck.rotation.y * FREE_LOOK_TILT_AMOUNT

@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://ue4j8bfq4ciw"
-path="res://.godot/imported/parede.blend-6cc6ef3859e2a16f917ec3cca508c8c6.scn"
+valid=false
 
 [deps]
 
 source_file="res://COGITO/Assets/Models/parede.blend"
-dest_files=["res://.godot/imported/parede.blend-6cc6ef3859e2a16f917ec3cca508c8c6.scn"]
 
 [params]
 

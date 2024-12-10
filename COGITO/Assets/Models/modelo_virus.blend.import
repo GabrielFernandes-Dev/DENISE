@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://lj3vwnag3537"
-path="res://.godot/imported/modelo_virus.blend-162d3a13fad67113b35ac8fb7c34a8d1.scn"
+valid=false
 
 [deps]
 
 source_file="res://COGITO/Assets/Models/modelo_virus.blend"
-dest_files=["res://.godot/imported/modelo_virus.blend-162d3a13fad67113b35ac8fb7c34a8d1.scn"]
 
 [params]
 

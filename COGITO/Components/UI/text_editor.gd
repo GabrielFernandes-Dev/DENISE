@@ -74,6 +74,7 @@ func handle_mouse_event(event):
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	area.mouse_entered.connect(func(): mouse_entered = true)
+	add_to_group("interactable")
 	viewport.set_process_input(true)
 
 

@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dctnpvjff0trs"
-path="res://.godot/imported/plataforma_fase_03.blend-0f2d2ad01d30ae1a1b175f5a5de79148.scn"
+valid=false
 
 [deps]
 
 source_file="res://COGITO/Assets/Models/plataforma_fase_03.blend"
-dest_files=["res://.godot/imported/plataforma_fase_03.blend-0f2d2ad01d30ae1a1b175f5a5de79148.scn"]
 
 [params]
 
