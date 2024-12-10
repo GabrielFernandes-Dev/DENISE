@@ -8,9 +8,12 @@ extends CharacterBody3D
 var current_target_index = 0
 
 var points = [
-	Vector3(47.869, 0.651, 101.32),
-	Vector3(67.131, 0.651, 110.286),
-	Vector3(96.238, 6.126, 110.286)
+	Vector3(-1, 0.2, -5.5),
+	Vector3(2, 0.2,-10),
+	Vector3(26, 0.2,-9),
+	Vector3(26, 0.2,0),
+	Vector3(26, 0.2,-9)
+	
 ]
 
 func _ready() -> void:
@@ -23,6 +26,8 @@ func _ready() -> void:
 	nav_agent.target_desired_distance = 0.5
 
 	await get_tree().create_timer(0.1).timeout
+	
+	position = points[0]
 
 	# Define o primeiro destino
 	set_next_target()
@@ -67,3 +72,6 @@ func _on_vision_timer_timeout() -> void:
 						$RayCast3D.debug_shape_custom_color = Color(174, 0, 0)
 					else:
 						$RayCast3D.debug_shape_custom_color = Color(0, 255, 0)
+						
+func _eliminar():
+	queue_free()

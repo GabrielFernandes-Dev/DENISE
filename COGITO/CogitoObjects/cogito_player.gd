@@ -145,6 +145,8 @@ var slide_audio_player : AudioStreamPlayer3D
 var abilities: Array[CogitoAbility] = []
 var current_ability_index: int = -1
 
+var editor_toggle = false
+
 # Node caching
 @onready var player_interaction_component: PlayerInteractionComponent = $PlayerInteractionComponent
 @onready var neck: Node3D = $Neck
@@ -181,7 +183,6 @@ var current_ability_index: int = -1
 
 #endregion
 
-var editor_toggle = false
 
 func _ready():
 	#Some Setup steps
@@ -433,6 +434,12 @@ func _process_on_ladder(_delta):
 var jumped_from_slide = false
 
 func _physics_process(delta):
+	if Input.is_action_just_pressed("editor_toggle") && is_on_floor():
+		editor_toggle = !editor_toggle
+		if editor_toggle == true:
+			_on_pause_movement()
+		else:
+			_on_resume_movement()
 	#if is_movement_paused:
 		#return
 		
@@ -511,13 +518,6 @@ func _physics_process(delta):
 			crouching_collision_shape.disabled = true
 		sliding_timer.stop()
 		# Prevent sprinting if player is out of stamina.
-		if Input.is_action_just_pressed("editor_toggle") && is_on_floor():
-			editor_toggle = !editor_toggle
-			if editor_toggle == true:
-				_on_pause_movement()
-			else:
-				_on_resume_movement()
-			
 		if Input.is_action_pressed("sprint") and stamina_attribute and stamina_attribute.value_current > 0:
 			if !Input.is_action_pressed("jump") and CAN_BUNNYHOP:
 				bunny_hop_speed = SPRINTING_SPEED
@@ -551,7 +551,6 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed("free_look") or !sliding_timer.is_stopped() and !is_movement_paused:
 		is_free_looking = true
-		print("free look")
 		if sliding_timer.is_stopped():
 			eyes.rotation.z = -deg_to_rad(
 				neck.rotation.y * FREE_LOOK_TILT_AMOUNT
@@ -846,7 +845,7 @@ func _physics_process(delta):
 func _handle_aim_detection() -> void:
 	if interaction_raycast.is_colliding():
 		var collider = interaction_raycast.get_collider()
-		if collider.is_in_group("virus"):
+		if collider != null and collider.is_in_group("virus"):
 			is_aiming_at_virus = true
 		else:
 			is_aiming_at_virus = false

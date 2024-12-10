@@ -39,8 +39,6 @@ func handle_mouse_event(event):
 	
 	var mouse_pos3d = find_mouse(event.global_position)
 	mouse_inside = mouse_pos3d != null
-	print(mouse_inside)
-	print(mouse_pos3d)
 
 	if mouse_inside:
 		mouse_pos3d = area.global_transform.affine_inverse() * mouse_pos3d
@@ -76,7 +74,6 @@ func handle_mouse_event(event):
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	area.mouse_entered.connect(func(): mouse_entered = true)
-	add_to_group("interactable")
 	viewport.set_process_input(true)
 
 

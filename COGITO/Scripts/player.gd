@@ -1,8 +1,6 @@
 extends CharacterBody3D
 
 const SPEED = 5.0
-var SPEED_NOW = 0.0
-var editor_mode = false
 const JUMP_VELOCITY = 4.5
 
 var mouse_sensitivity = 0.03
@@ -12,7 +10,6 @@ var mouse_captured = true
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED) #mantém mouse preso na janela do jogo
-	var SPEED_NOW = SPEED
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and mouse_captured:
@@ -36,20 +33,16 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-	
-	if Input.is_action_just_pressed("quickslot_1") and is_on_floor():
-		editor_mode = !editor_mode
-	
-	if editor_mode == false:
+		
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-		var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-		var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-		if direction:
-			velocity.x = direction.x * SPEED_NOW
-			velocity.z = direction.z * SPEED_NOW
-		else:
-			velocity.x = move_toward(velocity.x, 0, SPEED_NOW)
-			velocity.z = move_toward(velocity.z, 0, SPEED_NOW)
+	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	if direction:
+		velocity.x = direction.x * SPEED
+		velocity.z = direction.z * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.z = move_toward(velocity.z, 0, SPEED)
 
-		move_and_slide()
+	move_and_slide()
