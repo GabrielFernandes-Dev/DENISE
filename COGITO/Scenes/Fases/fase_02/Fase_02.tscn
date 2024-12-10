@@ -1,12 +1,15 @@
-[gd_scene load_steps=13 format=3 uid="uid://wjcauo77l5vh"]
+[gd_scene load_steps=16 format=3 uid="uid://wjcauo77l5vh"]
 
 [ext_resource type="Script" path="res://COGITO/Scenes/Fases/fase_02/fase_02.gd" id="1_0p2g1"]
 [ext_resource type="PackedScene" uid="uid://cv03lo3m3adio" path="res://COGITO/DetectionZoneSystem/zona_deteccao.tscn" id="1_01r0n"]
 [ext_resource type="PackedScene" uid="uid://dpcnm78mxxhag" path="res://COGITO/Scenes/Fases/fase_02/cenario_fase_02.tscn" id="3_q87dw"]
 [ext_resource type="PackedScene" uid="uid://kicjwmh02uwf" path="res://COGITO/PackedScenes/cogito_player.tscn" id="6_kp54i"]
 [ext_resource type="Script" path="res://COGITO/InventoryPD/CustomResources/InventorySlotPD.gd" id="7_h8b18"]
+[ext_resource type="PackedScene" uid="uid://cjykok478dx46" path="res://COGITO/Objects/virus_alien.tscn" id="8_ew25j"]
 [ext_resource type="Script" path="res://COGITO/InventoryPD/cogito_inventory.gd" id="8_khsed"]
+[ext_resource type="PackedScene" uid="uid://dctwsg8mhg0tu" path="res://COGITO/Objects/virus_alien2.tscn" id="9_e2n6i"]
 [ext_resource type="PackedScene" uid="uid://b07avihnyexjd" path="res://COGITO/Objects/portal.tscn" id="10_08eg4"]
+[ext_resource type="PackedScene" uid="uid://dddwxb5wsrkre" path="res://COGITO/Objects/virus_nano.tscn" id="10_gtyo4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wcfml"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -63,7 +66,7 @@ spot_angle = 44.6369
 navigation_mesh = SubResource("NavigationMesh_mdopp")
 
 [node name="Area1" parent="NavigationRegion3D" instance=ExtResource("1_01r0n")]
-transform = Transform3D(50.9912, 0, 0, 0, 50.9912, 0, 0, 0, 50.9912, -6.09709, -0.0638865, -0.548672)
+transform = Transform3D(50.9912, 0, 0, 0, 50.9912, 0, 0, 0, 50.9912, 1.36748, -0.0638865, -0.548672)
 collision_layer = 4
 collision_mask = 24
 
@@ -90,6 +93,21 @@ transform = Transform3D(0.568921, 0, 0.822394, 0, 1, 0, -0.822394, 0, 0.568921, 
 collision_layer = 8
 collision_mask = 31
 inventory_data = SubResource("Resource_0o5p4")
+
+[node name="virus_alien" parent="." instance=ExtResource("8_ew25j")]
+transform = Transform3D(-0.0603692, 0, -0.998176, 0, 1, 0, 0.998176, 0, -0.0603692, 19, 2, 2)
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="virus_alien"]
+
+[node name="virus_alien2" parent="." instance=ExtResource("9_e2n6i")]
+transform = Transform3D(-0.0540091, 0, 0.99854, 0, 1, 0, -0.99854, 0, -0.0540091, -9, 2, -2)
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="virus_alien2"]
+
+[node name="virus_nano" parent="." instance=ExtResource("10_gtyo4")]
+transform = Transform3D(-0.890054, 0, -0.455856, 0.0518019, 0.993522, -0.101143, 0.452903, -0.113637, -0.884288, 15, 1, -16)
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="virus_nano"]
 
 [connection signal="body_entered" from="NavigationRegion3D/Area1" to="NavigationRegion3D/Area1" method="_on_body_entered"]
 [connection signal="body_exited" from="NavigationRegion3D/Area1" to="NavigationRegion3D/Area1" method="_on_body_exited"]
