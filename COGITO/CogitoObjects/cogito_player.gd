@@ -837,7 +837,7 @@ func _physics_process(delta):
 func _handle_aim_detection() -> void:
 	if interaction_raycast.is_colliding():
 		var collider = interaction_raycast.get_collider()
-		if collider.is_in_group("virus"):
+		if collider != null and collider.is_in_group("virus"):
 			is_aiming_at_virus = true
 		else:
 			is_aiming_at_virus = false

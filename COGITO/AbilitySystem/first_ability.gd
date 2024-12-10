@@ -28,6 +28,8 @@ func use(player: Node) -> void:
 				text_editor.visible = false
 			else:
 				text_editor.visible = true
+				if target != null and target.is_in_group("virus"):
+					target._eliminar()
 			start_cooldown(player)
 		else:
 			if text_editor.visible:

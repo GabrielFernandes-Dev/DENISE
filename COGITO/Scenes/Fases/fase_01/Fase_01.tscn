@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cxe8ifj7cb8sj"]
+[gd_scene load_steps=17 format=3 uid="uid://cxe8ifj7cb8sj"]
 
 [ext_resource type="PackedScene" uid="uid://cv03lo3m3adio" path="res://COGITO/DetectionZoneSystem/zona_deteccao.tscn" id="1_lrn1w"]
 [ext_resource type="Script" path="res://COGITO/Scenes/Fases/fase_01/fase_01.gd" id="1_n7nl1"]
@@ -7,7 +7,10 @@
 [ext_resource type="Script" path="res://COGITO/InventoryPD/CustomResources/InventorySlotPD.gd" id="7_pivv0"]
 [ext_resource type="PackedScene" uid="uid://xod0to5m4773" path="res://COGITO/Objects/virus.tscn" id="8_8fnn2"]
 [ext_resource type="Script" path="res://COGITO/InventoryPD/cogito_inventory.gd" id="8_nhfd6"]
+[ext_resource type="PackedScene" uid="uid://di7id6n510eg2" path="res://COGITO/Objects/virus_ computer.tscn" id="9_xbsvk"]
 [ext_resource type="PackedScene" uid="uid://b07avihnyexjd" path="res://COGITO/Objects/portal.tscn" id="10_0o3ng"]
+[ext_resource type="PackedScene" uid="uid://dm6qrlkbiie18" path="res://COGITO/Objects/virus_conj.tscn" id="10_333eb"]
+[ext_resource type="PackedScene" uid="uid://dj16jxsxp4pbp" path="res://COGITO/Objects/virus_tobacco.tscn" id="11_tuyh1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_c40mf"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -95,10 +98,25 @@ collision_mask = 31
 inventory_data = SubResource("Resource_5dk1p")
 
 [node name="Virus" parent="." instance=ExtResource("8_8fnn2")]
-transform = Transform3D(0.664775, 0, 0.747044, 0, 1, 0, -0.747044, 0, 0.664775, -1.04278, 0.252711, -5.56781)
+transform = Transform3D(0.0629628, 0.0784243, 0.99493, -0.00495307, 0.99692, -0.0782678, -0.998004, 0, 0.0631573, -1, 0.2, -5.5)
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="Virus"]
 debug_enabled = true
+
+[node name="virus_computer" parent="." instance=ExtResource("9_xbsvk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.33415, 0, 6)
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="virus_computer"]
+
+[node name="virus_conj" parent="." instance=ExtResource("10_333eb")]
+transform = Transform3D(1, 0, 0, 0, -0.979673, 0.200599, 0, -0.200599, -0.979673, 11, 1.3, 0.7)
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="virus_conj"]
+
+[node name="virus_tobacco" parent="." instance=ExtResource("11_tuyh1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0.2, -5)
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="virus_tobacco"]
 
 [connection signal="body_entered" from="NavigationRegion3D/Area1" to="NavigationRegion3D/Area1" method="_on_body_entered"]
 [connection signal="body_exited" from="NavigationRegion3D/Area1" to="NavigationRegion3D/Area1" method="_on_body_exited"]

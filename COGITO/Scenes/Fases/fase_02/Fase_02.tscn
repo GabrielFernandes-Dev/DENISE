@@ -63,7 +63,7 @@ spot_angle = 44.6369
 navigation_mesh = SubResource("NavigationMesh_mdopp")
 
 [node name="Area1" parent="NavigationRegion3D" instance=ExtResource("1_01r0n")]
-transform = Transform3D(50.9912, 0, 0, 0, 50.9912, 0, 0, 0, 50.9912, -6.09709, -0.0638865, -0.548672)
+transform = Transform3D(50.9912, 0, 0, 0, 50.9912, 0, 0, 0, 50.9912, 12.6221, -0.0638865, -0.548672)
 collision_layer = 4
 collision_mask = 24
 
