@@ -11,12 +11,16 @@ func _init():
 
 func use(player: Node) -> void:
 	var text_editor = player.find_child("TextEditor")
+	var text_region = player.find_child("TextEdit")
+	
+	print(text_region)
 	if is_on_cooldown:
 		print("Habilidade em cooldown!")
 		return
 	
 	if player.is_aiming_at_virus:
 		var target = player.interaction_raycast.get_collider()
+		text_region.insert_text(target.lua_script, 0, 0)
 		var hit_point = player.interaction_raycast.get_collision_point()
 		var distance = player.global_position.distance_to(hit_point)
 		

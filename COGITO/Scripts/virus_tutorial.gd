@@ -3,6 +3,19 @@ extends CharacterBody3D
 @export var speed : int = 2
 @export var accel : int = 10
 
+var lua_script = """
+--O virus depende da bool para viver
+--troque a variavel para ativo "false" para desativar
+local WormVirus = {
+	ativo = true
+}
+
+function WormVirus:exec(self)
+	return 	self.ativo
+end
+"""
+
+
 
 var current_target_index = 0
 
